@@ -18,6 +18,7 @@ const AdminPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [greeting, setGreeting] = useState('');
   const [userName, setUserName] = useState('');
+  const [loadingPosts, setLoadingPosts] = useState(true); // New state for loading posts
   const history = useHistory();
 
   useEffect(() => {
@@ -50,9 +51,11 @@ const AdminPage = () => {
     try {
       const response = await axios.get('http://localhost:5000/api/posts');
       setPosts(response.data);
+      setLoadingPosts(false); // Set loading state to false when posts are fetched
     } catch (error) {
       console.error('Failed to fetch posts:', error.response?.data?.error || error.message);
       alert('Failed to fetch posts');
+      setLoadingPosts(false); // Set loading state to false even if fetching fails
     }
   };
 
@@ -221,25 +224,33 @@ const AdminPage = () => {
       <Button onClick={gotoHome}>Home</Button>
       <Button onClick={handleLogout}>Logout</Button>
 
-      <h2>All Posts</h2>
-      <ul>
-        {posts.map(post => (
-          <li key={post._id}>
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
-            <p><strong>Plot Area:</strong> {post.plotArea.value} {post.plotArea.unit}</p>
-            <p><strong>Plot Price:</strong> {post.plotPrice}</p>
-            <p><strong>Plot Location:</strong> {post.plotLocation}</p>
-            {post.pics && post.pics.map((pic, index) => (
-              <div key={index} style={{ position: 'relative' }}>
-                <img src={pic} alt={`Post ${index}`} style={{ maxWidth: '100px', maxHeight: '100px' }} />
-              </div>
+      {loadingPosts ? (
+        <p>Loading...</p>
+      ) : posts.length === 0 ? (
+        <p>No posts found.</p>
+      ) : (
+        <>
+          <h2>All Posts</h2>
+          <ul>
+            {posts.map(post => (
+              <li key={post._id}>
+                <h3>{post.title}</h3>
+                <p>{post.content}</p>
+                <p><strong>Plot Area:</strong> {post.plotArea.value} {post.plotArea.unit}</p>
+                <p><strong>Plot Price:</strong> {post.plotPrice}</p>
+                <p><strong>Plot Location:</strong> {post.plotLocation}</p>
+                {post.pics && post.pics.map((pic, index) => (
+                  <div key={index} style={{ position: 'relative' }}>
+                    <img src={pic} alt={`Post ${index}`} style={{ maxWidth: '100px', maxHeight: '100px' }} />
+                  </div>
+                ))}
+                <Button onClick={() => startEdit(post)}>Edit</Button>
+                <Button onClick={() => deletePost(post)}>Delete</Button>
+              </li>
             ))}
-            <Button onClick={() => startEdit(post)}>Edit</Button>
-            <Button onClick={() => deletePost(post)}>Delete</Button>
-          </li>
-        ))}
-      </ul>
+          </ul>
+        </>
+      )}
     </>
   );
 }
