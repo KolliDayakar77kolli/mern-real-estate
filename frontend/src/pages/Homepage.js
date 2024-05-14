@@ -25,7 +25,6 @@ function Homepage() {
     fetchPosts();
   }, []); // Empty dependency array means this effect runs once on mount
 
-
   return (
     <div className="Homepage">
       <Button onClick={handleAdminLogin}>Admin Login</Button>
@@ -35,6 +34,10 @@ function Homepage() {
           <li key={post._id}>
             <h3>{post.title}</h3>
             <p>{post.content}</p>
+            <p><strong>Plot Area:</strong> {post.plotArea.value} {post.plotArea.unit}</p>
+            <p><strong>Plot Price:</strong> {post.plotPrice}</p>
+            <p><strong>Plot Location:</strong> {post.plotLocation}</p>
+            <img src={post.pic} alt="Post Pic" style={{ maxWidth: '100%', maxHeight: '200px' }} /> {/* Display picture */}
           </li>
         ))}
       </ul>
