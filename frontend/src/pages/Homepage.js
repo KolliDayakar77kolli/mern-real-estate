@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom'; // Import useHistory hook
+import { Button } from '@chakra-ui/react';
 
 function Homepage() {
   const [posts, setPosts] = useState([]); // State to store the list of posts
+  const history = useHistory();
+
+  const handleAdminLogin = () => {
+    history.push('/login'); // Redirect to /admin route
+  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -21,6 +28,7 @@ function Homepage() {
 
   return (
     <div className="Homepage">
+      <Button onClick={handleAdminLogin}>Admin Login</Button>
       <h2>All Posts</h2>
       <ul>
         {posts.map(post => (
