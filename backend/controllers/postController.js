@@ -2,14 +2,14 @@ const asyncHandler = require("express-async-handler");
 const Post = require("../models/postModel");
 
 const createPost = asyncHandler(async (req, res) => {
-  const { title, content, plotArea, plotPrice, plotLocation, pic } = req.body;
+  const { title, content, plotArea, plotPrice, plotLocation, pics } = req.body;
 
-  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pic) {
+  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pics || !Array.isArray(pics)) {
     res.status(400);
-    throw new Error("Please enter all the fields");
+    throw new Error("Please enter all the fields and provide pics as an array");
   }
 
-  const newPost = new Post({ title, content, plotArea, plotPrice, plotLocation, pic });
+  const newPost = new Post({ title, content, plotArea, plotPrice, plotLocation, pics });
 
   try {
     await newPost.save();
@@ -19,28 +19,19 @@ const createPost = asyncHandler(async (req, res) => {
   }
 });
 
-const allPosts = asyncHandler(async (req, res) => {
-  try {
-    const posts = await Post.find();
-    res.status(200).json(posts);
-  } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
-  }
-});
-
 const editPost = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { title, content, plotArea, plotPrice, plotLocation, pic } = req.body;
+  const { title, content, plotArea, plotPrice, plotLocation, pics } = req.body;
 
-  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pic) {
+  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pics || !Array.isArray(pics)) {
     res.status(400);
-    throw new Error("Please enter all the fields");
+    throw new Error("Please enter all the fields and provide pics as an array");
   }
 
   try {
     const updatedPost = await Post.findByIdAndUpdate(
       id,
-      { title, content, plotArea, plotPrice, plotLocation, pic },
+      { title, content, plotArea, plotPrice, plotLocation, pics },
       { new: true, runValidators: true }
     );
 
@@ -52,6 +43,15 @@ const editPost = asyncHandler(async (req, res) => {
     res.status(200).json(updatedPost);
   } catch (error) {
     res.status(400).json({ success: false, error: error.message });
+  }
+});
+
+const allPosts = asyncHandler(async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
@@ -69,4 +69,4 @@ const deletePost = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { createPost, allPosts, editPost, deletePost };
+module.exports = { createPost, editPost, allPosts, deletePost };

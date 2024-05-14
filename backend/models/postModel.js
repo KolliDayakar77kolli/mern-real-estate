@@ -10,11 +10,13 @@ const postSchema = new mongoose.Schema(
     },
     plotPrice: Number,
     plotLocation: String,
-    pic: {
-      type: String,
-      required: true,
-      default: "https://icon-library.com/images/default-image-icon/default-image-icon-6.jpg" // Default picture URL
-    }
+    pics: [
+      {
+        type: String,
+        required: true,
+        default: "https://icon-library.com/images/default-image-icon/default-image-icon-6.jpg" // Default picture URL
+      }
+    ]
   },
   {
     timestamps: true
@@ -22,11 +24,11 @@ const postSchema = new mongoose.Schema(
 );
 
 postSchema.pre("save", async function (next) {
-  if (!this.isModified("pic")) {
+  if (!this.isModified("pics")) {
     next();
   }
 
-  // Handle logic for uploading the picture here, e.g., resizing, saving to storage, etc.
+  // Handle logic for uploading the pictures here, e.g., resizing, saving to storage, etc.
   // For now, just proceed to the next middleware
   next();
 });

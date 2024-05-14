@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom'; // Import useHistory hook
+import { useHistory } from 'react-router-dom'; 
 import { Button } from '@chakra-ui/react';
 
 function Homepage() {
-  const [posts, setPosts] = useState([]); // State to store the list of posts
+  const [posts, setPosts] = useState([]);
   const history = useHistory();
 
   const handleAdminLogin = () => {
-    history.push('/login'); // Redirect to /admin route
+    history.push('/login');
   };
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/posts');
-        setPosts(response.data); // Set the fetched posts to state
+        setPosts(response.data);
       } catch (error) {
         console.error('Failed to fetch posts:', error.response?.data?.error || error.message);
         alert('Failed to fetch posts');
@@ -23,7 +23,7 @@ function Homepage() {
     };
 
     fetchPosts();
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []);
 
   return (
     <div className="Homepage">
@@ -37,7 +37,9 @@ function Homepage() {
             <p><strong>Plot Area:</strong> {post.plotArea.value} {post.plotArea.unit}</p>
             <p><strong>Plot Price:</strong> {post.plotPrice}</p>
             <p><strong>Plot Location:</strong> {post.plotLocation}</p>
-            <img src={post.pic} alt="Post Pic" style={{ maxWidth: '100%', maxHeight: '200px' }} /> {/* Display picture */}
+            {post.pics && post.pics.map((pic, index) => (
+              <img key={index} src={pic} alt={`Post Pic ${index}`} style={{ maxWidth: '100%', maxHeight: '200px' }} />
+            ))}
           </li>
         ))}
       </ul>

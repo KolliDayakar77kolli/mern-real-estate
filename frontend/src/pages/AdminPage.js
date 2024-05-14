@@ -11,7 +11,7 @@ const AdminPage = () => {
   const [plotAreaUnit, setPlotAreaUnit] = useState('yards');
   const [plotPrice, setPlotPrice] = useState('');
   const [plotLocation, setPlotLocation] = useState('');
-  const [pic, setPic] = useState('');
+  const [pics, setPics] = useState([]);
   const [currentPostId, setCurrentPostId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isPicLoading, setIsPicLoading] = useState(false);
@@ -58,7 +58,7 @@ const AdminPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const postData = { title, content, plotArea: { value: plotAreaValue, unit: plotAreaUnit }, plotPrice, plotLocation, pic };
+    const postData = { title, content, plotArea: { value: plotAreaValue, unit: plotAreaUnit }, plotPrice, plotLocation, pics };
     setIsLoading(true);
     try {
       let response;
@@ -73,7 +73,7 @@ const AdminPage = () => {
       setPlotAreaUnit('yards');
       setPlotPrice('');
       setPlotLocation('');
-      setPic('');
+      setPics([]);
       setCurrentPostId(null);
       setIsLoading(false);
       alert(`Post ${currentPostId ? 'updated' : 'created'} successfully!`);
@@ -93,7 +93,7 @@ const AdminPage = () => {
     setPlotAreaUnit(post.plotArea.unit);
     setPlotPrice(post.plotPrice);
     setPlotLocation(post.plotLocation);
-    setPic(post.pic);
+    setPics(post.pics);
     setCurrentPostId(post._id);
     onOpen();
   };
@@ -114,29 +114,36 @@ const AdminPage = () => {
     }
   };
 
-  const postDetails = async (pics) => {
+  const postDetails = async (files) => {
     try {
       setIsPicLoading(true);
-      const data = new FormData();
-      data.append('file', pics);
-      data.append('upload_preset', 'real-estate');
-      data.append('cloud_name', 'dtsi0uvsr');
-      const response = await fetch('https://api.cloudinary.com/v1_1/dtsi0uvsr/image/upload', {
-        method: 'POST',
-        body: data,
+      const promises = Array.from(files).map(file => {
+        const data = new FormData();
+        data.append('file', file);
+        data.append('upload_preset', 'real-estate');
+        data.append('cloud_name', 'dtsi0uvsr');
+        return fetch('https://api.cloudinary.com/v1_1/dtsi0uvsr/image/upload', {
+          method: 'POST',
+          body: data,
+        });
       });
-      const responseData = await response.json();
-      setPic(responseData.url.toString());
+
+      const responses = await Promise.all(promises);
+      const responseData = await Promise.all(responses.map(response => response.json()));
+      const imageUrls = responseData.map(data => data.url);
+      setPics([...pics, ...imageUrls]);
       setIsPicLoading(false);
     } catch (error) {
-      console.error('Error uploading picture:', error);
-      alert('Error uploading picture');
+      console.error('Error uploading pictures:', error);
+      alert('Error uploading pictures');
       setIsPicLoading(false);
     }
   };
 
-  const handleRemovePic = () => {
-    setPic('');
+  const handleRemovePic = (index) => {
+    const updatedPics = [...pics];
+    updatedPics.splice(index, 1);
+    setPics(updatedPics);
   };
 
   const gotoHome = () => {
@@ -185,22 +192,22 @@ const AdminPage = () => {
                 <input type="text" value={plotLocation} onChange={e => setPlotLocation(e.target.value)} />
               </div>
               <div>
-                <label>Picture:</label>
-                <input type="file" accept="image/*" onChange={e => postDetails(e.target.files[0])} />
+                <label>Pictures:</label>
+                <input type="file" accept="image/*" multiple onChange={e => postDetails(e.target.files)} />
                 {isPicLoading ? (
                   <div>Loading...</div>
                 ) : (
-                  pic && (
-                    <div style={{ position: 'relative' }}>
-                      <img src={pic} alt="Chosen" style={{ maxWidth: '100px', maxHeight: '100px' }} />
+                  pics && pics.map((pic, index) => (
+                    <div key={index} style={{ position: 'relative' }}>
+                      <img src={pic} alt={`Chosen ${index}`} style={{ maxWidth: '100px', maxHeight: '100px' }} />
                       <Button
                         style={{ position: 'absolute', top: '5px', right: '5px' }}
-                        onClick={handleRemovePic}
+                        onClick={() => handleRemovePic(index)}
                       >
                         Remove
                       </Button>
                     </div>
-                  )
+                  ))
                 )}
               </div>
               <Button type="submit" colorScheme='blue' mr={3} isLoading={isLoading} loadingText="Submitting...">
@@ -223,7 +230,11 @@ const AdminPage = () => {
             <p><strong>Plot Area:</strong> {post.plotArea.value} {post.plotArea.unit}</p>
             <p><strong>Plot Price:</strong> {post.plotPrice}</p>
             <p><strong>Plot Location:</strong> {post.plotLocation}</p>
-            {post.pic && <img src={post.pic} alt="Post" style={{ maxWidth: '100px', maxHeight: '100px' }} />}
+            {post.pics && post.pics.map((pic, index) => (
+              <div key={index} style={{ position: 'relative' }}>
+                <img src={pic} alt={`Post ${index}`} style={{ maxWidth: '100px', maxHeight: '100px' }} />
+              </div>
+            ))}
             <Button onClick={() => startEdit(post)}>Edit</Button>
             <Button onClick={() => deletePost(post)}>Delete</Button>
           </li>
