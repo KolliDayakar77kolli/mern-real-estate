@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, useDisclosure } from '@chakra-ui/react';
+import { useHistory } from 'react-router-dom'; 
 
 const AdminPage = () => {
   const [posts, setPosts] = useState([]);
@@ -13,20 +14,47 @@ const AdminPage = () => {
   const [pic, setPic] = useState('');
   const [currentPostId, setCurrentPostId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isPicLoading, setIsPicLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [greeting, setGreeting] = useState('');
+  const [userName, setUserName] = useState('');
+  const history = useHistory();
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/posts');
-        setPosts(response.data);
-      } catch (error) {
-        console.error('Failed to fetch posts:', error.response?.data?.error || error.message);
-        alert('Failed to fetch posts');
-      }
-    };
-    fetchPosts();
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (!userInfo || !userInfo.name) {
+      window.alert('You need to log in');
+      history.push('/login');
+    } else {
+      setUserName(userInfo.name);
+      fetchPosts();
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour >= 0 && hour < 12) {
+      setGreeting('Good morning');
+    } else if (hour >= 12 && hour < 18) {
+      setGreeting('Good afternoon');
+    } else if (hour >= 18 && hour < 24) {
+      setGreeting('Good evening');
+    } else {
+      setGreeting('Good night');
+    }
+  }, []);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/api/posts');
+      setPosts(response.data);
+    } catch (error) {
+      console.error('Failed to fetch posts:', error.response?.data?.error || error.message);
+      alert('Failed to fetch posts');
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -88,6 +116,7 @@ const AdminPage = () => {
 
   const postDetails = async (pics) => {
     try {
+      setIsPicLoading(true);
       const data = new FormData();
       data.append('file', pics);
       data.append('upload_preset', 'real-estate');
@@ -98,16 +127,31 @@ const AdminPage = () => {
       });
       const responseData = await response.json();
       setPic(responseData.url.toString());
+      setIsPicLoading(false);
     } catch (error) {
       console.error('Error uploading picture:', error);
       alert('Error uploading picture');
+      setIsPicLoading(false);
     }
+  };
+
+  const handleRemovePic = () => {
+    setPic('');
+  };
+
+  const gotoHome = () => {
+    history.push("/");
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem('userInfo');
+    history.push('/login');
   };
 
   return (
     <>
+      <div>{greeting}, {userName || 'Guest'}</div>
       <Button onClick={onOpen}>Post something..!</Button>
-
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -143,7 +187,21 @@ const AdminPage = () => {
               <div>
                 <label>Picture:</label>
                 <input type="file" accept="image/*" onChange={e => postDetails(e.target.files[0])} />
-                {pic && <img src={pic} alt="Chosen" style={{ maxWidth: '100px', maxHeight: '100px' }} />}
+                {isPicLoading ? (
+                  <div>Loading...</div>
+                ) : (
+                  pic && (
+                    <div style={{ position: 'relative' }}>
+                      <img src={pic} alt="Chosen" style={{ maxWidth: '100px', maxHeight: '100px' }} />
+                      <Button
+                        style={{ position: 'absolute', top: '5px', right: '5px' }}
+                        onClick={handleRemovePic}
+                      >
+                        Remove
+                      </Button>
+                    </div>
+                  )
+                )}
               </div>
               <Button type="submit" colorScheme='blue' mr={3} isLoading={isLoading} loadingText="Submitting...">
                 {currentPostId ? 'Update Post' : 'Create Post'}
@@ -153,6 +211,8 @@ const AdminPage = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
+      <Button onClick={gotoHome}>Home</Button>
+      <Button onClick={handleLogout}>Logout</Button>
 
       <h2>All Posts</h2>
       <ul>
