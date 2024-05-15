@@ -2,14 +2,14 @@ const asyncHandler = require("express-async-handler");
 const Post = require("../models/postModel");
 
 const createPost = asyncHandler(async (req, res) => {
-  const { title, content, plotArea, plotPrice, plotLocation, pics } = req.body;
+  const { title, content, plotArea, plotPrice, plotLocation, pics, highlights } = req.body;
 
-  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pics || !Array.isArray(pics)) {
+  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pics || !Array.isArray(pics) || !highlights || !Array.isArray(highlights) || highlights.length === 0) {
     res.status(400);
-    throw new Error("Please enter all the fields and provide pics as an array");
+    throw new Error("Please enter all the fields, provide pics as an array, and include at least one highlight");
   }
 
-  const newPost = new Post({ title, content, plotArea, plotPrice, plotLocation, pics });
+  const newPost = new Post({ title, content, plotArea, plotPrice, plotLocation, pics, highlights });
 
   try {
     await newPost.save();
@@ -21,9 +21,9 @@ const createPost = asyncHandler(async (req, res) => {
 
 const editPost = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { title, content, plotArea, plotPrice, plotLocation, pics } = req.body;
+  const { title, content, plotArea, plotPrice, plotLocation, pics, highlights } = req.body;
 
-  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pics || !Array.isArray(pics)) {
+  if (!title || !content || !plotArea || !plotPrice || !plotLocation || !pics || !highlights ||  !Array.isArray(pics)) {
     res.status(400);
     throw new Error("Please enter all the fields and provide pics as an array");
   }
@@ -31,7 +31,7 @@ const editPost = asyncHandler(async (req, res) => {
   try {
     const updatedPost = await Post.findByIdAndUpdate(
       id,
-      { title, content, plotArea, plotPrice, plotLocation, pics },
+      { title, content, plotArea, plotPrice, plotLocation, pics, highlights },
       { new: true, runValidators: true }
     );
 

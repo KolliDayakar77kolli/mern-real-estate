@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom'; 
-import { Button } from '@chakra-ui/react';
+import { Button , Box, Text, UnorderedList, ListItem} from '@chakra-ui/react';
 
 function Homepage() {
   const [posts, setPosts] = useState([]);
@@ -37,6 +37,14 @@ function Homepage() {
             <p><strong>Plot Area:</strong> {post.plotArea.value} {post.plotArea.unit}</p>
             <p><strong>Plot Price:</strong> {post.plotPrice}</p>
             <p><strong>Plot Location:</strong> {post.plotLocation}</p>
+            <Box style={{ marginLeft: '20px' }}>
+                  <Text fontWeight="bold">Highlights:</Text>
+                  <UnorderedList>
+                    {post.highlights.map((highlight, index) => (
+                      <ListItem key={index}>{highlight}</ListItem>
+                    ))}
+                  </UnorderedList>
+                </Box>
             {post.pics && post.pics.map((pic, index) => (
               <img key={index} src={pic} alt={`Post Pic ${index}`} style={{ maxWidth: '100%', maxHeight: '200px' }} />
             ))}

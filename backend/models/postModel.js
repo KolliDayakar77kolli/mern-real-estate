@@ -10,6 +10,7 @@ const postSchema = new mongoose.Schema(
     },
     plotPrice: Number,
     plotLocation: String,
+    highlights: [String],
     pics: [
       {
         type: String,
