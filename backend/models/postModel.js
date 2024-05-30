@@ -17,7 +17,13 @@ const postSchema = new mongoose.Schema(
         required: true,
         default: "https://icon-library.com/images/default-image-icon/default-image-icon-6.jpg" // Default picture URL
       }
-    ]
+    ],
+    type: {
+      type: String,
+      required: true,
+      enum: ["residential", "commercial", "industrial", "agricultural"], // Allowed values for type
+      default: "residential" // Default value if none is provided
+    }
   },
   {
     timestamps: true

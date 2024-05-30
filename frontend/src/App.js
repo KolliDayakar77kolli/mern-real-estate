@@ -3,6 +3,8 @@ import Login from './components/Authentication/Login';
 import AdminPage from './pages/AdminPage';
 import Homepage from './pages/Homepage';
 import { Route } from "react-router-dom";
+import Posts from './components/Miscellaneous/Posts';
+
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
      <Route path="/admin" component={AdminPage} />
      <Route path="/register" component={Signup} />
      <Route path="/login" component={Login} />
+     <Route path="/posts" component={Posts} />
+
     </div>
   );
 }
