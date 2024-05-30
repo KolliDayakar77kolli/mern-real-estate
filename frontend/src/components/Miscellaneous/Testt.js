@@ -8,7 +8,9 @@ const Testt = () => {
       alignItems="center"
       justifyContent="center"
       minHeight="100vh"
-      bgGradient="linear(to-tr, #00c6ff, #0072ff)"
+      // bgGradient="linear(to-tr, #00c6ff, #0072ff)"
+      bg="white"
+
     >
       <Flex
         maxW="80%"
