@@ -1,9 +1,11 @@
 /* index.css or App.css */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
 
-body {
+html,body {
   margin: 0;
   font-family: 'Nunito Sans', Arial, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 code {

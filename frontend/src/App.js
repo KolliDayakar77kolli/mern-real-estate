@@ -4,9 +4,18 @@ import AdminPage from './pages/AdminPage';
 import Homepage from './pages/Homepage';
 import { Route } from "react-router-dom";
 import Posts from './components/Miscellaneous/Posts';
-
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+    });
+  }, []);
+
   return (
     <div className="App">
      <Route exact path="/" component={Homepage} />

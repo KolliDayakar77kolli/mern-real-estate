@@ -33,9 +33,9 @@ const NavLinks = ({ onClose }) => (
     <Link href="/contact" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
       Contact Us
     </Link>
-    <Link href="/admin" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
+    {/* <Link href="/admin" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
       Admin Login
-    </Link>
+    </Link> */}
   </>
 );
 
@@ -50,11 +50,11 @@ function Header() {
         // bg="#06112A"
         bg="#081637"
         color="#fff"
-        padding="1"
+        padding="3"
         align="center"
         justify="space-between"
         position="fixed"
-        zIndex="1"
+        zIndex="9999"
         width="100%"
       >
         <Link href="/" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
@@ -76,6 +76,8 @@ function Header() {
           href="/admin"
           fontWeight="bold"
           color="#ffffff" 
+          bg="#5ea51d"
+          padding="7px 15px"
           _hover={{ textDecoration: 'none' }}
           display={{ base: 'none', md: 'block' }}
         >
@@ -97,7 +99,7 @@ function Header() {
         </DrawerOverlay>
       </Drawer>
 
-      <Box
+      {/* <Box
         as="section"
         height="500px"
         bgImage="url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTE3OTM5My1pbWFnZS1rd3Z5MG94eC5qcGc.jpg')"
@@ -120,16 +122,16 @@ function Header() {
             Explore our properties
           </Button>
         </Box>
-      </Box>
+      </Box> */}
 
-      <Box as="section" p="20px" lineHeight="1.5" color="black">
+      {/* <Box as="section" p="20px" lineHeight="1.5" color="black">
         <Text>
           At Real Estate Developers, we are dedicated to helping you find your dream home. Overwhelmed by the options available? We offer support, and personalized itineraries to make your home search easier and more enjoyable.
         </Text>
         <Text mt="10px">
           Our agents are more than consultants, they are fellow homebuyers with a passion for helping you find your perfect home. With over 75 years of combined experience, you can trust us to find the best solutions for your needs.
         </Text>
-      </Box>
+      </Box> */}
     </Box>
   );
 }

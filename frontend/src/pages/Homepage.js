@@ -15,6 +15,8 @@ import Testt2 from "../components/Miscellaneous/Testt2";
 import { FaHome, FaBuilding, FaIndustry, FaTractor } from "react-icons/fa";
 import Footer from "../components/Miscellaneous/Footer";
 import Main from "../components/Miscellaneous/Main";
+import HomeProjects from "../components/Miscellaneous/HomeProject";
+import HomeParallax from "../components/Miscellaneous/HomeParallax";
 
 function Homepage() {
   const [allPosts, setAllPosts] = useState([]);
@@ -47,36 +49,44 @@ function Homepage() {
 
   return (
     <>
-      <Header />
-
       <div className="Homepage">
         {/* <Button onClick={handleAdminLogin}>Admin Login</Button> */}
-
+        <Header />
         <Main />
-
         {/* Explore cards section */}
-        <Box p={4} mx={{ base: 4, md: 8 }}>
+        <Box marginTop="150px" p={4} mx={{ base: 4, md: 8 }}>
+        <Text
+            fontSize="12.5px"
+            color="#5ea51d"
+            fontFamily="'Nunito Sans', Arial, sans-serif"
+            textAlign="center"
+            fontWeight="800"
+          >
+            RATNA CATEGORIES
+          </Text>
           <Text
-            fontSize="28px"
+            fontSize={["24px", "30px", "36px", "45px"]} // Responsive font sizes
             color="#000000CC"
             fontFamily="'Nunito Sans', Arial, sans-serif"
             textAlign="center"
             mb={6}
+            data-aos="fade-right"
           >
             Explore Our Categories & Places
           </Text>
-          <Box display="flex" justifyContent="center" alignItems="center">
+          <Box marginTop="40px" marginBottom="150px" display="flex" justifyContent="center" alignItems="center">
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6}>
               <Card
                 onClick={() => handleTypeClick("residential")}
                 cursor="pointer"
-                // border="1px solid #ccc"
-
-                h="200px"
-                w="200px"
+                h="230px"
+                w="230px"
                 bg="#F3F5F1"
                 _hover={{ bg: "#5ea51d", color: "#ffffff" }}
                 className="group"
+                data-aos="flip-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
               >
                 <CardBody
                   display="flex"
@@ -98,11 +108,17 @@ function Homepage() {
                     as="h3"
                     color="#000000CC"
                     _groupHover={{ color: "#ffffff" }}
+                    fontSize="24px" // Enlarging the type name
+                    textAlign="center" // Center align text
                   >
                     Residential
                   </Text>
-                  <Text color="#000000CC" _groupHover={{ color: "#ffffff" }}>
-                    Click to view all residential posts.
+                  <Text
+                    color="#000000CC"
+                    _groupHover={{ color: "#ffffff" }}
+                    textAlign="center" // Center align text
+                  >
+                    Click to view.
                   </Text>
                 </CardBody>
               </Card>
@@ -110,12 +126,14 @@ function Homepage() {
               <Card
                 onClick={() => handleTypeClick("commercial")}
                 cursor="pointer"
-                // border="1px solid #ccc"
-                h="200px"
-                w="200px"
+                h="230px"
+                w="230px"
                 bg="#F3F5F1"
                 _hover={{ bg: "#5ea51d", color: "#ffffff" }}
                 className="group"
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
               >
                 <CardBody
                   display="flex"
@@ -137,11 +155,17 @@ function Homepage() {
                     as="h3"
                     color="#000000CC"
                     _groupHover={{ color: "#ffffff" }}
+                    fontSize="24px" // Enlarging the type name
+                    textAlign="center" // Center align text
                   >
                     Commercial
                   </Text>
-                  <Text color="#000000CC" _groupHover={{ color: "#ffffff" }}>
-                    Click to view all commercial posts.
+                  <Text
+                    color="#000000CC"
+                    _groupHover={{ color: "#ffffff" }}
+                    textAlign="center" // Center align text
+                  >
+                    Click to view.
                   </Text>
                 </CardBody>
               </Card>
@@ -149,12 +173,14 @@ function Homepage() {
               <Card
                 onClick={() => handleTypeClick("industrial")}
                 cursor="pointer"
-                // border="1px solid #ccc"
-                h="200px"
-                w="200px"
+                h="230px"
+                w="230px"
                 bg="#F3F5F1"
                 _hover={{ bg: "#5ea51d", color: "#ffffff" }}
                 className="group"
+                data-aos="flip-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
               >
                 <CardBody
                   display="flex"
@@ -176,11 +202,17 @@ function Homepage() {
                     as="h3"
                     color="#000000CC"
                     _groupHover={{ color: "#ffffff" }}
+                    fontSize="24px" // Enlarging the type name
+                    textAlign="center" // Center align text
                   >
                     Industrial
                   </Text>
-                  <Text color="#000000CC" _groupHover={{ color: "#ffffff" }}>
-                    Click to view all industrial posts.
+                  <Text
+                    color="#000000CC"
+                    _groupHover={{ color: "#ffffff" }}
+                    textAlign="center" // Center align text
+                  >
+                    Click to view.
                   </Text>
                 </CardBody>
               </Card>
@@ -188,12 +220,14 @@ function Homepage() {
               <Card
                 onClick={() => handleTypeClick("agricultural")}
                 cursor="pointer"
-                // border="1px solid #ccc"
-                h="200px"
-                w="200px"
+                h="230px"
+                w="230px"
                 bg="#F3F5F1"
                 _hover={{ bg: "#5ea51d", color: "#ffffff" }}
                 className="group"
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
               >
                 <CardBody
                   display="flex"
@@ -215,11 +249,17 @@ function Homepage() {
                     as="h3"
                     color="#000000CC"
                     _groupHover={{ color: "#ffffff" }}
+                    fontSize="24px" // Enlarging the type name
+                    textAlign="center" // Center align text
                   >
                     Agricultural
                   </Text>
-                  <Text color="#000000CC" _groupHover={{ color: "#ffffff" }}>
-                    Click to view all agricultural posts.
+                  <Text
+                    color="#000000CC"
+                    _groupHover={{ color: "#ffffff" }}
+                    textAlign="center" // Center align text
+                  >
+                    Click to view.
                   </Text>
                 </CardBody>
               </Card>
@@ -228,11 +268,16 @@ function Homepage() {
         </Box>
         {/* Explore cards section */}
 
+        {/* our projects */}
+        <HomeProjects />
+        {/* our projects */}
 
+        {/* parallax */}
+        <HomeParallax />
+        {/* parallax */}
 
         {/* <Testt /> */}
         {/* <Testt2 /> */}
-
 
         {/* All posts */}
         {/* <Box bg="#F3F5F1">
@@ -267,11 +312,8 @@ function Homepage() {
         </Box> */}
         {/* All posts */}
 
-
-
+        <Footer />
       </div>
-
-      {/* <Footer /> */}
     </>
   );
 }
