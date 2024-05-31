@@ -9,3 +9,9 @@ body {
 code {
   font-family: 'Nunito Sans', Arial, sans-serif;
 }
+.owl-theme .owl-dots {
+  display: none;
+}
+.owl-theme .owl-nav {
+  display: none;
+}

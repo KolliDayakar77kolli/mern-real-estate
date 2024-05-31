@@ -14,6 +14,7 @@ import Testt from "../components/Miscellaneous/Testt";
 import Testt2 from "../components/Miscellaneous/Testt2";
 import { FaHome, FaBuilding, FaIndustry, FaTractor } from "react-icons/fa";
 import Footer from "../components/Miscellaneous/Footer";
+import Main from "../components/Miscellaneous/Main";
 
 function Homepage() {
   const [allPosts, setAllPosts] = useState([]);
@@ -51,7 +52,7 @@ function Homepage() {
       <div className="Homepage">
         {/* <Button onClick={handleAdminLogin}>Admin Login</Button> */}
 
-
+        <Main />
 
         {/* Explore cards section */}
         <Box p={4} mx={{ base: 4, md: 8 }}>
