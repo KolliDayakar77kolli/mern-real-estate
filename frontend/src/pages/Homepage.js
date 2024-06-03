@@ -17,6 +17,7 @@ import Footer from "../components/Miscellaneous/Footer";
 import Main from "../components/Miscellaneous/Main";
 import HomeProjects from "../components/Miscellaneous/HomeProject";
 import HomeParallax from "../components/Miscellaneous/HomeParallax";
+import WeOffer from "../components/Miscellaneous/WeOffer";
 
 function Homepage() {
   const [allPosts, setAllPosts] = useState([]);
@@ -53,6 +54,7 @@ function Homepage() {
         {/* <Button onClick={handleAdminLogin}>Admin Login</Button> */}
         <Header />
         <Main />
+
         {/* Explore cards section */}
         <Box marginTop="150px" p={4} mx={{ base: 4, md: 8 }}>
         <Text
@@ -74,7 +76,11 @@ function Homepage() {
           >
             Explore Our Categories & Places
           </Text>
-          <Box marginTop="40px" marginBottom="150px" display="flex" justifyContent="center" alignItems="center">
+
+          <WeOffer />
+
+          {/* offer cards */}
+          {/* <Box marginTop="40px" marginBottom="150px" display="flex" justifyContent="center" alignItems="center">
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6}>
               <Card
                 onClick={() => handleTypeClick("residential")}
@@ -264,7 +270,9 @@ function Homepage() {
                 </CardBody>
               </Card>
             </SimpleGrid>
-          </Box>
+          </Box> */}
+          {/* offer cards */}
+
         </Box>
         {/* Explore cards section */}
 

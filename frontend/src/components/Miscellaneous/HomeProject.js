@@ -26,7 +26,7 @@ const projects = [
 
 const HomeProjects = () => {
     return (
-      <Box bg="#F3F5F1" py={10} px={5}>
+      <Box id="projects" bg="#F3F5F1" py={10} px={5}>
             <Text
             paddingTop="100px"
             fontSize="12.5px"

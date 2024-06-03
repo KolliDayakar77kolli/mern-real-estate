@@ -5,6 +5,7 @@ import { Box, Text, Button, Flex, Spacer } from '@chakra-ui/react';
 const HomeParallax = () => {
   return (
     <Box
+      id="contact"
       marginBottom="50px"
       position="relative"
       height="50vh"
