@@ -13,13 +13,19 @@ import {
   DrawerContent,
   DrawerCloseButton,
   VStack,
+  Button
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink , useHistory} from 'react-router-dom';
 
 function AdminHeader() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const history = useHistory();
 
+  const handleLogout = () => {
+    localStorage.removeItem('userInfo');
+    history.push('/login');
+  };
   return (
     <Box>
       <Flex
@@ -58,7 +64,10 @@ function AdminHeader() {
             <NavLink to="/" onClose={onClose}>
               Home
             </NavLink>
-            <NavLink to="/projects" onClose={onClose}>
+            <NavLink to="/admin" onClose={onClose}>
+              Admin
+            </NavLink>
+            <NavLink to="/profile" onClose={onClose}>
               Profile
             </NavLink>
           </Flex>
@@ -66,15 +75,14 @@ function AdminHeader() {
 
         {/* Right section */}
         <Flex align="center">
-          <Link
-            as={RouterLink}
-            to="/admin"
+          <Button
             fontWeight="bold"
             _hover={{ textDecoration: 'none' }}
             display={{ base: 'none', md: 'block' }}
+            onClick={handleLogout}
           >
             Logout
-          </Link>
+          </Button>
 
           {/* Hamburger menu button for mobile */}
           <IconButton

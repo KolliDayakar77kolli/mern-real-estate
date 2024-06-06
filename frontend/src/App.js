@@ -7,6 +7,7 @@ import Posts from './components/Miscellaneous/Posts';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import HomeProfile from './components/Miscellaneous/HomeProfile';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
      <Route path="/register" component={Signup} />
      <Route path="/login" component={Login} />
      <Route path="/posts" component={Posts} />
+     <Route path="/profile" component={HomeProfile} />
 
     </div>
   );

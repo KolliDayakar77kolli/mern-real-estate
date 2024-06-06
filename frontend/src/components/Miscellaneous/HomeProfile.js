@@ -1,10 +1,13 @@
 import React from 'react';
 import { Box, Flex, Text, Image, useBreakpointValue } from '@chakra-ui/react';
+import AdminHeader from './AdminHeader';
 
 const HomeProfile = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
+    <>
+    <AdminHeader />
     <Box width="100%" borderRadius="md" boxShadow="lg" p={5}>
       <Flex bg="#F3F5F1" direction={isMobile ? 'column' : 'row'} align="center" justify="center">
         <Box flex="1"  textAlign={isMobile ? 'center' : 'left'} px={6} py={4}>
@@ -25,6 +28,7 @@ const HomeProfile = () => {
         </Box>
       </Flex>
     </Box>
+    </>
   );
 };
 
