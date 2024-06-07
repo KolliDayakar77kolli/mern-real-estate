@@ -78,6 +78,8 @@ function Homepage() {
           </Text>
 
           <WeOffer />
+          <Testt/>
+          <Testt2/>
 
           {/* offer cards */}
           {/* <Box marginTop="40px" marginBottom="150px" display="flex" justifyContent="center" alignItems="center">
