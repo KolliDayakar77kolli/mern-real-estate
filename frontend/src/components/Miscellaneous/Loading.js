@@ -16,7 +16,7 @@ const Loading = () => {
       zIndex="9999"
     >
       <Flex direction="column" align="center" justify="center">
-        <Image src="logo.png" alt="Logo" height="60px" boxSize="100px" mb={4}  width="60px" />
+        <Image src="logo.png" alt="Logo" height="80px" boxSize="100px" mb={4}  width="80px" />
         <Spinner size="xl" />
       </Flex>
     </Flex>
