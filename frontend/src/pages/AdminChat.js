@@ -133,7 +133,7 @@ const AdminChat = () => {
     <Box p={4} borderWidth="1px" borderRadius="lg" w="100%" bg="white" boxShadow="lg">
       <HStack justifyContent="space-between" mb={4}>
         <Text fontSize="xl" fontWeight="bold">
-          All Posts
+          All Chats
         </Text>
         <Menu>
           <MenuButton

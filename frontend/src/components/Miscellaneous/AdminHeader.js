@@ -67,6 +67,9 @@ function AdminHeader() {
             <NavLink to="/admin" onClose={onClose}>
               Admin
             </NavLink>
+            <NavLink to="/chats" onClose={onClose}>
+              Chats
+            </NavLink>
             <NavLink to="/profile" onClose={onClose}>
               Profile
             </NavLink>

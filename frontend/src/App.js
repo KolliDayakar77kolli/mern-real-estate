@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, useLocation } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Homepage from './pages/Homepage';
-import AdminChat from './pages/Admin';
+import AdminChat from './pages/AdminChat';
+import AdminPage from './pages/AdminPage';
 import Signup from './components/Authentication/Signup';
 import Login from './components/Authentication/Login';
 import Posts from './components/Miscellaneous/Posts';
@@ -31,12 +32,13 @@ function App() {
 
   const AppContent = () => {
     const location = useLocation();
-    const hideChatbotRoutes = ["/login", "/admin", "/profile"];
+    const hideChatbotRoutes = ["/login", "/admin", "/profile", "/chats"];
 
     return (
       <Box minH="100vh" bg="gray.100">
         <Route exact path="/" component={Homepage} />
-        <Route path="/admin" component={AdminChat} />
+        <Route path="/admin" component={AdminPage} />
+        <Route path="/chats" component={AdminChat} />
         <Route path="/register" component={Signup} />
         <Route path="/login" component={Login} />
         <Route path="/posts" component={Posts} />

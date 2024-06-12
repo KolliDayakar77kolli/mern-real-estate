@@ -19,16 +19,16 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 const NavLinks = ({ onClose }) => (
   <>
-    <Link href="/" fontWeight="bold" onClick={onClose} color="#081637" _hover={{ textDecoration: 'none' }}>
+    <Link href="/" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
       Home
     </Link>
-    <Link href="#projects" fontWeight="bold" onClick={onClose} color="#081637" _hover={{ textDecoration: 'none' }}>
+    <Link href="#projects" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
       Projects
     </Link>
-    <Link href="/about" fontWeight="bold" onClick={onClose} color="#081637" _hover={{ textDecoration: 'none' }}>
+    <Link href="/about" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
       About Us
     </Link>
-    <Link href="#contact" fontWeight="bold" onClick={onClose} color="#081637" _hover={{ textDecoration: 'none' }}>
+    <Link href="#contact" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
       Contact Us
     </Link>
     {/* <Link href="/admin" fontWeight="bold" onClick={onClose} color="#081637" _hover={{ textDecoration: 'none' }}>
