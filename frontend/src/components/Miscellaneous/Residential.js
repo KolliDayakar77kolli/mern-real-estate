@@ -1,4 +1,3 @@
-// src/components/Residential.js
 import React, { useState } from 'react';
 import { Box, Flex, Image, Text, Button, VStack, HStack, Stack } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';

@@ -48,11 +48,11 @@ function Header() {
         // bg="#06112A"
         bg="#081637"
         color="#fff"
-        padding="3"
+        padding="2"
         align="center"
         justify="space-between"
         position="fixed"
-        zIndex="9999"
+        zIndex="8999"
         width="100%"
       >
         <Link href="/" fontWeight="bold" _hover={{ textDecoration: 'none' }}>

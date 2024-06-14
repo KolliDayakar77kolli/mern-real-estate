@@ -21,13 +21,13 @@ const buttonSlideIn = keyframes`
 
 const Main = () => {
   const images = [
-    "https://source.unsplash.com/random/800x600?nature",
-    "https://source.unsplash.com/random/800x601?nature",
-    "https://source.unsplash.com/random/800x602?nature",
+    "../../budda.jpg",
+    "../../commercial_build.jpg",
+    "../../Ts_plots.jpg",
   ];
 
   return (
-    <Box position="relative" top="55px" width="100%" minHeight="90vh">
+    <Box position="relative" top="55px" width="100%" minHeight="100vh">
       <Carousel
         showArrows={false}
         showThumbs={false}
@@ -39,7 +39,7 @@ const Main = () => {
         {images.map((image, index) => (
           <Box
             key={index}
-            minHeight="90vh" // Min height of 90vh to ensure responsiveness
+            minHeight="100vh" // Min height of 90vh to ensure responsiveness
             backgroundImage={`url(${image})`}
             backgroundPosition="center"
             backgroundRepeat="no-repeat"

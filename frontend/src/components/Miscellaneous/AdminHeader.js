@@ -13,7 +13,8 @@ import {
   DrawerContent,
   DrawerCloseButton,
   VStack,
-  Button
+  Button,
+  Image
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { Link as RouterLink , useHistory} from 'react-router-dom';
@@ -38,21 +39,12 @@ function AdminHeader() {
       >
         {/* Left section */}
         <Flex align="center">
-          <Link
-            as={RouterLink}
-            to="/"
-            fontWeight="bold"
-            _hover={{ textDecoration: 'none' }}
-          >
-            <Flex align="center">
-              <img
-                src="https://via.placeholder.com/50"
-                alt="Logo"
-                style={{ marginRight: '8px' }}
-              />
-              <Heading size="lg">Logo</Heading>
-            </Flex>
-          </Link>
+        <Link href="/" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
+          <Flex align="center">
+            <Image src="logo.png" alt="Logo" height="60px" width="60px" marginLeft="20px" />
+            <Heading fontSize="25px" marginLeft="20px" color="white">Ratna Real Estate</Heading>
+          </Flex>
+        </Link>
 
           <Flex
             display={{ base: 'none', md: 'flex' }}

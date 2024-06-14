@@ -56,8 +56,8 @@ function PostsHeader() {
       >
         <Link href="/" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
           <Flex align="center">
-            <Image src="https://via.placeholder.com/50" alt="Logo" mr="8px" />
-            <Heading size="lg">Logo</Heading>
+            <Image src="logo.png" alt="Logo" height="60px" width="60px" marginLeft="20px" />
+            <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">Ratna Real Estate</Heading>
           </Flex>
         </Link>
         <IconButton

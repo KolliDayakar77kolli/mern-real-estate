@@ -21,8 +21,8 @@ const postSchema = new mongoose.Schema(
     type: {
       type: String,
       required: true,
-      enum: ["residential", "commercial", "industrial", "agricultural"], // Allowed values for type
-      default: "residential" // Default value if none is provided
+      enum: ["Amaravathi", "Andhra", "Telangana", "Commercial"], // Allowed values for type
+      default: "Amaravathi" // Default value if none is provided
     }
   },
   {

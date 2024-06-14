@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { FaTrash, FaCheck, FaBell } from 'react-icons/fa';
 import { io } from 'socket.io-client';
+import AdminHeader from '../components/Miscellaneous/AdminHeader';
 
 const AdminChat = () => {
   const [chats, setChats] = useState([]);
@@ -130,6 +131,8 @@ const AdminChat = () => {
   };
 
   return (
+    <>
+    <AdminHeader/>
     <Box p={4} borderWidth="1px" borderRadius="lg" w="100%" bg="white" boxShadow="lg">
       <HStack justifyContent="space-between" mb={4}>
         <Text fontSize="xl" fontWeight="bold">
@@ -240,6 +243,7 @@ const AdminChat = () => {
         ))}
       </VStack>
     </Box>
+    </>
   );
 };
 

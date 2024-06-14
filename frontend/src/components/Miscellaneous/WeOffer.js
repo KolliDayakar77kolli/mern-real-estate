@@ -6,10 +6,10 @@ import { FaHome, FaBuilding, FaIndustry, FaTractor } from "react-icons/fa";
 const WeOffer = () => {
   const history = useHistory();
   const cards = [
-    { name: 'Residential', image: 'https://source.unsplash.com/random/800x600?nature', type: 'residential', icon: <FaHome />, aos: 'flip-right' },
-    { name: 'Commercial', image: 'https://source.unsplash.com/random/800x600?nature', type: 'commercial', icon: <FaBuilding />, aos: 'flip-left' },
-    { name: 'Industrial', image: 'https://source.unsplash.com/random/800x600?nature', type: 'industrial', icon: <FaIndustry />, aos: 'flip-right' },
-    { name: 'Agricultural', image: 'https://source.unsplash.com/random/800x600?nature', type: 'agricultural', icon: <FaTractor />, aos: 'flip-left' },
+    { name: 'Amaravathi', image: 'budda.jpg', type: 'Amaravathi', icon: <FaHome />, aos: 'flip-right' },
+    { name: 'Andhra', image: 'Ap_land.jpg', type: 'Andhra', icon: <FaBuilding />, aos: 'flip-left' },
+    { name: 'Telangana', image: 'Ts_plots.jpg', type: 'Telangana', icon: <FaIndustry />, aos: 'flip-right' },
+    { name: 'Commercial', image: 'commercial_build.jpg', type: 'Commercial', icon: <FaTractor />, aos: 'flip-left' },
   ];
   
   const handleTypeClick = (type) => {
