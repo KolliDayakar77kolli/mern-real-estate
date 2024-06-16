@@ -12,7 +12,7 @@ const Loading = () => {
       height="100%"
       align="center"
       justify="center"
-      backgroundColor="white"
+      backgroundColor="teal"
       zIndex="9999"
     >
       <Flex direction="column" align="center" justify="center">

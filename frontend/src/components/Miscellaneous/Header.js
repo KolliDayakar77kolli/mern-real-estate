@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   Box,
@@ -13,39 +14,59 @@ import {
   DrawerContent,
   DrawerCloseButton,
   VStack,
-  Image
+  Image,
+  Portal,
+  useBreakpointValue,
+  keyframes
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-const NavLinks = ({ onClose }) => (
-  <>
-    <Link href="/" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      Home
-    </Link>
-    <Link href="#projects" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      Projects
-    </Link>
-    <Link href="/about" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      About Us
-    </Link>
-    <Link href="#contact" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      Contact Us
-    </Link>
-    {/* <Link href="/admin" fontWeight="bold" onClick={onClose} color="#081637" _hover={{ textDecoration: 'none' }}>
-      Admin Login
-    </Link> */}
-  </>
-);
+const fadeRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const NavLinks = ({ onClose, animate }) => {
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "#categories", label: "Categories" },
+    { href: "/about", label: "About Us" },
+    { href: "#contact", label: "Contact Us" },
+  ];
+
+  return (
+    <>
+      {links.map((link, index) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          fontWeight="bold"
+          onClick={onClose}
+          color="#ffffff"
+          _hover={{ textDecoration: 'none' }}
+          animation={animate ? `${fadeRight} 0.5s ease-in-out ${index * 0.2}s forwards` : 'none'}
+        >
+          {link.label}
+        </Link>
+      ))}
+    </>
+  );
+};
 
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const isDrawer = useBreakpointValue({ base: true, md: false });
 
   return (
     <Box>
       <Flex
         as="header"
-        // bg="#333"
-        // bg="#06112A"
         bg="#081637"
         color="#fff"
         padding="2"
@@ -68,7 +89,7 @@ function Header() {
           onClick={onOpen}
         />
         <Flex display={{ base: 'none', md: 'flex' }} color='white' flex="1" justify="start" alignItems="center" marginLeft="40px" gap="10">
-          <NavLinks />
+          <NavLinks onClose={onClose} animate={false} />
         </Flex>
         <Link
           href='tel:9999999'
@@ -93,30 +114,26 @@ function Header() {
         </Link>
       </Flex>
 
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-        <DrawerOverlay>
-          <DrawerContent marginTop="70px" paddingTop="20px">
-            <DrawerCloseButton color="black" paddingTop="40px"/>
-            <DrawerHeader color="#5ea51d">Menu</DrawerHeader>
-            <DrawerBody mt="15">
-              <VStack align="start" color='#081637' spacing={7}>
-                <NavLinks data-aos="fade-right" onClose={onClose} />
-              </VStack>
-            </DrawerBody>
-          </DrawerContent>
-        </DrawerOverlay>
-      </Drawer>
+      <Portal>
+        <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+          <DrawerOverlay zIndex="10000">
+            <DrawerContent paddingTop="20px" bg="#081637">
+              <DrawerCloseButton paddingTop="40px" color="#ffffff" />
+              <DrawerHeader color="#ffffff">Menu</DrawerHeader>
+              <DrawerBody mt="15">
+                <VStack align="start" spacing={7}>
+                  <NavLinks onClose={onClose} animate={isDrawer} />
+                </VStack>
+              </DrawerBody>
+            </DrawerContent>
+          </DrawerOverlay>
+        </Drawer>
+      </Portal>
     </Box>
   );
 }
 
 export default Header;
-
-
-
-
-
-
 
 
 
@@ -145,9 +162,8 @@ export default Header;
 //   DrawerContent,
 //   DrawerCloseButton,
 //   VStack,
-//   Text,
-//   Button,
-//   Image
+//   Image,
+//   Portal
 // } from '@chakra-ui/react';
 // import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -156,8 +172,8 @@ export default Header;
 //     <Link href="/" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
 //       Home
 //     </Link>
-//     <Link href="#projects" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-//       Projects
+//     <Link href="#categories" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
+//       Categories
 //     </Link>
 //     <Link href="/about" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
 //       About Us
@@ -165,9 +181,6 @@ export default Header;
 //     <Link href="#contact" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
 //       Contact Us
 //     </Link>
-//     {/* <Link href="/admin" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-//       Admin Login
-//     </Link> */}
 //   </>
 // );
 
@@ -178,21 +191,18 @@ export default Header;
 //     <Box>
 //       <Flex
 //         as="header"
-//         // bg="#333"
-//         // bg="#06112A"
 //         bg="#081637"
 //         color="#fff"
-//         padding="3"
+//         padding="2"
 //         align="center"
 //         justify="space-between"
 //         position="fixed"
-//         zIndex="9999"
+//         zIndex="8999"
 //         width="100%"
 //       >
 //         <Link href="/" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
 //           <Flex align="center">
-          
-//             <Image src="logo.png" alt="Logo" height="60px" width="60px" marginLeft="20px"/>
+//             <Image src="logo.png" alt="Logo" height="60px" width="60px" marginLeft="20px" />
 //             <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">Ratna Real Estate</Heading>
 //           </Flex>
 //         </Link>
@@ -202,23 +212,23 @@ export default Header;
 //           icon={<HamburgerIcon />}
 //           onClick={onOpen}
 //         />
-//         <Flex display={{ base: 'none', md: 'flex' }} flex="1" justify="start" alignItems="center" marginLeft="40px" gap="10">
+//         <Flex display={{ base: 'none', md: 'flex' }} color='white' flex="1" justify="start" alignItems="center" marginLeft="40px" gap="10">
 //           <NavLinks />
 //         </Flex>
 //         <Link
-//          href='tel: 9999999'
-//          _hover={{ textDecoration: 'none' }}
-//          paddingRight='50px'
-//         fontWeight="bold"
-//         color="#ffffff" 
-//         display={{ base: 'none', md: 'block' }}
+//           href='tel:9999999'
+//           _hover={{ textDecoration: 'none' }}
+//           paddingRight='50px'
+//           fontWeight="bold"
+//           color="#ffffff"
+//           display={{ base: 'none', md: 'block' }}
 //         >
 //           <pre>Call Us At: 999999999</pre>
 //         </Link>
 //         <Link
 //           href="/admin"
 //           fontWeight="bold"
-//           color="#ffffff" 
+//           color="#ffffff"
 //           bg="#5ea51d"
 //           padding="7px 15px"
 //           _hover={{ textDecoration: 'none' }}
@@ -228,81 +238,23 @@ export default Header;
 //         </Link>
 //       </Flex>
 
-//       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-//         <DrawerOverlay>
-//           <DrawerContent>
-//             <DrawerCloseButton />
-//             <DrawerHeader>Menu</DrawerHeader>
-//             <DrawerBody>
-//               <VStack align="start" color='black' spacing={7}>
-//                 <NavLinks onClose={onClose} />
-//               </VStack>
-//             </DrawerBody>
-//           </DrawerContent>
-//         </DrawerOverlay>
-//       </Drawer>
-
-
+//       <Portal>
+//         <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+//           <DrawerOverlay zIndex="10000">
+//             <DrawerContent paddingTop="20px" bg="#081637">
+//               <DrawerCloseButton paddingTop="40px" color="#ffffff" />
+//               <DrawerHeader color="#ffffff">Menu</DrawerHeader>
+//               <DrawerBody mt="15">
+//                 <VStack align="start" spacing={7}>
+//                   <NavLinks onClose={onClose} />
+//                 </VStack>
+//               </DrawerBody>
+//             </DrawerContent>
+//           </DrawerOverlay>
+//         </Drawer>
+//       </Portal>
 //     </Box>
 //   );
 // }
 
 // export default Header;
-
-
-
-
-
-
-
-
-
-      {/* <Box
-        as="section"
-        height="500px"
-        bgImage="url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTE3OTM5My1pbWFnZS1rd3Z5MG94eC5qcGc.jpg')"
-        bgSize="cover"
-        bgPos="center"
-        backgroundAttachment="fixed"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        textAlign="center"
-      >
-        <Box maxWidth="800px" color="black" textAlign="left">
-          <Heading as="h1" fontSize="48px" mb="20px">
-            Real Estate Development Company. Near You.
-          </Heading>
-          <Text fontSize="24px" mb="20px">
-            Find your perfect property among our 5,000+ choices with the help of our expert agents!
-          </Text>
-          <Button bg="#333" color="#fff" padding="15px 20px" fontSize="18px" onClick={() => alert('Explore our properties')}>
-            Explore our properties
-          </Button>
-        </Box>
-      </Box> */}
-
-      {/* <Box as="section" p="20px" lineHeight="1.5" color="black">
-        <Text>
-          At Real Estate Developers, we are dedicated to helping you find your dream home. Overwhelmed by the options available? We offer support, and personalized itineraries to make your home search easier and more enjoyable.
-        </Text>
-        <Text mt="10px">
-          Our agents are more than consultants, they are fellow homebuyers with a passion for helping you find your perfect home. With over 75 years of combined experience, you can trust us to find the best solutions for your needs.
-        </Text>
-      </Box> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

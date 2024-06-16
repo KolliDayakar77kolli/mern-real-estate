@@ -18,6 +18,7 @@ import Main from "../components/Miscellaneous/Main";
 import HomeProjects from "../components/Miscellaneous/HomeProject";
 import HomeParallax from "../components/Miscellaneous/HomeParallax";
 import WeOffer from "../components/Miscellaneous/WeOffer";
+import ContactForm from "../components/Miscellaneous/ContactForm";
 
 function Homepage() {
   const [allPosts, setAllPosts] = useState([]);
@@ -56,7 +57,7 @@ function Homepage() {
         <Main />
 
         {/* Explore cards section */}
-        <Box marginTop="150px" p={4} mx={{ base: 4, md: 8 }}>
+        <Box id="categories" marginTop="150px" p={4} mx={{ base: 4, md: 8 }}>
         <Text
             fontSize="12.5px"
             color="#5ea51d"
@@ -92,6 +93,7 @@ function Homepage() {
         <HomeParallax />
         {/* parallax */}
 
+        <ContactForm />
         <Footer />
       </div>
     </>
