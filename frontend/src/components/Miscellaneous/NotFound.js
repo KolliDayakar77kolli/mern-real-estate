@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import animationData from '../../404-animation.json'; // Adjust the path to your downloaded Lottie JSON file
+import animationData from '../../lottie animations/404-animation.json';
 
 const NotFound = () => {
     return (

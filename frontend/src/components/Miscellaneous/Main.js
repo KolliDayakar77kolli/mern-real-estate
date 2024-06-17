@@ -1,8 +1,17 @@
 import React from "react";
-import { Box, Text, ChakraProvider, Heading, Button, keyframes } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  ChakraProvider,
+  Heading,
+  Button,
+  keyframes,
+} from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the carousel CSS
 import "./../../index.css";
+import Lottie from "lottie-react";
+import animationData from "../../lottie animations/Explore More.json";
 
 const fadeRight = keyframes`
   from { opacity: 0; transform: translateX(-20px); }
@@ -101,15 +110,22 @@ const Main = () => {
                   Find your perfect property among our 5,000+ choices with the
                   help of our expert agents!
                 </Text>
+
                 <Button
-                  bg="#5ea51d"
-                  color="#ffffff"
-                  padding={{ base: "10px 15px", md: "15px 20px" }}
-                  fontSize={{ base: "14px", md: "18px" }}
                   onClick={() => alert("Explore our properties")}
+                  bg="transparent"
+                  _hover={{ bg: "transparent" }}
+                  _active={{ bg: "transparent" }}
+                  _focus={{ boxShadow: "none" }}
+                  cursor="pointer"
                   animation={`${buttonSlideIn} 2s ease-in-out`}
                 >
-                  Explore our properties
+                  <Lottie
+                    animationData={animationData}
+                    autoplay
+                    loop
+                    style={{ width: 200, height: 200 }}
+                  />
                 </Button>
               </Box>
             </Box>

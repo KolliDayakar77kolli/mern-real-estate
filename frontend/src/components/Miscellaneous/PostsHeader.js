@@ -15,30 +15,54 @@ import {
   VStack,
   Text,
   Button,
-  Image
+  Image,
+  Portal,
+  useBreakpointValue,
+  keyframes
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
-const NavLinks = ({ onClose }) => (
-  <>
-    <Link href="/" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      Home
-    </Link>
-    <Link href="/about" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      About Us
-    </Link>
-    <Link href="#contact" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      Contact Us
-    </Link>
-    {/* <Link href="/admin" fontWeight="bold" onClick={onClose} color="#ffffff" _hover={{ textDecoration: 'none' }}>
-      Admin Login
-    </Link> */}
-  </>
-);
+
+const fadeRight = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const NavLinks = ({ onClose, animate }) => {
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "#contact", label: "Contact Us" },
+  ];
+
+  return (
+    <>
+      {links.map((link, index) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          fontWeight="bold"
+          onClick={onClose}
+          color="#ffffff"
+          _hover={{ textDecoration: 'none' }}
+          animation={animate ? `${fadeRight} 0.5s ease-in-out ${index * 0.2}s forwards` : 'none'}
+        >
+          {link.label}
+        </Link>
+      ))}
+    </>
+  );
+};
 
 function PostsHeader() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const isDrawer = useBreakpointValue({ base: true, md: false });
   return (
     <Box>
       <Flex
@@ -82,19 +106,21 @@ function PostsHeader() {
         </Link>
       </Flex>
 
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
-        <DrawerOverlay>
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Menu</DrawerHeader>
-            <DrawerBody>
-              <VStack align="start" spacing={7}>
-                <NavLinks onClose={onClose} />
-              </VStack>
-            </DrawerBody>
-          </DrawerContent>
-        </DrawerOverlay>
-      </Drawer>
+      <Portal>
+        <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+          <DrawerOverlay zIndex="10000">
+            <DrawerContent paddingTop="20px" bg="#081637">
+              <DrawerCloseButton paddingTop="40px" color="#ffffff" />
+              <DrawerHeader color="#ffffff">Menu</DrawerHeader>
+              <DrawerBody mt="15">
+                <VStack align="start" spacing={7}>
+                  <NavLinks onClose={onClose} animate={isDrawer} />
+                </VStack>
+              </DrawerBody>
+            </DrawerContent>
+          </DrawerOverlay>
+        </Drawer>
+      </Portal>
     </Box>
   );
 }

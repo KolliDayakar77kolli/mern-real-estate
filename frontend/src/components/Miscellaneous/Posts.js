@@ -18,6 +18,8 @@ import {
   Tag,
   Icon,
   ChakraProvider,
+  useBreakpointValue
+
 } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -25,6 +27,8 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../../App.css';
 import PostsHeader from '../Miscellaneous/PostsHeader';
+import ContactForm from "../Miscellaneous/ContactForm";
+import Map from "../Miscellaneous/Map";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -40,7 +44,8 @@ function Posts() {
   const [currentPage, setCurrentPage] = useState(1);
   const [keyCounter, setKeyCounter] = useState(0); // State to force re-render of Carousel
   const [selectedImageIndex, setSelectedImageIndex] = useState([]);
-  
+  const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
+
   useEffect(() => {
     const fetchPosts = async () => {
       if (!type) {
@@ -424,6 +429,36 @@ function Posts() {
             Next
           </Button>
         </Stack>
+
+
+        {/* contact section */}
+        <Flex
+          direction={flexDirection}
+          align="center"
+          justify="center"
+          gap={4}
+          p={4}
+        >
+          <Box
+            bg="white"
+            boxShadow="md"
+            borderRadius="md"
+            p={4}
+            width={{ base: "100%", md: "45%" }}
+          >
+            <ContactForm />
+          </Box>
+          <Box
+            bg="white"
+            boxShadow="md"
+            borderRadius="md"
+            p={4}
+            width={{ base: "100%", md: "45%" }}
+          >
+            <Map />
+          </Box>
+        </Flex>
+        {/* contact section */}
       </Box>
     </ChakraProvider>
   );
