@@ -1,6 +1,5 @@
-// src/components/ContactForm.js
 import React, { useState } from 'react';
-import { Box, Button, FormControl, FormLabel, Input, Textarea, Spinner, useToast, VStack } from '@chakra-ui/react';
+import { Box, Button, FormControl, Heading, FormLabel, Input, Textarea, Spinner, useToast, VStack, Text } from '@chakra-ui/react';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
@@ -18,10 +17,10 @@ const ContactForm = () => {
     setLoading(true);
 
     emailjs.send(
-      'service_8ct0qfa',  // replace with your EmailJS service ID
-      'template_pdyo4bg', // replace with your EmailJS template ID
+      'service_8ct0qfa',
+      'template_pdyo4bg',
       formData,
-      'umsWnFdwHMAakJXcs'      // replace with your EmailJS user ID
+      'umsWnFdwHMAakJXcs'
     ).then((result) => {
       setLoading(false);
       toast({
@@ -45,40 +44,43 @@ const ContactForm = () => {
   };
 
   return (
-    <Box
-      id="contact"
-      p={5}
-      maxWidth={{ base: "90%", md: "500px" }}
-      mx="auto"
-      bg="gray.50"
-      boxShadow="lg"
-      borderRadius="md"
-      mt={10}
-    >
-      <form onSubmit={handleSubmit}>
-        <VStack spacing={4}>
-          <FormControl id="name" isRequired>
-            <FormLabel>Name</FormLabel>
-            <Input type="text" name="name" value={formData.name} onChange={handleChange} />
-          </FormControl>
-          <FormControl id="email" isRequired>
-            <FormLabel>Email</FormLabel>
-            <Input type="email" name="email" value={formData.email} onChange={handleChange} />
-          </FormControl>
-          <FormControl id="phone" isRequired>
-            <FormLabel>Phone</FormLabel>
-            <Input type="tel" name="phone" value={formData.phone} onChange={handleChange} />
-          </FormControl>
-          <FormControl id="message" isRequired>
-            <FormLabel>Message</FormLabel>
-            <Textarea name="message" value={formData.message} onChange={handleChange} />
-          </FormControl>
-          <Button type="submit" colorScheme="teal" isFullWidth>
-            {loading ? <Spinner size="sm" /> : "Send"}
-          </Button>
-        </VStack>
-      </form>
-    </Box>
+    <>
+      <Heading textAlign="center"  fontFamily="'Nunito Sans', Arial, sans-serif">Contact Form</Heading>
+      <Text color="#5ea51d"  fontWeight="800" fontFamily="'Nunito Sans', Arial, sans-serif" textAlign="center">Simply fill the form we will get in touch with you soon...</Text>
+      <Box
+        p={5}
+        maxWidth={{ base: "90%", md: "500px" }}
+        mx="auto"
+        bg="gray.50"
+        boxShadow="lg"
+        borderRadius="md"
+        mt={10}
+      >
+        <form onSubmit={handleSubmit}>
+          <VStack spacing={4}>
+            <FormControl id="name" isRequired>
+              <FormLabel>Name</FormLabel>
+              <Input type="text" name="name" value={formData.name} onChange={handleChange} />
+            </FormControl>
+            <FormControl id="email" isRequired>
+              <FormLabel>Email</FormLabel>
+              <Input type="email" name="email" value={formData.email} onChange={handleChange} />
+            </FormControl>
+            <FormControl id="phone" isRequired>
+              <FormLabel>Phone</FormLabel>
+              <Input type="tel" name="phone" value={formData.phone} onChange={handleChange} />
+            </FormControl>
+            <FormControl id="message" isRequired>
+              <FormLabel>Message</FormLabel>
+              <Textarea name="message" value={formData.message} onChange={handleChange} />
+            </FormControl>
+            <Button type="submit" colorScheme="teal" isFullWidth>
+              {loading ? <Spinner size="sm" /> : "Send"}
+            </Button>
+          </VStack>
+        </form>
+      </Box>
+    </>
   );
 };
 

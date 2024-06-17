@@ -129,13 +129,28 @@ const Chatbot = () => {
     <Portal>
       <Box position="fixed" bottom="20px" right="20px" zIndex={9999}>
         {!showChat && (
-          <IconButton
-            icon={<FaCommentDots />}
-            isRound
-            size="lg"
-            colorScheme="teal"
-            onClick={handleToggleChat}
-          />
+          <Box position="relative" display="flex" justifyContent="center" alignItems="center">
+            <IconButton
+              icon={<FaCommentDots />}
+              isRound
+              size="lg"
+              colorScheme="green"
+              onClick={handleToggleChat}
+            />
+            <svg
+              width="100"
+              height="100"
+              viewBox="0 0 100 100"
+              style={{ position: 'absolute', top: '-35px', pointerEvents: 'none' }}
+            >
+              <path id="curve" fill="transparent" d="M 20, 50 A 30, 30 0 1, 1 80, 50" />
+              <text width="500" fontWeight="800" style={{ fill: '#5ea51d', fontSize: '15px' }}>
+                <textPath xlinkHref="#curve" textAnchor="middle" startOffset="50%">
+                  Need Help ?
+                </textPath>
+              </text>
+            </svg>
+          </Box>
         )}
         {showChat && (
           <Box

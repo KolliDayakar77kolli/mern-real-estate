@@ -7,9 +7,9 @@ const WeOffer = () => {
   const history = useHistory();
   const cards = [
     { name: 'Amaravathi', image: 'budda.jpg', type: 'Amaravathi', icon: <FaHome />, aos: 'flip-right' },
-    { name: 'Andhra', image: 'Ap_land.jpg', type: 'Andhra', icon: <FaBuilding />, aos: 'flip-left' },
+    { name: 'Andhra', image: 'Ap_land.jpg', type: 'Andhra', icon: <FaTractor  />, aos: 'flip-left' },
     { name: 'Telangana', image: 'Ts_plots.jpg', type: 'Telangana', icon: <FaIndustry />, aos: 'flip-right' },
-    { name: 'Commercial', image: 'commercial_build.jpg', type: 'Commercial', icon: <FaTractor />, aos: 'flip-left' },
+    { name: 'Commercial', image: 'commercial_build.jpg', type: 'Commercial', icon: <FaBuilding />, aos: 'flip-left' },
   ];
   
   const handleTypeClick = (type) => {

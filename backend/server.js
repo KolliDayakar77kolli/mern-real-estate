@@ -7,6 +7,7 @@ const cors = require('cors');
 const chatRoutes = require('./routes/chatRoutes');
 const socketIo = require('socket.io');
 const http = require('http');
+const notFoundHandler = require("./middleware/notFound");
 
 dotenv.config();
 connectDB();
@@ -36,6 +37,8 @@ app.use((req, res, next) => {
 app.use("/api/user", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use('/api/chats', chatRoutes);
+// Use the 404 middleware for unknown routes
+app.use('*', notFoundHandler);
 
 io.on('connection', (socket) => {
   console.log('New client connected:', socket.id); // Log the socket id of the connected client
