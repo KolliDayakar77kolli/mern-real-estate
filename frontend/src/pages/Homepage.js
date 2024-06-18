@@ -23,6 +23,9 @@ import HomeParallax from "../components/Miscellaneous/HomeParallax";
 import WeOffer from "../components/Miscellaneous/WeOffer";
 import ContactForm from "../components/Miscellaneous/ContactForm";
 import Map from "../components/Miscellaneous/Map";
+import Testimonials from "../components/Miscellaneous/Testimonials";
+import Unique from "../components/Miscellaneous/Unique";
+import MV from "../components/Miscellaneous/MV";
 
 function Homepage() {
   const [allPosts, setAllPosts] = useState([]);
@@ -94,9 +97,13 @@ function Homepage() {
         <HomeProjects />
         {/* our projects */}
 
+        <Unique />
+        <MV />
         {/* parallax */}
         <HomeParallax />
         {/* parallax */}
+
+        <Testimonials />
 
       {/* Contact section */}
         <Text
