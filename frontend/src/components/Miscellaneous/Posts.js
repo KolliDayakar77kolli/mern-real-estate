@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
@@ -29,6 +28,7 @@ import '../../App.css';
 import PostsHeader from '../Miscellaneous/PostsHeader';
 import ContactForm from "../Miscellaneous/ContactForm";
 import Map from "../Miscellaneous/Map";
+import Footer from "../Miscellaneous/Footer";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -460,6 +460,7 @@ function Posts() {
         </Flex>
         {/* contact section */}
       </Box>
+      <Footer />
     </ChakraProvider>
   );
 }
