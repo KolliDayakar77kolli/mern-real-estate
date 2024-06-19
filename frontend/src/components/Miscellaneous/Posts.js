@@ -40,9 +40,9 @@ function Posts() {
   const [searchQuery, setSearchQuery] = useState('');
   const query = useQuery();
   const type = query.get('type');
-  const itemsPerPage = 5; // Changed to 5 items per page
+  const itemsPerPage = 5; 
   const [currentPage, setCurrentPage] = useState(1);
-  const [keyCounter, setKeyCounter] = useState(0); // State to force re-render of Carousel
+  const [keyCounter, setKeyCounter] = useState(0); 
   const [selectedImageIndex, setSelectedImageIndex] = useState([]);
   const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
 
@@ -58,8 +58,7 @@ function Posts() {
           `http://localhost:5000/api/posts/type?type=${type}`
         );
         setAllPosts(response.data);
-        setFilteredPosts(response.data); // Initialize filteredPosts with all posts
-        // Initialize selectedImageIndex state array with 0s
+        setFilteredPosts(response.data); 
         setSelectedImageIndex(new Array(response.data.length).fill(0));
       } catch (error) {
         console.error(
@@ -82,7 +81,7 @@ function Posts() {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    setKeyCounter(keyCounter + 1); // Increment keyCounter to force Carousel re-render
+    setKeyCounter(keyCounter + 1); 
   };
 
   const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);

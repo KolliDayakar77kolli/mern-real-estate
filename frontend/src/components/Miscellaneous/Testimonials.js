@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 import { Box, Image, Text, Center, IconButton } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 
@@ -35,7 +35,7 @@ const Testimonials = () => {
         TESTIMONIALS
       </Text>
       <Text
-        fontSize={["24px", "30px", "36px", "45px"]} // Responsive font sizes
+        fontSize={["24px", "30px", "36px", "45px"]} 
         color="#000000CC"
         fontFamily="'Nunito Sans', Arial, sans-serif"
         textAlign="center"

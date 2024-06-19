@@ -61,12 +61,10 @@ const updateProfilePicture = asyncHandler(async (req, res) => {
   const { pic } = req.body;
 
   try {
-    // Upload image to Cloudinary
     const result = await cloudinary.uploader.upload(pic, {
-      folder: 'profile-pics', // Optional folder to store the image in Cloudinary
+      folder: 'profile-pics', 
     });
 
-    // Find user and update profile picture URL
     const user = await User.findById(req.user._id);
 
     if (!user) {
@@ -74,7 +72,6 @@ const updateProfilePicture = asyncHandler(async (req, res) => {
       throw new Error('User not found');
     }
 
-    // Check if the request is authorized
     if (user._id.toString() !== req.user._id.toString()) {
       res.status(401);
       throw new Error('Not authorized to update this profile picture');

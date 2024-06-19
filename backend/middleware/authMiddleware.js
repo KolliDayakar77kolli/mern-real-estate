@@ -20,7 +20,6 @@ const protect = asyncHandler(async (req, res, next) => {
         throw new Error('User not found');
       }
 
-      // Assign user object to request object for use in other middleware/controllers
       req.user = user;
       next();
     } catch (error) {

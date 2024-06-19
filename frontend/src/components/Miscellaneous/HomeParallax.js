@@ -1,4 +1,3 @@
-// HomeParallax.jsx
 import React from 'react';
 import { Box, Text, Button, Flex, Spacer } from '@chakra-ui/react';
 
@@ -9,7 +8,7 @@ const HomeParallax = () => {
       marginBottom="50px"
       position="relative"
       height="50vh"
-      backgroundImage="url('https://source.unsplash.com/random/800x600?nature')"
+      backgroundImage="url('commercial_build.jpg')"
       backgroundAttachment="fixed"
       backgroundSize="cover"
       backgroundPosition="center"
@@ -42,7 +41,6 @@ const HomeParallax = () => {
           alignItems="center"
         >
           <Text fontSize={{ base: '2xl', md: '4xl' }} mb={{ base: 4, md: 0 }}
-            data-aos="fade-right"
           >
             Find the Best Place for Living
           </Text>
@@ -51,7 +49,6 @@ const HomeParallax = () => {
             bg="black"
             color="white"
             _hover={{ bg: 'gray.700' }}
-            data-aos="fade-left"
           >
             Get in Touch
           </Button>

@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useHistory } from "react-router-dom";
+import React from "react";
 import {
-  Button,
-  Card,
-  CardBody,
   Box,
-  SimpleGrid,
   Text,
   Flex,
-  Heading,
   useBreakpointValue
 } from "@chakra-ui/react";
 import Header from "../components/Miscellaneous/Header";
 import Testt from "../components/Miscellaneous/Testt";
 import Testt2 from "../components/Miscellaneous/Testt2";
-import { FaHome, FaBuilding, FaIndustry, FaTractor } from "react-icons/fa";
 import Footer from "../components/Miscellaneous/Footer";
 import Main from "../components/Miscellaneous/Main";
-import HomeProjects from "../components/Miscellaneous/HomeProject";
 import HomeParallax from "../components/Miscellaneous/HomeParallax";
 import WeOffer from "../components/Miscellaneous/WeOffer";
 import ContactForm from "../components/Miscellaneous/ContactForm";
@@ -28,40 +19,12 @@ import Unique from "../components/Miscellaneous/Unique";
 import MV from "../components/Miscellaneous/MV";
 
 function Homepage() {
-  const [allPosts, setAllPosts] = useState([]);
-  const history = useHistory();
 
   const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
-
-  const handleAdminLogin = () => {
-    history.push("/login");
-  };
-
-  const handleTypeClick = (type) => {
-    history.push(`/posts?type=${type}`);
-  };
-
-  useEffect(() => {
-    const fetchAllPosts = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/api/posts");
-        setAllPosts(response.data);
-      } catch (error) {
-        console.error(
-          "Failed to fetch posts:",
-          error.response?.data?.error || error.message
-        );
-        alert("Failed to fetch posts");
-      }
-    };
-
-    fetchAllPosts();
-  }, []);
 
   return (
     <>
       <div className="Homepage">
-        {/* <Button onClick={handleAdminLogin}>Admin Login</Button> */}
         <Header />
         <Main />
 
@@ -77,7 +40,7 @@ function Homepage() {
             RATNA CATEGORIES
           </Text>
           <Text
-            fontSize={["24px", "30px", "36px", "45px"]} // Responsive font sizes
+            fontSize={["24px", "30px", "36px", "45px"]} 
             color="#000000CC"
             fontFamily="'Nunito Sans', Arial, sans-serif"
             textAlign="center"
@@ -93,19 +56,16 @@ function Homepage() {
         </Box>
         {/* Explore cards section */}
 
-        {/* our projects */}
-        <HomeProjects />
-        {/* our projects */}
-
         <Unique />
         <MV />
+
         {/* parallax */}
         <HomeParallax />
         {/* parallax */}
 
         <Testimonials />
 
-      {/* Contact section */}
+        {/* Contact section */}
         <Text
           fontSize="12.5px"
           color="#5ea51d"
@@ -116,7 +76,7 @@ function Homepage() {
           GET IN TOUCH
         </Text>
         <Text
-          fontSize={["24px", "30px", "36px", "45px"]} // Responsive font sizes
+          fontSize={["24px", "30px", "36px", "45px"]} 
           color="#000000CC"
           fontFamily="'Nunito Sans', Arial, sans-serif"
           textAlign="center"
@@ -151,7 +111,7 @@ function Homepage() {
             <Map />
           </Box>
         </Flex>
-      {/* Contact section */}
+        {/* Contact section */}
 
         <Footer />
       </div>

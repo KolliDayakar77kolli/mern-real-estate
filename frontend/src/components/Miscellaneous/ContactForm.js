@@ -17,7 +17,6 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simple form validation
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       toast({
         title: "Error.",
@@ -29,7 +28,6 @@ const ContactForm = () => {
       return;
     }
 
-    // Play the animation immediately
     if (lottieRef.current) {
       lottieRef.current.play();
     }
@@ -49,7 +47,7 @@ const ContactForm = () => {
           isClosable: true,
         });
         setFormData({ name: '', email: '', phone: '', message: '' });
-      }, 2000); // Adjust delay to match the length of your animation
+      }, 2000); 
     }).catch((error) => {
       toast({
         title: "Error.",

@@ -46,7 +46,7 @@ const AdminPage = () => {
   const [userName, setUserName] = useState('');
   const [loadingPosts, setLoadingPosts] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 4; // Adjust this value for the number of posts per page
+  const postsPerPage = 4; 
   const history = useHistory();
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -123,7 +123,7 @@ const AdminPage = () => {
         : [...posts, response.data];
       setPosts(updatedPosts);
       onClose();
-      setCurrentPostId(null); // Reset currentPostId to null after form submission
+      setCurrentPostId(null); 
     } catch (error) {
       console.error(error.response?.data?.error || error.message);
       alert(
@@ -219,14 +219,14 @@ const AdminPage = () => {
     setPics(updatedPics);
   };
 
-  const gotoHome = () => {
-    history.push("/");
-  };
+  // const gotoHome = () => {
+  //   history.push("/");
+  // };
 
-  const handleLogout = () => {
-    localStorage.removeItem('userInfo');
-    history.push('/login');
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('userInfo');
+  //   history.push('/login');
+  // };
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -280,117 +280,6 @@ const AdminPage = () => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-              {/* <form onSubmit={handleSubmit}>
-              <div>
-                <label>Title:</label>
-                <input
-                  type="text"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  required
-                />
-              </div>
-              <div>
-                <label>Content:</label>
-                <textarea
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
-                  required
-                  />
-                </div>
-                <div>
-                  <label>Plot Area:</label>
-                  <input
-                    type="number"
-                    value={plotAreaValue}
-                    onChange={(e) => setPlotAreaValue(e.target.value)}
-                    required
-                  />
-                  <select
-                    value={plotAreaUnit}
-                    onChange={(e) => setPlotAreaUnit(e.target.value)}
-                  >
-                    <option value="yards">yards</option>
-                    <option value="Acres">Acres</option>
-                    <option value="Cents">Cents</option>
-                    <option value="Sqft">Sqft</option>
-                  </select>
-                </div>
-                <div>
-                  <label>Plot Price:</label>
-                  <input
-                    type="number"
-                    value={plotPrice}
-                    onChange={(e) => setPlotPrice(e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label>Plot Location:</label>
-                  <input
-                    type="text"
-                    value={plotLocation}
-                    onChange={(e) => setPlotLocation(e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label>Pictures:</label>
-                  <input
-                    type="file"
-                    multiple
-                    onChange={(e) => postDetails(e.target.files)}
-                  />
-                  {isPicLoading && <div>Uploading pictures...</div>}
-                  {pics.map((pic, index) => (
-                    <div key={index}>
-                      <img src={pic} alt="Uploaded" width="100" />
-                      <Button onClick={() => handleRemovePic(index)}>Remove</Button>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <label>Highlights:</label>
-                  {highlights.map((highlight, index) => (
-                    <div key={index}>
-                      <input
-                        type="text"
-                        value={highlight}
-                        onChange={(e) =>
-                          setHighlights(
-                            highlights.map((h, i) =>
-                              i === index ? e.target.value : h
-                            )
-                          )
-                        }
-                      />
-                      {index > 0 && (
-                        <Button onClick={() => handleRemoveHighlight(index)}>
-                          Remove
-                        </Button>
-                      )}
-                    </div>
-                  ))}
-                  <Button onClick={handleAddHighlight}>Add Highlight</Button>
-                </div>
-                <div>
-                  <label>Type:</label>
-                  <select value={type} onChange={(e) => setType(e.target.value)}>
-                    <option value="Amaravathi">Amaravathi</option>
-                    <option value="Andhra">Andhra</option>
-                    <option value="Telangana">Telangana</option>
-                    <option value="Commercial">Commercial</option>
-                  </select>
-                </div>
-                <Flex justify="space-between" mt={4}>
-                  <Button type="submit" isLoading={isLoading}>
-                    {currentPostId ? "Update" : "Submit"}
-                  </Button>
-                  <Button colorScheme="gray" onClick={() => { onClose(); clearForm(); setCurrentPostId(null); }}>
-                    Cancel
-                  </Button>
-                </Flex>
-              </form> */}
 
               <form onSubmit={handleSubmit}>
                     <FormControl mb={4}>

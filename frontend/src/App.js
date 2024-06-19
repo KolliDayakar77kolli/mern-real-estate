@@ -22,31 +22,26 @@ function App() {
       duration: 1200,
     });
 
-    // Set a timeout to increase the loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Set to 3000ms (3 seconds) or any desired delay
+    }, 3000); 
 
-    return () => clearTimeout(timer); // Clean up the timer
+    return () => clearTimeout(timer); 
   }, []);
 
   const AppContent = () => {
     const location = useLocation();
     const hideChatbotRoutes = ["/login", "/admin", "/profile", "/chats"];
 
-    // Function to check if current route should hide the Chatbot
     const shouldHideChatbot = () => {
-      // Check if it's a specified route to hide Chatbot
       if (hideChatbotRoutes.includes(location.pathname)) {
         return true;
       }
 
-      // Check if it's the homepage or a route with query parameters
       if (location.pathname === "/" || location.pathname === "/posts") {
         return false;
       }
 
-      // For all other cases, hide Chatbot
       return true;
     };
 

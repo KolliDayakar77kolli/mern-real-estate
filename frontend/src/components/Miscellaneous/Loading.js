@@ -1,4 +1,3 @@
-// src/components/Loading.js
 import React from "react";
 import { Flex, Spinner, Image } from "@chakra-ui/react";
 

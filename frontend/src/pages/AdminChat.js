@@ -37,7 +37,7 @@ const AdminChat = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1); // State for total pages
+  const [totalPages, setTotalPages] = useState(1); 
   const chatsPerPage = 10;
 
   useEffect(() => {
@@ -68,7 +68,6 @@ const AdminChat = () => {
         const unreadChats = response.data.filter((chat) => !chat.isRead);
         setNotifications(unreadChats.length);
 
-        // Calculate total pages based on chats length
         const total = Math.ceil(response.data.length / chatsPerPage);
         setTotalPages(total);
       } catch (error) {
@@ -395,7 +394,6 @@ const AdminChat = () => {
         </ModalContent>
       </Modal>
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <Box mt={4} display="flex" justifyContent="center">
           <Button

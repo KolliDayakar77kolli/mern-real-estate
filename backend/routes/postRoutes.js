@@ -7,7 +7,6 @@ router.post('/', createPost);
 router.get('/', allPosts);   
 router.put('/:id', editPost);
 router.delete('/:id', deletePost);
-// Get posts by type
 router.get("/type", getPostsByType);
 
 module.exports = router;

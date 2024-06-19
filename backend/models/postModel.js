@@ -6,7 +6,7 @@ const postSchema = new mongoose.Schema(
     content: String,
     plotArea: {
       value: Number,
-      unit: String // Store the unit separately as a string
+      unit: String 
     },
     plotPrice: Number,
     plotLocation: String,
@@ -15,14 +15,14 @@ const postSchema = new mongoose.Schema(
       {
         type: String,
         required: true,
-        default: "https://icon-library.com/images/default-image-icon/default-image-icon-6.jpg" // Default picture URL
+        default: "https://icon-library.com/images/default-image-icon/default-image-icon-6.jpg" 
       }
     ],
     type: {
       type: String,
       required: true,
-      enum: ["Amaravathi", "Andhra", "Telangana", "Commercial"], // Allowed values for type
-      default: "Amaravathi" // Default value if none is provided
+      enum: ["Amaravathi", "Andhra", "Telangana", "Commercial"], 
+      default: "Amaravathi" 
     }
   },
   {
@@ -35,8 +35,6 @@ postSchema.pre("save", async function (next) {
     next();
   }
 
-  // Handle logic for uploading the pictures here, e.g., resizing, saving to storage, etc.
-  // For now, just proceed to the next middleware
   next();
 });
 

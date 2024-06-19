@@ -21,7 +21,6 @@ const Testt = () => {
         flexDirection={flexDirection}
         flexWrap="wrap"
       >
-        {/* Image Section */}
         <Box
           flex="2"
           position="relative"
@@ -74,7 +73,6 @@ const Testt = () => {
           </Box>
         </Box>
         
-        {/* Text Section */}
         <Box flex="1" p="4" order={{ base: -1, md: 0 }}>
           <Heading as="h2" size="lg" mb="4" color="blue.700" textAlign={{ base: 'center', md: 'left' }}>
             Ready to sell your property?

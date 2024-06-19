@@ -13,22 +13,19 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const server = http.createServer(app); // Create HTTP server
+const server = http.createServer(app); 
 
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", // Replace with your React app's URL
+    origin: "http://localhost:3000", // React app's URL
     methods: ["GET", "POST"]
   }
-}); // Attach socket.io to HTTP server with CORS configuration
+}); 
 
-// CORS Configuration
-app.use(cors()); // Use cors middleware
+app.use(cors()); 
 
-// Other middleware and routes
 app.use(express.json());
 
-// Middleware to attach io to the request object
 app.use((req, res, next) => {
   req.io = io;
   next();
@@ -37,14 +34,13 @@ app.use((req, res, next) => {
 app.use("/api/user", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use('/api/chats', chatRoutes);
-// Use the 404 middleware for unknown routes
 app.use('*', notFoundHandler);
 
 io.on('connection', (socket) => {
-  console.log('New client connected:', socket.id); // Log the socket id of the connected client
+  console.log('New client connected:', socket.id); 
 
   socket.on('disconnect', () => {
-    console.log('Client disconnected:', socket.id); // Log the socket id of the disconnected client
+    console.log('Client disconnected:', socket.id); 
   });
 });
 

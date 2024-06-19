@@ -2,13 +2,12 @@ import React from "react";
 import {
   Box,
   Text,
-  ChakraProvider,
   Heading,
   Button,
   keyframes,
 } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the carousel CSS
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import "./../../index.css";
 import Lottie from "lottie-react";
 import animationData from "../../lottie animations/Explore More.json";
@@ -48,7 +47,7 @@ const Main = () => {
         {images.map((image, index) => (
           <Box
             key={index}
-            minHeight="100vh" // Min height of 90vh to ensure responsiveness
+            minHeight="100vh" 
             backgroundImage={`url(${image})`}
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
@@ -78,7 +77,7 @@ const Main = () => {
                 textAlign={{ base: "center", md: "left" }}
                 p={{ base: "20px", md: "40px" }}
                 m="auto"
-                ml={{ base: "auto", md: "40px" }} // Add margin-left for larger screens
+                ml={{ base: "auto", md: "40px" }} 
               >
                 <Heading
                   as="h1"

@@ -1,9 +1,7 @@
 import React from 'react';
 import { Box, Flex, Text, VStack, Stack, useBreakpointValue, Link, Icon, Heading } from '@chakra-ui/react';
 import { PhoneIcon, EmailIcon, InfoIcon } from '@chakra-ui/icons';
-// import { FaWhatsapp, FaInstagram, FaPhone, FaFacebook } from 'react-icons/fa'; 
 
-// Define the CSS class in a variable
 const linkStyles = {
   textDecoration: 'none',
   fontWeight: '450',
@@ -12,7 +10,6 @@ const linkStyles = {
 };
 
 const Footer = () => {
-  // Determine the direction of the Stack and text alignment based on the screen size
   const stackDirection = useBreakpointValue({ base: 'column', md: 'row' });
   const alignItems = useBreakpointValue({ base: 'flex-start', md: 'center' });
 
@@ -32,10 +29,10 @@ const Footer = () => {
           direction={stackDirection}
           spacing={8}
           w="100%"
-          justify="space-evenly" // Aligns columns at both ends on big screens
+          justify="space-evenly" 
           alignItems={alignItems}
-          px={4} // Horizontal padding
-          py={2} // Vertical padding
+          px={4} 
+          py={2} 
         >
           {/* Logo and Social Media Links */}
           <VStack spacing={4} textAlign="center" alignItems="center">
@@ -112,8 +109,8 @@ const Footer = () => {
             </Heading>
             <Flex align="center">
               <PhoneIcon mr={2} />
-              <Link href="tel:99999999" sx={linkStyles}>
-                99999999
+              <Link href="tel:6303433566" sx={linkStyles}>
+              6303433566
               </Link>
             </Flex>
             <Flex align="center">
