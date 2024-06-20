@@ -55,7 +55,7 @@ function Posts() {
 
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/posts/type?type=${type}`
+          `https://ratna-real-estate.onrender.com/api/posts/type?type=${type}`
         );
         setAllPosts(response.data);
         setFilteredPosts(response.data); 
