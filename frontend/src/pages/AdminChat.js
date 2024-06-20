@@ -41,7 +41,7 @@ const AdminChat = () => {
   const chatsPerPage = 10;
 
   useEffect(() => {
-    const newSocket = io("http://localhost:5000");
+    const newSocket = io("https://ratna-real-estate.onrender.com/");
 
     newSocket.on("connect", () => {
       console.log("Socket connected");

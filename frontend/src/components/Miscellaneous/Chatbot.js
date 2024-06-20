@@ -50,7 +50,7 @@ const Chatbot = () => {
       const response = await axios.post('/api/chats');
       setChatId(response.data._id);
 
-      const newSocket = io('http://localhost:5000', {
+      const newSocket = io('https://ratna-real-estate.onrender.com/', {
         transports: ['websocket'],
       });
 
