@@ -76,7 +76,7 @@ const AdminPage = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/posts');
+      const response = await axios.get('https://ratna-real-estate.onrender.com/api/posts');
       setPosts(response.data);
       setLoadingPosts(false);
     } catch (error) {
@@ -103,11 +103,11 @@ const AdminPage = () => {
       let response;
       if (currentPostId) {
         response = await axios.put(
-          `http://localhost:5000/api/posts/${currentPostId}`,
+          `https://ratna-real-estate.onrender.com/api/posts/${currentPostId}`,
           postData
         );
       } else {
-        response = await axios.post('http://localhost:5000/api/posts', postData);
+        response = await axios.post('https://ratna-real-estate.onrender.com/api/posts', postData);
       }
       clearForm();
       setIsLoading(false);
@@ -178,7 +178,7 @@ const AdminPage = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${post._id}`);
+      await axios.delete(`https://ratna-real-estate.onrender.com/api/posts/${post._id}`);
       const updatedPosts = posts.filter(p => p._id !== post._id);
       setPosts(updatedPosts);
       alert('Post deleted successfully!');
