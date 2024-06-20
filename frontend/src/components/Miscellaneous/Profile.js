@@ -25,7 +25,7 @@ const Profile = () => {
 
   const updateProfilePicture = async (userId, imageUrl) => {
     try {
-      const response = await fetch('http://localhost:3000/api/updateProfilePicture', {
+      const response = await fetch('https://ratna-real-estate.onrender.com/api/updateProfilePicture', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
