@@ -29,7 +29,7 @@ const Main = () => {
   ];
 
   return (
-    <Box position="relative" top="55px" width="100%" minHeight={{ base: "60vh", md: "80vh" }}>
+    <Box position="relative" top="55px" width="100%" minHeight={{ base: "90vh", md: "100vh" }}>
       <Carousel
         showArrows={false}
         showThumbs={false}
