@@ -38,6 +38,8 @@ const NavLinks = ({ onClose, animate }) => {
     { href: "#categories", label: "Categories" },
     { href: "/about", label: "About Us" },
     { href: "#contact", label: "Contact Us" },
+    { href: "tel:6303433566", label: "6303433566" }, 
+    { href: "mailto:ratnarealestateinfo@gmail.com", label: "ratnarealestateinfo@gmail.com" }, 
   ];
 
   return (
@@ -107,7 +109,7 @@ function Header() {
         >
           <NavLinks onClose={onClose} animate={false} />
         </Flex>
-        <Link
+        {/* <Link
           href="tel:6303433566"
           _hover={{ textDecoration: "none" }}
           paddingRight="50px"
@@ -130,7 +132,7 @@ function Header() {
         >
           <Icon as={EmailIcon} boxSize={5} mr={2} />
           <pre>ratnarealestateinfo@gmail.com</pre>
-        </Link>
+        </Link> */}
       </Flex>
 
       <Portal>
