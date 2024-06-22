@@ -181,7 +181,8 @@ const Chatbot = () => {
             borderWidth="1px"
             borderRadius="lg"
             // w="400px" 
-            maxW="100%
+            // fixed issue
+            maxW="100%"
             h="500px" 
             bg="white"
             boxShadow="lg"
