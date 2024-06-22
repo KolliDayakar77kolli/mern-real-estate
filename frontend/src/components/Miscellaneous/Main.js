@@ -35,9 +35,7 @@ const Main = () => {
   ];
 
   return (
-    // <Box position="relative" top="55px" width="100%" minHeight="100vh">
-      
-    <Box position="relative" top="55px" width="100%" minHeight={{ base: "90vh", md: "100%" }}>
+    <Box position="relative" top="55px" width="100%">
       <Carousel
         showArrows={false}
         showThumbs={false}
@@ -45,12 +43,13 @@ const Main = () => {
         autoPlay
         infiniteLoop
         interval={3000}
+        swipeable={false}
+        dynamicHeight
       >
         {images.map((image, index) => (
           <Box
             key={index}
-            // minHeight="100vh" 
-            minHeight={{ base: "80vh", md: "100%" }}
+            height={{ base: "100vh", md: "100vh" }}
             backgroundImage={`url(${image})`}
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
@@ -80,7 +79,7 @@ const Main = () => {
                 textAlign={{ base: "center", md: "left" }}
                 p={{ base: "20px", md: "40px" }}
                 m="auto"
-                ml={{ base: "auto", md: "40px" }} 
+                ml={{ base: "auto", md: "40px" }}
               >
                 <Heading
                   as="h1"
@@ -139,6 +138,15 @@ const Main = () => {
 };
 
 export default Main;
+
+
+
+
+
+
+
+
+
 
 
 
