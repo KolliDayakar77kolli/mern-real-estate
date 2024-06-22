@@ -180,7 +180,8 @@ const Chatbot = () => {
             p={4}
             borderWidth="1px"
             borderRadius="lg"
-            w="400px" 
+            // w="400px" 
+            maxW="100%"  // Adjusted to be responsive
             h="500px" 
             bg="white"
             boxShadow="lg"
