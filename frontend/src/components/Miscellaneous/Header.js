@@ -18,7 +18,7 @@ import {
   useBreakpointValue,
   keyframes
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { HamburgerIcon , EmailIcon, PhoneIcon} from '@chakra-ui/icons';
 
 const fadeRight = keyframes`
   0% {
@@ -107,14 +107,16 @@ function Header() {
           <NavLinks onClose={onClose} animate={false} />
         </Flex>
         <Link
-          href="tel:9999999"
+          href="tel:6303433566"
           _hover={{ textDecoration: "none" }}
           paddingRight="50px"
           fontWeight="bold"
           color="#ffffff"
-          display={{ base: "none", md: "block" }}
+          display={{ base: "none", md: "flex" }}
+          alignItems="center"
         >
-          <pre>Call Us At: 6303433566</pre>
+          <Icon as={PhoneIcon} boxSize={5} mr={2} />
+          <pre>6303433566</pre>
         </Link>
         <Link
           href="mailto:ratnarealestateinfo@gmail.com"
@@ -122,9 +124,11 @@ function Header() {
           paddingRight="50px"
           fontWeight="bold"
           color="#5ea51d"
-          display={{ base: "none", md: "block" }}
+          display={{ base: "none", md: "flex" }}
+          alignItems="center"
         >
-          <pre>Email Us At: youremail@example.com</pre>
+          <Icon as={EmailIcon} boxSize={5} mr={2} />
+          <pre>ratnarealestateinfo@gmail.com</pre>
         </Link>
 
         {/* <Link
