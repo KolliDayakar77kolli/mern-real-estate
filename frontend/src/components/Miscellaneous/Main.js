@@ -37,7 +37,7 @@ const Main = () => {
   return (
     // <Box position="relative" top="55px" width="100%" minHeight="100vh">
       
-    <Box position="relative" top="55px" width="100%" minHeight={{ base: "100vh", md: "100vh" }}>
+    <Box position="relative" top="55px" width="100%" minHeight={{ base: "90vh", md: "100%" }}>
       <Carousel
         showArrows={false}
         showThumbs={false}
@@ -50,7 +50,7 @@ const Main = () => {
           <Box
             key={index}
             // minHeight="100vh" 
-            minHeight={{ base: "80vh", md: "100vh" }}
+            minHeight={{ base: "80vh", md: "100%" }}
             backgroundImage={`url(${image})`}
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
