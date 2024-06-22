@@ -75,32 +75,59 @@ function Header() {
         zIndex="8999"
         width="100%"
       >
-        <Link href="/" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
+        <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
           <Flex align="center">
-            <Image src="logo.png" alt="Logo" height="60px" width="60px" marginLeft="20px" />
-            <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">Ratna Real Estate</Heading>
+            <Image
+              src="logo.png"
+              alt="Logo"
+              height="60px"
+              width="60px"
+              marginLeft="20px"
+            />
+            <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">
+              Ratna Real Estate
+            </Heading>
           </Flex>
         </Link>
         <IconButton
-          display={{ base: 'block', md: 'none' }}
+          display={{ base: "block", md: "none" }}
           aria-label="Open Menu"
           icon={<HamburgerIcon />}
           onClick={onOpen}
         />
-        <Flex display={{ base: 'none', md: 'flex' }} color='white' flex="1" justify="start" alignItems="center" marginLeft="40px" gap="10">
+        <Flex
+          display={{ base: "none", md: "flex" }}
+          color="white"
+          flex="1"
+          justify="start"
+          alignItems="center"
+          marginLeft="40px"
+          gap="10"
+        >
           <NavLinks onClose={onClose} animate={false} />
         </Flex>
         <Link
-          href='tel:9999999'
-          _hover={{ textDecoration: 'none' }}
-          paddingRight='50px'
+          href="tel:9999999"
+          _hover={{ textDecoration: "none" }}
+          paddingRight="50px"
           fontWeight="bold"
           color="#ffffff"
-          display={{ base: 'none', md: 'block' }}
+          display={{ base: "none", md: "block" }}
         >
           <pre>Call Us At: 6303433566</pre>
         </Link>
         <Link
+          href="mailto:ratnarealestateinfo@gmail.com"
+          _hover={{ textDecoration: "none" }}
+          paddingRight="50px"
+          fontWeight="bold"
+          color="#5ea51d"
+          display={{ base: "none", md: "block" }}
+        >
+          <pre>Email Us At: youremail@example.com</pre>
+        </Link>
+
+        {/* <Link
           href="/admin"
           fontWeight="bold"
           color="#ffffff"
@@ -110,7 +137,7 @@ function Header() {
           display={{ base: 'none', md: 'block' }}
         >
           Admin Login
-        </Link>
+        </Link> */}
       </Flex>
 
       <Portal>
