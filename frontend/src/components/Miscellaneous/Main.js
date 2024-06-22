@@ -47,7 +47,7 @@ const Main = () => {
         {images.map((image, index) => (
           <Box
             key={index}
-            minHeight="100vh" 
+            minHeight="80vh" 
             backgroundImage={`url(${image})`}
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
