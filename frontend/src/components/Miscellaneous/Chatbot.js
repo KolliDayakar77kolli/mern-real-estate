@@ -181,14 +181,13 @@ const Chatbot = () => {
             borderWidth="1px"
             borderRadius="lg"
             // w="400px" 
-            maxW="90%"  // Adjusted to be responsive
+            maxW="100%"  // Adjusted to be responsive
             h="500px" 
             bg="white"
             boxShadow="lg"
             display="flex"
             flexDirection="column"
             justifyContent="space-between"
-            margin-left="auto"
           >
             <VStack spacing={3} align="stretch" overflowY="auto" h="400px">
               {" "}
