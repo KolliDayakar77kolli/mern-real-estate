@@ -188,6 +188,7 @@ const Chatbot = () => {
             display="flex"
             flexDirection="column"
             justifyContent="space-between"
+            margin-left="auto"
           >
             <VStack spacing={3} align="stretch" overflowY="auto" h="400px">
               {" "}
