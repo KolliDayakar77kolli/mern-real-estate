@@ -176,35 +176,18 @@ const Chatbot = () => {
           </Box>
         )}
         {showChat && (
-          // <Box
-          //   p={4}
-          //   borderWidth="1px"
-          //   borderRadius="lg"
-          //   // w="400px"
-          //   maxW="100%"  // Adjusted to be responsive
-          //   h="500px"
-          //   bg="white"
-          //   boxShadow="lg"
-          //   display="flex"
-          //   flexDirection="column"
-          //   justifyContent="space-between"
-          // >
-
           <Box
             p={4}
             borderWidth="1px"
             borderRadius="lg"
-            maxW="90%" // Adjusted to be responsive
-            h="500px"
+            // w="400px" 
+            maxW="90%"  // Adjusted to be responsive
+            h="500px" 
             bg="white"
             boxShadow="lg"
             display="flex"
             flexDirection="column"
             justifyContent="space-between"
-            marginLeft="auto" // Center horizontally
-            marginRight="auto" // Center horizontally
-            left="50%" // Center horizontally
-            transform="translateX(-50%)" // Center horizontally
           >
             <VStack spacing={3} align="stretch" overflowY="auto" h="400px">
               {" "}
@@ -229,8 +212,8 @@ const Chatbot = () => {
                     bg={msg.isBot ? "gray.200" : "blue.200"}
                     p={2}
                     borderRadius="md"
-                    maxW="100%"
-                    // whiteSpace="pre-wrap"
+                    maxW="100%" 
+                    // whiteSpace="pre-wrap" 
                   >
                     {msg.text}
                   </Text>
