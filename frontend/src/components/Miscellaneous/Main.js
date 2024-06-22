@@ -35,7 +35,7 @@ const Main = () => {
   ];
 
   return (
-    <Box position="relative" top="55px" width="100%" minHeight="100vh">
+    <Box position="relative" top="55px" width="100%" minHeight="80vh">
       <Carousel
         showArrows={false}
         showThumbs={false}
