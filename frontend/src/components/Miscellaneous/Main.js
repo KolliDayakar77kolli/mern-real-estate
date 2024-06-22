@@ -130,7 +130,7 @@ const Main = () => {
                   />
                 </Button> */}
 
-                <Link href="#weoffer" style={{ textDecoration: 'none' }}>
+                <Link href="#categories" style={{ textDecoration: 'none' }}>
                       <Button
                         bg="transparent"
                         _hover={{ bg: "transparent" }}

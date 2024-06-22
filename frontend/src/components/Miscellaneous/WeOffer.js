@@ -17,7 +17,7 @@ const WeOffer = () => {
   };
 
   return (
-    <Box width="100%" id="weoffer" display="flex" justifyContent="center" py={10}>
+    <Box width="100%" display="flex" justifyContent="center" py={10}>
     <SimpleGrid columns={[1, 2, 2, 4]} spacing={10} width="90%">
       {cards.map((card, index) => (
         <Box
