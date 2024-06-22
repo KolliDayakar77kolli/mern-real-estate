@@ -1,7 +1,13 @@
 import React from "react";
-import { Box, Text, Heading, Button, keyframes } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Heading,
+  Button,
+  keyframes,
+} from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import "./../../index.css";
 import Lottie from "lottie-react";
 import animationData from "../../lottie animations/Explore More.json";
@@ -29,6 +35,8 @@ const Main = () => {
   ];
 
   return (
+    // <Box position="relative" top="55px" width="100%" minHeight="100vh">
+      
     <Box position="relative" top="55px" width="100%" minHeight={{ base: "100vh", md: "80vh" }}>
       <Carousel
         showArrows={false}
@@ -41,7 +49,8 @@ const Main = () => {
         {images.map((image, index) => (
           <Box
             key={index}
-            minHeight={{ base: "60vh", md: "80vh" }}
+            // minHeight="100vh" 
+            minHeight={{ base: "80vh", md: "80vh" }}
             backgroundImage={`url(${image})`}
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
@@ -140,18 +149,6 @@ export default Main;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from "react";
 // import {
 //   Box,
@@ -189,7 +186,7 @@ export default Main;
 //   ];
 
 //   return (
-//     <Box position="relative" top="55px" width="100%" minHeight="80vh">
+//     <Box position="relative" top="55px" width="100%" minHeight="100vh">
 //       <Carousel
 //         showArrows={false}
 //         showThumbs={false}
@@ -201,7 +198,7 @@ export default Main;
 //         {images.map((image, index) => (
 //           <Box
 //             key={index}
-//             minHeight="80vh" 
+//             minHeight="100vh" 
 //             backgroundImage={`url(${image})`}
 //             backgroundPosition="center"
 //             backgroundRepeat="no-repeat"
@@ -290,10 +287,3 @@ export default Main;
 // };
 
 // export default Main;
-
-
-
-
-
-
-
