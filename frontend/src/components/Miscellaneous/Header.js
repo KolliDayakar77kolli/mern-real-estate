@@ -44,20 +44,29 @@ const NavLinks = ({ onClose, animate }) => {
 
   return (
     <>
-      {links.map((link, index) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          fontWeight="bold"
-          onClick={onClose}
-          color="#ffffff"
-          _hover={{ textDecoration: 'none' }}
-          animation={animate ? `${fadeRight} 0.5s ease-in-out ${index * 0.2}s forwards` : 'none'}
-        >
-          {link.label}
-        </Link>
-      ))}
-    </>
+    {links.map((link, index) => (
+      <Link
+        key={link.href}
+        href={link.href}
+        fontWeight="bold"
+        onClick={onClose}
+        color="#ffffff"
+        _hover={{ textDecoration: 'none' }}
+        animation={animate ? `${fadeRight} 0.5s ease-in-out ${index * 0.2}s forwards` : 'none'}
+        display="flex"
+        alignItems="center" 
+        gap={2} 
+      >
+        {link.href.startsWith('tel:') && (
+          <PhoneIcon /> 
+        )}
+        {link.href.startsWith('mailto:') && (
+          <EmailIcon /> 
+        )}
+        <span>{link.label}</span> 
+      </Link>
+    ))}
+  </>
   );
 };
 
