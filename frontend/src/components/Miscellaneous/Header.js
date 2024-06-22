@@ -38,6 +38,8 @@ const NavLinks = ({ onClose, animate }) => {
     { href: "#categories", label: "Categories" },
     { href: "/about", label: "About Us" },
     { href: "#contact", label: "Contact Us" },
+    { href: "tel:6303433566", label: "6303433566" }, // Phone link
+    { href: "mailto:ratnarealestateinfo@gmail.com", label: "ratnarealestateinfo@gmail.com" }, // Email link
   ];
 
   return (
@@ -48,7 +50,7 @@ const NavLinks = ({ onClose, animate }) => {
           href={link.href}
           fontWeight="bold"
           onClick={onClose}
-          color="#ffffff"
+          color={link.href.startsWith("tel") ? "#ffffff" : "#5ea51d"} // Phone link in white, email link in green
           _hover={{ textDecoration: 'none' }}
           animation={animate ? `${fadeRight} 0.5s ease-in-out ${index * 0.2}s forwards` : 'none'}
         >
@@ -59,91 +61,83 @@ const NavLinks = ({ onClose, animate }) => {
   );
 };
 
+
 function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isDrawer = useBreakpointValue({ base: true, md: false });
 
   return (
     <Box>
-      <Flex
-        as="header"
-        bg="#081637"
-        color="#fff"
-        padding="2"
-        align="center"
-        justify="space-between"
-        position="fixed"
-        zIndex="8999"
-        width="100%"
-      >
-        <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
-          <Flex align="center">
-            <Image
-              src="logo.png"
-              alt="Logo"
-              height="60px"
-              width="60px"
-              marginLeft="20px"
-            />
-            <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">
-              Ratna Real Estate
-            </Heading>
-          </Flex>
-        </Link>
-        <IconButton
-          display={{ base: "block", md: "none" }}
-          aria-label="Open Menu"
-          icon={<HamburgerIcon />}
-          onClick={onOpen}
-        />
-        <Flex
-          display={{ base: "none", md: "flex" }}
-          color="white"
-          flex="1"
-          justify="start"
-          alignItems="center"
-          marginLeft="40px"
-          gap="10"
-        >
-          <NavLinks onClose={onClose} animate={false} />
-        </Flex>
-        <Link
-          href="tel:6303433566"
-          _hover={{ textDecoration: "none" }}
-          paddingRight="50px"
-          fontWeight="bold"
-          color="#ffffff"
-          display={{ base: "none", md: "flex" }}
-          alignItems="center"
-        >
-          <Icon as={PhoneIcon} boxSize={5} mr={2} />
-          <pre>6303433566</pre>
-        </Link>
-        <Link
-          href="mailto:ratnarealestateinfo@gmail.com"
-          _hover={{ textDecoration: "none" }}
-          paddingRight="50px"
-          fontWeight="bold"
-          color="#5ea51d"
-          display={{ base: "none", md: "flex" }}
-          alignItems="center"
-        >
-          <Icon as={EmailIcon} boxSize={5} mr={2} />
-          <pre>ratnarealestateinfo@gmail.com</pre>
-        </Link>
+   <Flex
+  as="header"
+  bg="#081637"
+  color="#fff"
+  padding="2"
+  align="center"
+  justify="space-between"
+  position="fixed"
+  zIndex="8999"
+  width="100%"
+>
+  <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
+    <Flex align="center">
+      <Image
+        src="logo.png"
+        alt="Logo"
+        height="60px"
+        width="60px"
+        marginLeft="20px"
+      />
+      <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">
+        Ratna Real Estate
+      </Heading>
+    </Flex>
+  </Link>
+  <IconButton
+    display={{ base: "block", md: "none" }}
+    aria-label="Open Menu"
+    icon={<HamburgerIcon />}
+    onClick={onOpen}
+  />
+  <Flex
+    display={{ base: "none", md: "flex" }}
+    color="white"
+    flex="1"
+    justify="start"
+    alignItems="center"
+    marginLeft="40px"
+    gap="10"
+  >
+    <NavLinks onClose={onClose} animate={false} />
+  </Flex>
+  <Link
+    href="tel:6303433566"
+    _hover={{ textDecoration: "none" }}
+    paddingRight="50px"
+    fontWeight="bold"
+    color="#ffffff"
+    display={{ base: "none", md: "flex" }}
+    alignItems="center"
+    animation={animate ? `${fadeRight} 0.5s ease-in-out ${links.length * 0.2}s forwards` : 'none'} // Apply animation to phone link
+  >
+    <Icon as={PhoneIcon} boxSize={5} mr={2} />
+    <pre>6303433566</pre>
+  </Link>
+  <Link
+    href="mailto:ratnarealestateinfo@gmail.com"
+    _hover={{ textDecoration: "none" }}
+    paddingRight="50px"
+    fontWeight="bold"
+    color="#5ea51d"
+    display={{ base: "none", md: "flex" }}
+    alignItems="center"
+    animation={animate ? `${fadeRight} 0.5s ease-in-out ${(links.length + 1) * 0.2}s forwards` : 'none'} // Apply animation to email link
+  >
+    <Icon as={EmailIcon} boxSize={5} mr={2} />
+    <pre>ratnarealestateinfo@gmail.com</pre>
+  </Link>
+</Flex>
 
-        {/* <Link
-          href="/admin"
-          fontWeight="bold"
-          color="#ffffff"
-          bg="#5ea51d"
-          padding="7px 15px"
-          _hover={{ textDecoration: 'none' }}
-          display={{ base: 'none', md: 'block' }}
-        >
-          Admin Login
-        </Link> */}
-      </Flex>
 
       <Portal>
         <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
