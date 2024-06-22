@@ -38,8 +38,8 @@ const NavLinks = ({ onClose, animate }) => {
     { href: "#categories", label: "Categories" },
     { href: "/about", label: "About Us" },
     { href: "#contact", label: "Contact Us" },
-    { href: "tel:6303433566", label: "6303433566" }, // Phone link
-    { href: "mailto:ratnarealestateinfo@gmail.com", label: "ratnarealestateinfo@gmail.com" }, // Email link
+    { href: "tel:6303433566", label: "6303433566" }, 
+    { href: "mailto:ratnarealestateinfo@gmail.com", label: "ratnarealestateinfo@gmail.com" }, 
   ];
 
   return (
@@ -50,7 +50,7 @@ const NavLinks = ({ onClose, animate }) => {
           href={link.href}
           fontWeight="bold"
           onClick={onClose}
-          color={link.href.startsWith("tel") ? "#ffffff" : "#5ea51d"} // Phone link in white, email link in green
+          color={link.href.startsWith("tel") ? "#ffffff" : "#5ea51d"} 
           _hover={{ textDecoration: 'none' }}
           animation={animate ? `${fadeRight} 0.5s ease-in-out ${index * 0.2}s forwards` : 'none'}
         >
@@ -79,6 +79,7 @@ function Header() {
   zIndex="8999"
   width="100%"
 >
+  
   <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
     <Flex align="center">
       <Image
