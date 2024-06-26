@@ -5,6 +5,7 @@ import { VStack } from "@chakra-ui/layout";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
+import axiosInstance from '../../axiosInstance';
 
 const Signup = () => {
   const [show, setShow] = useState(false);
@@ -50,16 +51,13 @@ const Signup = () => {
     //       "Content-type": "application/json",
     //     },
     //   };
-      const { data } = await axios.post(
-        "/api/user/register",
-        {
-          name,
-          email,
-          password,
-          pic,
-        }
-        // ,config
-      );
+    const { data } = await axiosInstance.post("/user/register", {
+      name,
+      email,
+      password,
+      pic,
+    });
+
       console.log(data);
     //   toast({
     //     title: "Registration Successful",
