@@ -452,6 +452,7 @@ const deletePost = async (post) => {
                         height="auto"
                       >
                         <Carousel
+                          showThumbs={false}
                           renderArrow={({ type, onClick }) => (
                             <IconButton
                               aria-label={type === "prev" ? "Previous" : "Next"}
