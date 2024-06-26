@@ -26,6 +26,7 @@ import { FaBell, FaCheck, FaTrash } from "react-icons/fa";
 import axios from "axios";
 import { io } from "socket.io-client";
 import AdminHeader from "../components/Miscellaneous/AdminHeader";
+import axiosInstance from '../axiosInstance.js';
 
 
 const AdminChat = () => {
@@ -40,8 +41,11 @@ const AdminChat = () => {
   const [totalPages, setTotalPages] = useState(1); 
   const chatsPerPage = 10;
 
+
   useEffect(() => {
-    const newSocket = io("https://ratna-real-estate.onrender.com/");
+     const newSocket = io(process.env.NODE_ENV === "production"
+      ? "https://ratna-real-estate.onrender.com/"
+      : "http://localhost:5000");
 
     newSocket.on("connect", () => {
       console.log("Socket connected");
@@ -62,7 +66,7 @@ const AdminChat = () => {
 
     async function fetchChats() {
       try {
-        const response = await axios.get("/api/chats");
+        const response = await axiosInstance.get("/chats");
         setChats(response.data);
 
         const unreadChats = response.data.filter((chat) => !chat.isRead);
@@ -92,7 +96,7 @@ const AdminChat = () => {
   const handleDeleteChat = async (chatId) => {
     if (window.confirm("Are you sure you want to delete this chat?")) {
       try {
-        await axios.delete(`/api/chats/${chatId}`);
+        await axiosInstance.delete(`/chats/${chatId}`);
         setChats(chats.filter((chat) => chat._id !== chatId));
 
         const deletedChat = chats.find((chat) => chat._id === chatId);
@@ -123,7 +127,7 @@ const AdminChat = () => {
 
   const handleMarkAsRead = async (chatId) => {
     try {
-      await axios.put(`/api/chats/${chatId}/markAsRead`);
+      await axiosInstance.put(`/chats/${chatId}/markAsRead`);
       const updatedChats = chats.map((chat) =>
         chat._id === chatId ? { ...chat, isRead: true } : chat
       );
@@ -155,7 +159,7 @@ const AdminChat = () => {
       window.confirm("Are you sure you want to delete all chats?")
     ) {
       try {
-        await axios.delete("/api/chats");
+        await axiosInstance.delete("/chats");
         setChats([]);
         setNotifications(0);
         toast({
@@ -165,7 +169,6 @@ const AdminChat = () => {
           isClosable: true,
         });
         setDeleteConfirmation("");
-        onClose();
       } catch (error) {
         console.error("Error deleting all chats:", error);
         toast({
