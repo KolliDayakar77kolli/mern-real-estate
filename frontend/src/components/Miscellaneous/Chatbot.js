@@ -47,10 +47,12 @@ const Chatbot = () => {
 
   const startNewChat = async () => {
     try {
-      const response = await axios.post('/api/chats');
+      const response = await axiosInstance.post('/chats');
       setChatId(response.data._id);
 
-      const newSocket = io('https://ratna-real-estate.onrender.com/', {
+      const newSocket = io(process.env.NODE_ENV === "production"
+        ? "https://ratna-real-estate.onrender.com/"
+        : "http://localhost:5000", {
         transports: ['websocket'],
       });
 
@@ -85,7 +87,7 @@ const Chatbot = () => {
     setInput('');
 
     try {
-      await axios.post(`/api/chats/${chatId}/messages`, { text: input, isBot: false });
+      await axiosInstance.post(`/chats/${chatId}/messages`, { text: input, isBot: false });
     } catch (error) {
       console.error('Error sending message:', error);
     }
@@ -99,8 +101,10 @@ const Chatbot = () => {
         setStep(step + 1);
 
         try {
-          await axios.post(`/api/chats/${chatId}/messages`, botMessage);
-          socket.emit('botMessage', botMessage);
+          await axiosInstance.post(`/chats/${chatId}/messages`, botMessage);
+          if (socket) {
+            socket.emit('botMessage', botMessage);
+          }
         } catch (error) {
           console.error('Error sending bot message:', error);
         }
