@@ -5,6 +5,7 @@ import { FaCommentDots } from 'react-icons/fa';
 import { io } from 'socket.io-client';
 import Lottie from 'lottie-react';
 import typingAnimation from '../../lottie animations/typing.json';
+import axiosInstance from '../../axiosInstance';
 
 const Chatbot = () => {
   const initialMessages = [
