@@ -7,6 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useToast } from "@chakra-ui/toast";
+import axiosInstance from '../../axiosInstance';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,7 +37,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const { data } = await axios.post("/api/user/login", { email, password });
+      const { data } = await axiosInstance.post("/user/login", { email, password });
 
       toast({
         title: "Login successful",
