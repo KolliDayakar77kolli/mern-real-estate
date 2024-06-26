@@ -29,7 +29,7 @@ import PostsHeader from '../Miscellaneous/PostsHeader';
 import ContactForm from "../Miscellaneous/ContactForm";
 import Map from "../Miscellaneous/Map";
 import Footer from "../Miscellaneous/Footer";
-import axiosInstance from '../../../../backend/middleware/axiosInstance';
+import axiosInstance from '../../axiosInstance';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
