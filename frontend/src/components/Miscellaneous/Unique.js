@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 
 const Unique = () => {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
+  const imageHeight = useBreakpointValue({ base: "200px", md: "500px" });
+  const textHeight = useBreakpointValue({ base: "auto", md: "500px" });
 
   return (
     <Flex
@@ -19,21 +21,19 @@ const Unique = () => {
       boxShadow="md"
       bg="white"
       align="center"
-      maxH="500px"
-      overflow="hidden" 
+      overflow="hidden"
     >
       {/* Left side with image */}
       <Flex
         flex="1"
-        justify={{ base: "center", md: "center" }}
+        justify="center"
         align="center"
         p={1}
-        h="500px" 
+        h={imageHeight}
       >
         <Image
           src="Owner_Big_Photo.jpg"
           alt="Real Estate"
-          // boxSize="400px"
           w="100%"
           h="100%"
           objectFit="cover"
@@ -42,7 +42,12 @@ const Unique = () => {
       </Flex>
 
       {/* Right side with text and button */}
-      <Flex flex="1" h="500px" direction="column" p={8}>
+      <Flex
+        flex="1"
+        direction="column"
+        p={8}
+        h={textHeight}
+      >
         <Text
           fontSize="12.5px"
           color="#5ea51d"
@@ -52,15 +57,15 @@ const Unique = () => {
           Our Special
         </Text>
         <Text
-          fontSize={["16px", "24px", "30px", "36px"]} 
+          fontSize={["16px", "24px", "30px", "36px"]}
           color="#000000CC"
           fontFamily="'Nunito Sans', Arial, sans-serif"
           mb={6}
         >
           What makes us unique from others
         </Text>
-        <Text ml={6} fontSize="lg" color="gray.600" mb={8} listStyleType="disc">
-          <ul>
+        <Text fontSize="lg" color="gray.600" mb={8}>
+          <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
             <li>Exceptional customer service</li>
             <li>Unparalleled market expertise</li>
             <li>Dedication to finding the perfect property</li>
