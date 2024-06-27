@@ -19,7 +19,7 @@ const Unique = () => {
       boxShadow="md"
       bg="white"
       align="center"
-      maxH="400px"
+      maxH="500px"
       overflow="hidden" 
     >
       {/* Left side with image */}
@@ -28,20 +28,21 @@ const Unique = () => {
         justify={{ base: "center", md: "center" }}
         align="center"
         p={1}
+        h="500px" 
       >
         <Image
           src="Owner_Big_Photo.jpg"
           alt="Real Estate"
           // boxSize="400px"
           w="100%"
-          h="auto"
+          h="100%"
           objectFit="cover"
           borderRadius="md"
         />
       </Flex>
 
       {/* Right side with text and button */}
-      <Flex flex="1" direction="column" p={8}>
+      <Flex flex="1" h="500px" direction="column" p={8}>
         <Text
           fontSize="12.5px"
           color="#5ea51d"
