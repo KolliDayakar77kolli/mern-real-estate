@@ -49,7 +49,7 @@ const Welcome = () => {
           alt="Owner Photo"
           w="100%"
           h="100%"
-          objectFit="contain"
+          objectFit="cover"
           borderRadius="md"
         />
         <Box
