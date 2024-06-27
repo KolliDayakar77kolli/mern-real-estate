@@ -40,7 +40,7 @@ const Testt = () => {
             explain our process. You can make an informed decision about working
             with us to sell your property.
           </Text>
-
+          <Box mt={8} bgColor="red">
           <Link mt={4} href="#contactUs" style={{ textDecoration: "none" }}>
             <Button
               bg="blue.700"
@@ -53,6 +53,7 @@ const Testt = () => {
               Book Slot
             </Button>
           </Link>
+          </Box>
         </Box>
         <Box
           flex="2"
