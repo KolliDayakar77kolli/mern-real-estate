@@ -10,6 +10,7 @@ const Wel = () => {
     width="100%"
     height="500px" // Set a fixed height for the entire container
     p={4}
+    bg="orange"
   >
     <Box
       width={{ base: '100%', md: '50%' }}
@@ -19,6 +20,8 @@ const Wel = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
+    bg="yellow"
+
     >
       <Box>
         <Text fontSize="xl" fontWeight="bold">
@@ -33,6 +36,8 @@ const Wel = () => {
       width={{ base: '100%', md: '50%' }}
       height="100%" // Ensure the image box has the same height as the container
       position="relative"
+    bg="blue"
+
     >
       <Image
         src="Owner_Big_Photo.jpg"
