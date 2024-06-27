@@ -45,12 +45,14 @@ function Homepage() {
           </Text>
 
           <WeOffer />
-          <Testt />
+        </Box>
+        {/* Explore cards section */}
+
+        <Testt />
           <MV />
 
           <Testt2 />
-        </Box>
-        {/* Explore cards section */}
+
 
         <Unique />
 
