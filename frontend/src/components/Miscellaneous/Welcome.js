@@ -16,7 +16,7 @@ const Welcome = () => {
 
   return (
     <Flex
-      mt="50px"
+      mt="300px"
       direction={flexDirection}
       borderWidth={1}
       borderRadius="md"
