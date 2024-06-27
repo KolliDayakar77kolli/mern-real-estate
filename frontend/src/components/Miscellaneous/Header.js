@@ -14,7 +14,6 @@ import {
   DrawerCloseButton,
   VStack,
   Image,
-  Text,
   Portal,
   useBreakpointValue,
   keyframes
@@ -121,6 +120,7 @@ function Header() {
         </Flex>
       </Flex> */}
 
+
 <Flex
   as="header"
   bg="#081637"
@@ -132,7 +132,7 @@ function Header() {
   zIndex="8999"
   width="100%"
 >
-  <Flex align="center">
+  <Flex align="center" maxWidth="100%">
     <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
       <Flex align="center">
         <Image
@@ -142,13 +142,13 @@ function Header() {
           width="60px"
           marginLeft="20px"
         />
-        <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">
+        <Heading fontSize={{ base: "18px", md: "22px", lg: "25px" }} marginLeft="20px" color="#5ea51d">
           Ratna Real Estate
         </Heading>
       </Flex>
     </Link>
   </Flex>
-  <Flex align="center">
+  <Flex align="center" maxWidth="100%">
     <IconButton
       display={{ base: "block", md: "none" }}
       aria-label="Open Menu"
@@ -162,12 +162,13 @@ function Header() {
       justify="end"
       alignItems="center"
       marginLeft="40px"
-      gap="10"
+      gap="4"
     >
-      <NavLinks onClose={onClose} animate={false} />
+      <NavLinks fontSize={{ base: "14px", md: "16px", lg: "18px" }} onClose={onClose} animate={false} />
     </Flex>
   </Flex>
 </Flex>
+
 
 
       <Portal>
