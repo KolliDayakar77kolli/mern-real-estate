@@ -48,10 +48,14 @@ function Homepage() {
         </Box>
         {/* Explore cards section */}
 
+        <Box width="90%" bg="white">
         <Testt />
-          <MV />
+        <MV />
 
-          <Testt2 />
+
+        </Box>
+
+        <Testt2 />
 
 
         <Unique />
