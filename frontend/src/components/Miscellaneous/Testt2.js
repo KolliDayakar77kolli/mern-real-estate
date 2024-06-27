@@ -32,9 +32,15 @@ const Testt = () => {
           boxShadow="2xl"
           clipPath="polygon(0 0, 100% 0%, 87% 100%, 20% 95%)"
           transformStyle="preserve-3d"
-          transform={{
-            base: "perspective(800px) rotateX(-20deg)", 
-            md: "perspective(1200px) rotateY(-20deg)",
+            transform={{
+            base:
+              flexDirection === "column"
+                ? "perspective(800px) rotateX(0deg)"
+                : "perspective(800px) rotateX(-20deg)",
+            md:
+              flexDirection === "column"
+                ? "perspective(1200px) rotateY(0deg)"
+                : "perspective(1200px) rotateY(-20deg)",
           }}
         >
           <Image
