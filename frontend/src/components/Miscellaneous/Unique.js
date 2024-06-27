@@ -10,8 +10,7 @@ import { Link } from "react-router-dom";
 
 const Unique = () => {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
-  const imageHeight = useBreakpointValue({ base: "200px", md: "500px" });
-  const textHeight = useBreakpointValue({ base: "auto", md: "500px" });
+  const minHeight = useBreakpointValue({ base: "400px", md: "500px" });
 
   return (
     <Flex
@@ -22,6 +21,7 @@ const Unique = () => {
       bg="white"
       align="center"
       overflow="hidden"
+      minH={minHeight}
     >
       {/* Left side with image */}
       <Flex
@@ -29,7 +29,7 @@ const Unique = () => {
         justify="center"
         align="center"
         p={1}
-        h={imageHeight}
+        minH={minHeight}
       >
         <Image
           src="Owner_Big_Photo.jpg"
@@ -46,7 +46,7 @@ const Unique = () => {
         flex="1"
         direction="column"
         p={8}
-        h={textHeight}
+        minH={minHeight}
       >
         <Text
           fontSize="12.5px"
