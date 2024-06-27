@@ -14,6 +14,7 @@ import {
   DrawerCloseButton,
   VStack,
   Image,
+  Text,
   Portal,
   useBreakpointValue,
   keyframes
