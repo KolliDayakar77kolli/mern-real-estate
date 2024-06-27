@@ -13,7 +13,7 @@ const Testt = () => {
 
     >
       <Flex
-        maxW="80%"
+        maxW="100%"
         p="6"
         boxShadow="xl"
         overflow="hidden"
@@ -24,7 +24,7 @@ const Testt = () => {
       >
         <Box flex="1" p="4">
           <Heading as="h2" size="lg" mb="4" color="blue.700">
-          Ready to Buy a property?
+          Contact us to sell your property?
           </Heading>
           <Text fontSize="md" color="gray.600">
           Schedule a free property evaluation with our expert team. We will visit your property, provide you with a realistic market value, and explain our process. You can make an informed decision about working with us to sell your property.
@@ -47,7 +47,7 @@ const Testt = () => {
           }}
         >
           <Image
-            src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTE3OTM5My1pbWFnZS1rd3Z5MG94eC5qcGc.jpg"
+            src="For_Sell_Your_Property.jpg"
             alt="Image"
             objectFit="cover"
             width="100%"
@@ -71,10 +71,10 @@ const Testt = () => {
             textAlign="center"
           >
             <Heading as="h3" size="md" mb="2">
-              Beautiful Sunset
+              "Sell smarter, sell faster"
             </Heading>
             <Text fontSize="sm">
-              Photo by John Doe
+              "Sell smarter, sell faster"
             </Text>
           </Box>
         </Box>
