@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const Unique = () => {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
-  const minHeight = useBreakpointValue({ base: "300px", md: "500px" });
+  const minHeight = useBreakpointValue({ base: "300px", md: "400px" });
 
   return (
     <Flex
