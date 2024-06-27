@@ -51,7 +51,7 @@ const Testt = () => {
 
           transform={{
             base: "perspective(800px) rotateX(30deg)", 
-            md: "perspective(1200px) rotateY(30deg)",
+            md: "perspective(1200px) rotateY(-20deg)",
           }}
         >
           <Image
