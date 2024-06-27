@@ -59,7 +59,7 @@ const Testt = () => {
           }}
         >
           <Image
-            src="For_Sell_Your_Property.jpg"
+            src="Buy_A_Property.jpg"
             alt="Image"
             objectFit="cover"
             width="100%"
