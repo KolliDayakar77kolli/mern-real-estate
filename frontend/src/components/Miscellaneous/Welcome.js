@@ -16,7 +16,7 @@ const Welcome = () => {
 
   return (
     <Flex
-      mt="300px"
+      mt="250px"
       direction={flexDirection}
       borderWidth={1}
       borderRadius="md"
@@ -39,7 +39,6 @@ const Welcome = () => {
       <Flex
         flex="1"
         justify="center"
-        align="center"
         p={1}
         // minH={minHeight}
         position="relative"
@@ -47,10 +46,10 @@ const Welcome = () => {
       >
         <Image
           src="Owner_Big_Photo.jpg"
-          alt="Real Estate"
+          alt="Owner Photo"
           w="100%"
           h="100%"
-          objectFit="cover"
+          objectFit="contain"
           borderRadius="md"
         />
         <Box
