@@ -4,6 +4,7 @@ import { Box, Flex, Image, Text } from '@chakra-ui/react';
 const Wel = () => {
   return (
     <Flex
+    mt="250px"
     direction={{ base: 'column', md: 'row' }} // Stacks vertically on smaller screens, horizontally on larger screens
     alignItems="center"
     justifyContent="center"
@@ -44,7 +45,7 @@ const Wel = () => {
         alt="owner pic"
         width="100%"
         height="100%"
-        objectFit="contain" // Ensure the image covers the entire box without being cut off
+        objectFit="fill" // Ensure the image covers the entire box without being cut off
       />
     </Box>
   </Flex>
