@@ -26,44 +26,38 @@ const Unique = () => {
     >
       {/* Left side with image */}
       <Flex
-  flex="1"
-  justify="center"
-  align="center"
-  p={1}
-  minH={minHeight}
-  position="relative"
->
-  <Image
-    src="Owner_Big_Photo.jpg"
-    alt="Real Estate"
-    w="100%"
-    h="100%"
-    objectFit="cover"
-    borderRadius="md"
-  />
-  <Box
-    position="absolute"
-    bottom={2}
-    right={2}
-    bg="rgba(0, 0, 0, 0.6)"
-    color="white"
-    p={2}
-    borderRadius="md"
-  >
-    <Text fontSize="lg" fontWeight="bold">
-      Galla Srinivas Rao
-    </Text>
-  </Box>
-</Flex>
-
+        flex="1"
+        justify="center"
+        align="center"
+        p={1}
+        minH={minHeight}
+        position="relative"
+      >
+        <Image
+          src="Owner_Big_Photo.jpg"
+          alt="Real Estate"
+          w="100%"
+          h="100%"
+          objectFit="cover"
+          borderRadius="md"
+        />
+        <Box
+          position="absolute"
+          bottom={2}
+          right={2}
+          bg="rgba(0, 0, 0, 0.6)"
+          color="white"
+          p={2}
+          borderRadius="md"
+        >
+          <Text fontSize="lg" fontWeight="bold">
+            Galla Srinivas Rao
+          </Text>
+        </Box>
+      </Flex>
 
       {/* Right side with text and button */}
-      <Flex
-        flex="1"
-        direction="column"
-        p={8}
-        minH={minHeight}
-      >
+      <Flex flex="1" direction="column" p={8} minH={minHeight}>
         <Text
           fontSize="12.5px"
           color="#5ea51d"
@@ -88,7 +82,8 @@ const Unique = () => {
             <li>Experienced professionals staying ahead of market trends</li>
             <li>Innovative solutions and personalized service</li>
             <li>
-              Building lasting relationships grounded in trust, integrity, and transparency
+              Building lasting relationships grounded in trust, integrity, and
+              transparency
             </li>
           </ul>
         </Text>
