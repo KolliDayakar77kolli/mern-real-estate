@@ -6,7 +6,7 @@ const Welcome = () => {
   const isVertical = useBreakpointValue({ base: true, md: false });
 
   return (
-    <Box display="flex" flexDirection={isVertical ? 'column' : 'row'} height="100vh">
+    <Box mt="50px" display="flex" flexDirection={isVertical ? 'column' : 'row'} height="100vh">
       <Box flex="1" overflow="hidden">
         <Image
           src="Owner_Big_Photo.jpg"
