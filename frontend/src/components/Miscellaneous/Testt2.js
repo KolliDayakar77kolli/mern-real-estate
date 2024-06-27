@@ -104,7 +104,7 @@ const Testt = () => {
               <Button
                 bg="blue.700"
                 color="white"
-                _hover={{ bg: "white", color:"blue.700", border: "2px solid blue.700"}}
+                _hover={{ bg: "grey.400", color:"blue.700"}}
                 _active={{ bg: "transparent" }}
                 _focus={{ boxShadow: "xl" }}
                 cursor="pointer"

@@ -109,8 +109,8 @@ const Footer = () => {
             </Heading>
             <Flex align="center">
               <PhoneIcon mr={2} />
-              <Link href="tel:6303433566" sx={linkStyles}>
-              6303433566
+              <Link href="tel:9701333112" sx={linkStyles}>
+              9701333112
               </Link>
             </Flex>
             <Flex align="center">

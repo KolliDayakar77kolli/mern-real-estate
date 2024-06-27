@@ -37,7 +37,7 @@ const NavLinks = ({ onClose, animate }) => {
     { href: "#categories", label: "Categories" },
     { href: "/about", label: "About Us" },
     { href: "#contact", label: "Contact Us" },
-    { href: "tel:6303433566", label: "6303433566" }, 
+    { href: "tel:9701333112", label: "9701333112" }, 
     { href: "mailto:ratnarealestateinfo@gmail.com", label: "ratnarealestateinfo@gmail.com" }, 
   ];
 

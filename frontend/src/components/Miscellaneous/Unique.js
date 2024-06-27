@@ -33,7 +33,7 @@ const Unique = () => {
           // boxSize="400px"
           w="100%"
           h="400px"
-          objectFit="cover"
+          objectFit="contain"
           borderRadius="md"
         />
       </Flex>
