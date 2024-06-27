@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Welcome = () => {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
-  const minHeight = useBreakpointValue({ base: "300px", md: "300px" });
+//   const minHeight = useBreakpointValue({ base: "300px", md: "300px" });
 
   return (
     <Flex
@@ -24,9 +24,11 @@ const Welcome = () => {
       bg="white"
       align="center"
       overflow="hidden"
-      minH={minHeight}
+      width="90%"
+    //   minH={minHeight}
     >
-      <Flex flex="1" direction="column" p={8} minH={minHeight}>
+      <Flex flex="1" bg="green" direction="column">
+      {/* <Flex flex="1" direction="column" p={8} minH={minHeight}> */}
         <Heading as="h1" size="2xl" color="#5ea51d" mb={4} fontFamily="'Nunito Sans', Arial, sans-serif" >
           Welcome to Our Site
         </Heading>
@@ -37,8 +39,9 @@ const Welcome = () => {
         justify="center"
         align="center"
         p={1}
-        minH={minHeight}
+        // minH={minHeight}
         position="relative"
+        bg="red"
       >
         <Image
           src="Owner_Big_Photo.jpg"
