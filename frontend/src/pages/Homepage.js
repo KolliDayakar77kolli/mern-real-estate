@@ -52,12 +52,12 @@ function Homepage() {
 
           <WeOffer />
           <Testt />
+          <MV />
           <Testt2 />
         </Box>
         {/* Explore cards section */}
 
         <Unique />
-        <MV />
 
         {/* parallax */}
         <HomeParallax />
