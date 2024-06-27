@@ -99,7 +99,7 @@ const Testt = () => {
             experience.
           </Text>
 
-          <Link mt={4} href="#categories" style={{ textDecoration: "none" }}>
+          <Link marginTop="200px" href="#categories" style={{ textDecoration: "none" }}>
             <Button
               bg="blue.700"
               color="white"
