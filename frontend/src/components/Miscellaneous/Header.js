@@ -14,7 +14,6 @@ import {
   DrawerCloseButton,
   VStack,
   Image,
-  Icon,
   Portal,
   useBreakpointValue,
   keyframes
@@ -76,7 +75,8 @@ function Header() {
 
   return (
     <Box>
-      <Flex
+      {/* First Mine */}
+      {/* <Flex
         as="header"
         bg="#081637"
         color="#fff"
@@ -118,31 +118,58 @@ function Header() {
         >
           <NavLinks onClose={onClose} animate={false} />
         </Flex>
-        {/* <Link
-          href="tel:6303433566"
-          _hover={{ textDecoration: "none" }}
-          paddingRight="50px"
-          fontWeight="bold"
-          color="#ffffff"
-          display={{ base: "none", md: "flex" }}
-          alignItems="center"
-        >
-          <Icon as={PhoneIcon} boxSize={5} mr={2} />
-          <pre>6303433566</pre>
-        </Link>
-        <Link
-          href="mailto:ratnarealestateinfo@gmail.com"
-          _hover={{ textDecoration: "none" }}
-          paddingRight="50px"
-          fontWeight="bold"
-          color="#5ea51d"
-          display={{ base: "none", md: "flex" }}
-          alignItems="center"
-        >
-          <Icon as={EmailIcon} boxSize={5} mr={2} />
-          <pre>ratnarealestateinfo@gmail.com</pre>
-        </Link> */}
+      </Flex> */}
+
+<Flex
+  as="header"
+  bg="#081637"
+  color="#fff"
+  padding="2"
+  align="center"
+  justify="space-between"
+  position="fixed"
+  zIndex="8999"
+  width="100%"
+>
+  <Flex align="center">
+    <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
+      <Flex align="center">
+        <Image
+          src="logo.png"
+          alt="Logo"
+          height="60px"
+          width="60px"
+          marginLeft="20px"
+        />
+        <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">
+          Ratna Real Estate
+        </Heading>
       </Flex>
+    </Link>
+  </Flex>
+  <Flex align="center">
+    <IconButton
+      display={{ base: "block", md: "none" }}
+      aria-label="Open Menu"
+      icon={<HamburgerIcon />}
+      onClick={onOpen}
+    />
+    <Flex
+      display={{ base: "none", md: "flex" }}
+      color="white"
+      flex="1"
+      justify="end"
+      alignItems="center"
+      marginLeft="40px"
+      gap="10"
+    >
+      <NavLinks onClose={onClose} animate={false} />
+      <Text marginRight="20px">Phone: 123-456-7890</Text>
+      <Text marginRight="20px">Email: info@example.com</Text>
+    </Flex>
+  </Flex>
+</Flex>
+
 
       <Portal>
         <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
