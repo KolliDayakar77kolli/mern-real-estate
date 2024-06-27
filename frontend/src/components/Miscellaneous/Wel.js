@@ -4,6 +4,7 @@ import { Box, Flex, Image, Text } from '@chakra-ui/react';
 const Wel = () => {
   return (
     <Flex
+      mt="400px"
       direction={{ base: 'column', md: 'row' }} // Stacks vertically on smaller screens, horizontally on larger screens
       alignItems="center"
       justifyContent="center"
