@@ -30,7 +30,13 @@ const Testt = () => {
           width="100%"
           overflow="hidden"
           boxShadow="2xl"
-          clipPath="polygon(0 0, 100% 0%, 87% 100%, 20% 95%)"
+          clipPath={{
+            base:
+              flexDirection === "column"
+                ? "none"
+                : "polygon(0 0, 100% 0%, 87% 100%, 20% 95%)",
+            md: "polygon(0 0, 100% 0%, 87% 100%, 20% 95%)",
+          }}
           transformStyle="preserve-3d"
             transform={{
             base:
