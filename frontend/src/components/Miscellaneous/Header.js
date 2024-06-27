@@ -161,7 +161,7 @@ function Header() {
             justify="end"
             alignItems="center"
             marginLeft="40px"
-            gap="4"
+            gap="8"
           >
             <NavLinks fontSize={{ base: "14px", md: "16px", lg: "18px" }} onClose={onClose} animate={false} />
           </Flex>
