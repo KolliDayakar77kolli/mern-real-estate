@@ -5,7 +5,7 @@ import { FaBullseye, FaEye, FaHandHoldingHeart } from 'react-icons/fa';
 const MV = () => {
 
   const iconColor = useColorModeValue('teal.500', 'teal.300');
-  const boxBgColor = useColorModeValue('gray.100', 'gray.700');
+  const boxBgColor = useColorModeValue('white', 'white');
   const borderColor = useColorModeValue('gray.200', 'gray.600');
 
   return (
@@ -15,7 +15,7 @@ const MV = () => {
       justify="center" 
       w="100%" 
       p={4}
-      bg="white"
+      // bg="white"
     >
       <Box
         flex="1"
