@@ -165,8 +165,6 @@ function Header() {
       gap="10"
     >
       <NavLinks onClose={onClose} animate={false} />
-      <Text marginRight="20px">Phone: 123-456-7890</Text>
-      <Text marginRight="20px">Email: info@example.com</Text>
     </Flex>
   </Flex>
 </Flex>
