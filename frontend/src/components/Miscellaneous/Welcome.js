@@ -25,6 +25,8 @@ const Welcome = () => {
       align="center"
       overflow="hidden"
       width="90%"
+      mx="auto"
+      height="400px"
     //   minH={minHeight}
     >
       <Flex flex="1" bg="green" direction="column">
