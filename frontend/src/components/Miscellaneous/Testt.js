@@ -41,17 +41,18 @@ const Testt = () => {
             with us to sell your property.
           </Text>
 
-          <Link href="#contactUs" style={{ textDecoration: 'none' }}>
-                      <Button
-                        bg="green"
-                        _hover={{ bg: "blue" }}
-                        _active={{ bg: "transparent" }}
-                        _focus={{ boxShadow: "none" }}
-                        cursor="pointer"
-                      >
-                       Book Slot
-                      </Button>
-                </Link>
+          <Link mt={4} href="#contactUs" style={{ textDecoration: "none" }}>
+            <Button
+              bg="blue.700"
+              color="white"
+              _hover={{ bg: "white", color:"blue.700" }}
+              _active={{ bg: "transparent" }}
+              _focus={{ boxShadow: "xl" }}
+              cursor="pointer"
+            >
+              Book Slot
+            </Button>
+          </Link>
         </Box>
         <Box
           flex="2"
