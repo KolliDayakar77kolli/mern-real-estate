@@ -99,17 +99,18 @@ const Testt = () => {
             experience.
           </Text>
 
-          <Link href="#categories" style={{ textDecoration: 'none' }}>
-                      <Button
-                        bg="green"
-                        _hover={{ bg: "blue" }}
-                        _active={{ bg: "transparent" }}
-                        _focus={{ boxShadow: "none" }}
-                        cursor="pointer"
-                      >
-                       Buy Now
-                      </Button>
-                </Link>
+          <Link mt={4} href="#categories" style={{ textDecoration: "none" }}>
+            <Button
+              bg="blue.700"
+              color="white"
+              _hover={{ bg: "white", color:"blue.700" }}
+              _active={{ bg: "transparent" }}
+              _focus={{ boxShadow: "xl" }}
+              cursor="pointer"
+            >
+              Buy Now
+            </Button>
+          </Link>
         </Box>
       </Flex>
     </Flex>
