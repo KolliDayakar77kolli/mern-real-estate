@@ -25,21 +25,36 @@ const Unique = () => {
     >
       {/* Left side with image */}
       <Flex
-        flex="1"
-        justify="center"
-        align="center"
-        p={1}
-        minH={minHeight}
-      >
-        <Image
-          src="Owner_Big_Photo.jpg"
-          alt="Real Estate"
-          w="100%"
-          h="100%"
-          objectFit="cover"
-          borderRadius="md"
-        />
-      </Flex>
+  flex="1"
+  justify="center"
+  align="center"
+  p={1}
+  minH={minHeight}
+  position="relative"
+>
+  <Image
+    src="Owner_Big_Photo.jpg"
+    alt="Real Estate"
+    w="100%"
+    h="100%"
+    objectFit="cover"
+    borderRadius="md"
+  />
+  <Box
+    position="absolute"
+    bottom={2}
+    right={2}
+    bg="rgba(0, 0, 0, 0.6)"
+    color="white"
+    p={2}
+    borderRadius="md"
+  >
+    <Text fontSize="lg" fontWeight="bold">
+      Galla Srinivas Rao
+    </Text>
+  </Box>
+</Flex>
+
 
       {/* Right side with text and button */}
       <Flex
