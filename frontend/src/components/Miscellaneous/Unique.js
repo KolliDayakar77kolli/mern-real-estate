@@ -19,6 +19,8 @@ const Unique = () => {
       boxShadow="md"
       bg="white"
       align="center"
+      maxH="400px"
+      overflow="hidden" 
     >
       {/* Left side with image */}
       <Flex
