@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Text,
-  Flex,
-  useBreakpointValue
-} from "@chakra-ui/react";
+import { Box, Text, Flex, useBreakpointValue } from "@chakra-ui/react";
 import Header from "../components/Miscellaneous/Header";
 import Testt from "../components/Miscellaneous/Testt";
 import Testt2 from "../components/Miscellaneous/Testt2";
@@ -19,8 +14,7 @@ import Unique from "../components/Miscellaneous/Unique";
 import MV from "../components/Miscellaneous/MV";
 
 function Homepage() {
-
-  const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
+  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
 
   return (
     <>
@@ -40,7 +34,7 @@ function Homepage() {
             RATNA CATEGORIES
           </Text>
           <Text
-            fontSize={["24px", "30px", "36px", "45px"]} 
+            fontSize={["24px", "30px", "36px", "45px"]}
             color="#000000CC"
             fontFamily="'Nunito Sans', Arial, sans-serif"
             textAlign="center"
@@ -52,12 +46,13 @@ function Homepage() {
 
           <WeOffer />
           <Testt />
+          <MV />
+
           <Testt2 />
         </Box>
         {/* Explore cards section */}
 
         <Unique />
-        <MV />
 
         {/* parallax */}
         <HomeParallax />
@@ -76,7 +71,7 @@ function Homepage() {
           GET IN TOUCH
         </Text>
         <Text
-          fontSize={["24px", "30px", "36px", "45px"]} 
+          fontSize={["24px", "30px", "36px", "45px"]}
           color="#000000CC"
           fontFamily="'Nunito Sans', Arial, sans-serif"
           textAlign="center"

@@ -15,6 +15,7 @@ const MV = () => {
       justify="center" 
       w="100%" 
       p={4}
+      bg="white"
     >
       <Box
         flex="1"
