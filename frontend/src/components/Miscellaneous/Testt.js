@@ -22,14 +22,23 @@ const Testt = () => {
         flexDirection={flexDirection}
         flexWrap="wrap"
       >
-        <Box flex="1" p="4">
+        {/* <Box flex="1" p="4">
           <Heading as="h2" size="lg" mb="4" color="blue.700">
           Contact us to sell your property?
           </Heading>
           <Text fontSize="md" color="gray.600">
           Schedule a free property evaluation with our expert team. We will visit your property, provide you with a realistic market value, and explain our process. You can make an informed decision about working with us to sell your property.
           </Text>
-        </Box>
+        </Box> */}
+
+<Box flex="1" p="4">
+  <Heading as="h2" size="lg" mb="4" color="blue.700">
+    Contact us to sell your property
+  </Heading>
+  <Text fontSize="md" color="gray.600" lineHeight="taller">
+    Schedule a free property evaluation with our expert team. We will visit your property, provide you with a realistic market value, and explain our process. You can make an informed decision about working with us to sell your property.
+  </Text>
+</Box>
         <Box
           flex="2"
           position="relative"
@@ -71,11 +80,8 @@ const Testt = () => {
             textAlign="center"
           >
             <Heading as="h3" size="md" mb="2">
-              "Sell smarter, sell faster"
+              "Sell smarter - sell faster"
             </Heading>
-            <Text fontSize="sm">
-              "Sell smarter, sell faster"
-            </Text>
           </Box>
         </Box>
       </Flex>
