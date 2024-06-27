@@ -45,14 +45,14 @@ function Homepage() {
           </Text>
 
           <WeOffer />
-          <Testt />
-          <MV />
-
+          <Testt />   
           <Testt2 />
         </Box>
         {/* Explore cards section */}
 
         <Unique />
+        <MV />
+
 
         {/* parallax */}
         <HomeParallax />
