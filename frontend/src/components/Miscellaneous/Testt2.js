@@ -79,28 +79,15 @@ const Testt = () => {
           </Box>
         </Box>
 
-        <Box flex="1" p="4" order={{ base: -1, md: 0 }}>
-          <Heading
-            as="h2"
-            size="lg"
-            mb="4"
-            color="blue.700"
-            textAlign={{ base: "center", md: "left" }}
-          >
-            Ready to buy a property?
-          </Heading>
-          <Text
-            fontSize="md"
-            color="gray.600"
-            textAlign={{ base: "center", md: "left" }}
-            lineHeight="taller"
-          >
-            Schedule a free property evaluation with our expert team. We will
-            visit your property, provide you with a realistic market value, and
-            explain our process. You can make an informed decision about working
-            with us to sell your property.
-          </Text>
-        </Box>
+      
+        <Box flex="1" p="4">
+  <Heading as="h2" size="lg" mb="4" color="blue.700">
+    Ready to buy a property?
+  </Heading>
+  <Text fontSize="md" color="gray.600" lineHeight="taller">
+    Schedule a free property evaluation with our expert team. We will visit your property, provide you with a realistic market value, and explain our process. You can make an informed decision about working with us to sell your property.
+  </Text>
+</Box>
       </Flex>
     </Flex>
   );
