@@ -40,20 +40,23 @@ const Testt = () => {
             explain our process. You can make an informed decision about working
             with us to sell your property.
           </Text>
-          <Box mt={8} bgColor="red">
-          <Link mt={4} href="#contactUs" style={{ textDecoration: "none" }}>
-            <Button
-              bg="blue.700"
-              color="white"
-              _hover={{ bg: "white", color:"blue.700" }}
-              _active={{ bg: "transparent" }}
-              _focus={{ boxShadow: "xl" }}
-              cursor="pointer"
-            >
-              Book Slot
-            </Button>
-          </Link>
+
+          <Box mt={8}>
+            <Link mt={4} href="#contactUs" style={{ textDecoration: "none" }}>
+              <Button
+                bg="blue.700"
+                color="white"
+                _hover={{ bg: "white", color:"blue.700", border: "2px solid blue.700"}}
+                _active={{ bg: "transparent" }}
+                _focus={{ boxShadow: "xl" }}
+                cursor="pointer"
+                fontSize='lg'
+              >
+                Book Slot
+              </Button>
+            </Link>
           </Box>
+
         </Box>
         <Box
           flex="2"

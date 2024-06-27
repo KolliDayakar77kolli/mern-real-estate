@@ -98,20 +98,23 @@ const Testt = () => {
             expert guidance, ensuring a seamless and rewarding investment
             experience.
           </Text>
-          <Box mt={8} bgColor="red">
-            <Link href="#categories" style={{ textDecoration: "none" }}>
+
+          <Box mt={8}>
+            <Link mt={4} href="#categories" style={{ textDecoration: "none" }}>
               <Button
                 bg="blue.700"
                 color="white"
-                _hover={{ bg: "white", color:"blue.700" }}
+                _hover={{ bg: "white", color:"blue.700", border: "2px solid blue.700"}}
                 _active={{ bg: "transparent" }}
                 _focus={{ boxShadow: "xl" }}
                 cursor="pointer"
+                fontSize='lg'
               >
                 Buy Now
               </Button>
             </Link>
           </Box>
+
         </Box>
       </Flex>
     </Flex>
