@@ -5,11 +5,12 @@ import {
   Image,
   Button,
   Box,
+  Heading,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const Unique = () => {
+const Welcome = () => {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
   const minHeight = useBreakpointValue({ base: "300px", md: "300px" });
 
@@ -25,14 +26,10 @@ const Unique = () => {
       minH={minHeight}
     >
       <Flex flex="1" direction="column" p={8} minH={minHeight}>
-        <Text
-          fontSize="12.5px"
-          color="#5ea51d"
-          fontFamily="'Nunito Sans', Arial, sans-serif"
-          fontWeight="800"
-        >
-          Our Special
-        </Text>
+        <Heading as="h1" size="2xl" color="#5ea51d" mb={4} fontFamily="'Nunito Sans', Arial, sans-serif" >
+          Welcome to Our Site
+        </Heading>
+    
         <Text
           fontSize={["16px", "24px", "30px", "36px"]}
           color="#000000CC"
