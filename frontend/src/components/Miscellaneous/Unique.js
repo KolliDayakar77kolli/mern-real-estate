@@ -32,8 +32,8 @@ const Unique = () => {
           alt="Real Estate"
           // boxSize="400px"
           w="100%"
-          h="400px"
-          objectFit="contain"
+          h="auto"
+          objectFit="cover"
           borderRadius="md"
         />
       </Flex>
