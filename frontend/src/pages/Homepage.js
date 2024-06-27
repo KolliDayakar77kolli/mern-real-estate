@@ -12,6 +12,7 @@ import Map from "../components/Miscellaneous/Map";
 import Testimonials from "../components/Miscellaneous/Testimonials";
 import Unique from "../components/Miscellaneous/Unique";
 import MV from "../components/Miscellaneous/MV";
+import Welcome from "../components/Miscellaneous/Welcome";
 
 function Homepage() {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
@@ -21,6 +22,8 @@ function Homepage() {
       <div className="Homepage">
         <Header />
         <Main />
+
+        <Welcome />
 
         {/* Explore cards section */}
         <Box id="categories" marginTop="150px" p={4} mx={{ base: 4, md: 8 }}>
