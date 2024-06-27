@@ -44,7 +44,7 @@ const Wel = () => {
         alt="owner pic"
         width="100%"
         height="100%"
-        objectFit="cover" // Ensure the image covers the entire box without being cut off
+        objectFit="contain" // Ensure the image covers the entire box without being cut off
       />
     </Box>
   </Flex>
