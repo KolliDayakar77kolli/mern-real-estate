@@ -1,7 +1,16 @@
-import { Box, Flex, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  Link,
+  Button,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 
 const Testt = () => {
-  const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
+  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
 
   return (
     <Flex
@@ -38,7 +47,7 @@ const Testt = () => {
             md: "polygon(0 0, 100% 0%, 87% 100%, 20% 95%)",
           }}
           transformStyle="preserve-3d"
-            transform={{
+          transform={{
             base:
               flexDirection === "column"
                 ? "perspective(800px) rotateX(0deg)"
@@ -74,20 +83,34 @@ const Testt = () => {
             textAlign="center"
           >
             <Heading as="h3" size="md" mb="2">
-              "Sell smarter - sell faster"
+              "Explore top-tier properties"
             </Heading>
           </Box>
         </Box>
 
-      
         <Box flex="1" p="4">
-  <Heading as="h2" size="lg" mb="4" color="blue.700">
-    Ready to buy a property?
-  </Heading>
-  <Text fontSize="md" color="gray.600" lineHeight="taller">
-    Schedule a free property evaluation with our expert team. We will visit your property, provide you with a realistic market value, and explain our process. You can make an informed decision about working with us to sell your property.
-  </Text>
-</Box>
+          <Heading as="h2" size="lg" mb="4" color="blue.700">
+            Ready to buy a property?
+          </Heading>
+          <Text fontSize="md" color="gray.600" lineHeight="taller">
+            Discover exceptional properties suited to your goals. Explore a
+            premier selection of plots, lands, and commercial buildings with our
+            expert guidance, ensuring a seamless and rewarding investment
+            experience.
+          </Text>
+
+          <Link href="#categories" style={{ textDecoration: 'none' }}>
+                      <Button
+                        bg="green"
+                        _hover={{ bg: "blue" }}
+                        _active={{ bg: "transparent" }}
+                        _focus={{ boxShadow: "none" }}
+                        cursor="pointer"
+                      >
+                       Buy Now
+                      </Button>
+                </Link>
+        </Box>
       </Flex>
     </Flex>
   );

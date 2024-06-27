@@ -1,7 +1,16 @@
-import { Box, Flex, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  Link,
+  Button,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 
 const Testt = () => {
-  const flexDirection = useBreakpointValue({ base: 'column', md: 'row' });
+  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
 
   return (
     <Flex
@@ -10,7 +19,6 @@ const Testt = () => {
       minHeight="100vh"
       // bgGradient="linear(to-tr, #00c6ff, #0072ff)"
       bg="white"
-
     >
       <Flex
         maxW="100%"
@@ -22,28 +30,34 @@ const Testt = () => {
         flexDirection={flexDirection}
         flexWrap="wrap"
       >
-        {/* <Box flex="1" p="4">
+        <Box flex="1" p="4">
           <Heading as="h2" size="lg" mb="4" color="blue.700">
-          Contact us to sell your property?
+            Contact us to sell your property
           </Heading>
-          <Text fontSize="md" color="gray.600">
-          Schedule a free property evaluation with our expert team. We will visit your property, provide you with a realistic market value, and explain our process. You can make an informed decision about working with us to sell your property.
+          <Text fontSize="md" color="gray.600" lineHeight="taller">
+            Schedule a free property evaluation with our expert team. We will
+            visit your property, provide you with a realistic market value, and
+            explain our process. You can make an informed decision about working
+            with us to sell your property.
           </Text>
-        </Box> */}
 
-<Box flex="1" p="4">
-  <Heading as="h2" size="lg" mb="4" color="blue.700">
-    Contact us to sell your property
-  </Heading>
-  <Text fontSize="md" color="gray.600" lineHeight="taller">
-    Schedule a free property evaluation with our expert team. We will visit your property, provide you with a realistic market value, and explain our process. You can make an informed decision about working with us to sell your property.
-  </Text>
-</Box>
+          <Link href="#contactUs" style={{ textDecoration: 'none' }}>
+                      <Button
+                        bg="green"
+                        _hover={{ bg: "blue" }}
+                        _active={{ bg: "transparent" }}
+                        _focus={{ boxShadow: "none" }}
+                        cursor="pointer"
+                      >
+                       Book Slot
+                      </Button>
+                </Link>
+        </Box>
         <Box
           flex="2"
           position="relative"
           height="100%"
-          marginTop={{ base: '30px', md: '50px' }}
+          marginTop={{ base: "30px", md: "50px" }}
           marginBottom="30px"
           width="100%"
           overflow="hidden"
