@@ -8,10 +8,12 @@ const Unique = () => {
       direction={{ base: "column", md: "row" }}
       alignItems="center"
       justifyContent="center"
-      width="100%"
+      width="90%"
       height={{ base: "auto", md: "500px" }}
       p={4}
-      bg="white"
+      bg="grey.700"
+      boxShadow="xl"
+      
     >
       <Box
         width={{ base: "100%", md: "50%" }}
