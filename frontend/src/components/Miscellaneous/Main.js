@@ -146,8 +146,8 @@ const Main = () => {
 
                 <Flex
                   direction={{ base: "column", md: "row" }} // Vertically stacked on small screens, horizontally aligned on medium and larger screens
-                  justify={{ base: "flex-start", md: "center" }} // Align items to the start on small screens, center on medium and larger screens
-                  alignItems={{ base: "flex-start", md: "center" }} // Align items to the start on small screens, center on medium and larger screens
+                  justify={{ base: "center", md: "flex-start" }} // Align items to the start on small screens, center on medium and larger screens
+                  alignItems={{ base: "center", md: "flex-start" }} // Align items to the start on small screens, center on medium and larger screens
                   mt={{ base: 4, md: 0 }} // Margin top added to adjust spacing on smaller screens
                 >
                   <Link href="#categories" style={{ textDecoration: "none" }}>
@@ -173,6 +173,7 @@ const Main = () => {
                     style={{
                       textDecoration: "none",
                       marginLeft: { base: 0, md: 4 },
+                      marginTop: {base: 3, md: -3},
                     }}
                   >
                     <Button
