@@ -113,23 +113,6 @@ const Main = () => {
                   help of our expert agents!
                 </Text>
 
-                {/* <Button
-                  onClick={() => alert("Explore our properties")}
-                  bg="transparent"
-                  _hover={{ bg: "transparent" }}
-                  _active={{ bg: "transparent" }}
-                  _focus={{ boxShadow: "none" }}
-                  cursor="pointer"
-                  animation={`${buttonSlideIn} 2s ease-in-out`}
-                >
-                  <Lottie
-                    animationData={animationData}
-                    autoplay
-                    loop
-                    style={{ width: 200, height: 200 }}
-                  />
-                </Button> */}
-
                 <Link href="#categories" style={{ textDecoration: 'none' }}>
                       <Button
                         bg="transparent"
@@ -146,6 +129,26 @@ const Main = () => {
                           style={{ width: 200, height: 200 }}
                         />
                       </Button>
+                </Link>
+
+                <Link href="#about" style={{ textDecoration: 'none' }}>
+                  <Button
+                       bg="teal"
+                       _hover={{ bg: "transparent" }}
+                       _active={{ bg: "transparent" }}
+                       cursor="pointer"
+                       color="black"
+                       _hover={{
+                         bg: "white",
+                         color: "blue.700",
+                         border: "1px solid",
+                         borderColor: "blue.700",
+                       }}
+                       _focus={{ boxShadow: "xl" }}
+                       fontSize="lg"
+                  >
+                    Explore More
+                  </Button>
                 </Link>
               </Box>
             </Box>
