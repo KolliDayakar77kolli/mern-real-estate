@@ -1,12 +1,10 @@
-// src/Map.js
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Box } from '@chakra-ui/react';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import iconRed from '../public/marker-icon-red.png'; // Path to your red marker icon
 
-// Fix default icon issue with Leaflet
+// Fix for default icon URLs
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -14,18 +12,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
-const ratnaRealEstatePosition = [16.435285, 80.566099]; // Updated coordinates for Ratna Real Estate
-
-// Custom red marker icon
-const redIcon = new L.Icon({
-  iconUrl: iconRed,
-  iconRetinaUrl: iconRed,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-  shadowSize: [41, 41],
-});
+const ratnaRealEstatePosition = [16.435285, 80.566099];
 
 const Map = () => {
   return (
@@ -35,7 +22,7 @@ const Map = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Marker position={ratnaRealEstatePosition} icon={redIcon}>
+        <Marker position={ratnaRealEstatePosition}>
           <Popup>
             Ratna Real Estate
           </Popup>
