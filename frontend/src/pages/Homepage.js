@@ -26,6 +26,8 @@ function Homepage() {
         <Box mx="auto" w="100%" pt="70px" pb="100px" bg="white">
           <Wel />
           <MV />
+          <Unique />
+
         </Box>
 
         {/* Explore cards section */}
@@ -56,7 +58,6 @@ function Homepage() {
         </Box>
         {/* Explore cards section */}
 
-        <Unique />
 
 
         {/* parallax */}
