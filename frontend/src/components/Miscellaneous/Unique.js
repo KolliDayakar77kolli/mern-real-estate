@@ -43,17 +43,12 @@ const Unique = () => {
             fontFamily="'Nunito Sans', Arial, sans-serif"
             fontWeight="800"
           >
-            Our Special
+            OUR SPECIAL
           </Text>
-          <Text
-            fontSize={["16px", "24px", "30px", "36px"]}
-            color="#000000CC"
-            fontFamily="'Nunito Sans', Arial, sans-serif"
-            mb={6}
-          >
+      
+          <Heading as="h2" size="lg" mb="4" color="#000000CC" fontFamily="'Nunito Sans', Arial, sans-serif">
             What makes us unique from others
-          </Text>
-
+          </Heading>
           <Box>
             <Text fontSize="lg" color="gray.600" mb={8}>
               <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
