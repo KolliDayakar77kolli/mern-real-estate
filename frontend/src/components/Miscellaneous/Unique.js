@@ -11,30 +11,19 @@ const Unique = () => {
       width="100%"
       height={{ base: "auto", md: "500px" }}
       p={4}
+      bg="white"
     >
       <Box
         width={{ base: "100%", md: "50%" }}
         height={{ base: "300px", md: "100%" }}
-        position="relative"
       >
         <Image
-          src="Owner_Big_Photo.jpg"
-          alt="owner pic"
+          src="Unique_lens.jpg"
+          alt="Uniqness image"
           width="100%"
           height="100%"
           objectFit="fill"
         />
-        <Box
-          position="absolute"
-          bottom={2}
-          right={2}
-          backgroundColor="rgba(0, 0, 0, 0.6)"
-          color="white"
-          borderRadius="md"
-          p={2}
-        >
-          <Text fontWeight="bold">Galla Srinivas Rao</Text>
-        </Box>
       </Box>
 
       <Box

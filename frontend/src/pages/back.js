@@ -1,8 +1,8 @@
 
 
 
-
-
+// https://www.google.com/search?q=pixabay%20bussiness%20professional%20qualities%20images&hl=en&tbs=rimg:CWSwujvwRSusYY9eR3gW2l4ysgIAwAIA2AIA4AIA&udm=2&sa=X&ved=0CBsQuIIBahcKEwjQzejr1P2GAxUAAAAAHQAAAAAQDQ&biw=1366&bih=641&dpr=1#vhid=Gnu_yBiOFhyqIM&vssid=mosaic
+// unique images link
 
 
 
