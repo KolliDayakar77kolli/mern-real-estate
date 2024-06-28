@@ -106,49 +106,11 @@ const Main = () => {
                   help of our expert agents!
                 </Text>
 
-                {/* <Link href="#categories" style={{ textDecoration: 'none' }}>
-                      <Button
-                        bg="transparent"
-                        _hover={{ bg: "transparent" }}
-                        _active={{ bg: "transparent" }}
-                        _focus={{ boxShadow: "none" }}
-                        cursor="pointer"
-                        animation={`${buttonSlideIn} 2s ease-in-out`}
-                      >
-                        <Lottie
-                          animationData={animationData}
-                          autoplay
-                          loop
-                          style={{ width: 200, height: 200 }}
-                        />
-                      </Button>
-                </Link>
-
-                <Link href="#about" style={{ textDecoration: 'none' }}>
-                  <Button
-                       bg="teal.500"
-                       _active={{ bg: "transparent" }}
-                       cursor="pointer"
-                       color="black"
-                       _hover={{
-                         bg: "white",
-                         color: "blue.700",
-                         border: "1px solid",
-                         borderColor: "blue.700",
-                       }}
-                       _focus={{ boxShadow: "xl" }}
-                       fontSize="lg"
-                       p={4}
-                  >
-                    Explore More
-                  </Button>
-                </Link> */}
-
                 <Flex
-                  direction={{ base: "column", md: "row" }} // Vertically stacked on small screens, horizontally aligned on medium and larger screens
-                  justify={{ base: "center", md: "flex-start" }} // Align items to the start on small screens, center on medium and larger screens
-                  alignItems={{ base: "center", md: "flex-start" }} // Align items to the start on small screens, center on medium and larger screens
-                  mt={{ base: 4, md: 0 }} // Margin top added to adjust spacing on smaller screens
+                  direction={{ base: "column", md: "row" }} 
+                  justify={{ base: "center", md: "flex-start" }}
+                  alignItems={{ base: "center", md: "flex-start" }} 
+                  mt={{ base: 4, md: 0 }} 
                 >
                   <Link href="#categories" style={{ textDecoration: "none" }}>
                     <Button
