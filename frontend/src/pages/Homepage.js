@@ -12,7 +12,7 @@ import Map from "../components/Miscellaneous/Map";
 import Testimonials from "../components/Miscellaneous/Testimonials";
 import Unique from "../components/Miscellaneous/Unique";
 import MV from "../components/Miscellaneous/MV";
-import Wel from "../components/Miscellaneous/Wel";
+import Welcome from "../components/Miscellaneous/Welcome";
 
 function Homepage() {
   const flexDirection = useBreakpointValue({ base: "column", md: "row" });
@@ -24,7 +24,7 @@ function Homepage() {
         <Main />
 
         <Box mx="auto" w="100%" pt="70px" pb="100px" bg="white">
-          <Wel />
+          <Welcome />
           <MV />
           <Unique />
 

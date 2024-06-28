@@ -448,6 +448,8 @@ const AdminPage = () => {
                         overflow="hidden"
                         borderRadius="lg"
                         height="auto"
+                        bg="white"
+                        boxShadow="lg"
                       >
                         <Carousel
                           showThumbs={false}
