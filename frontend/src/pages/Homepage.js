@@ -29,7 +29,7 @@ function Homepage() {
         </Box>
 
         {/* Explore cards section */}
-        <Box id="categories" marginTop="150px" p={4} mx={{ base: 4, md: 8 }}>
+        <Box id="categories" marginTop="100px" p={4} mx={{ base: 4, md: 8 }}>
           <Text
             fontSize="12.5px"
             color="#5ea51d"
