@@ -23,7 +23,10 @@ function Homepage() {
         <Header />
         <Main />
 
-        <Wel />
+        <Box mx="auto" w="100%" bg="white">
+          <Wel />
+          <MV />
+        </Box>
 
         {/* Explore cards section */}
         <Box id="categories" marginTop="150px" p={4} mx={{ base: 4, md: 8 }}>
@@ -54,7 +57,6 @@ function Homepage() {
         {/* Explore cards section */}
 
         <Unique />
-        <MV />
 
 
         {/* parallax */}
