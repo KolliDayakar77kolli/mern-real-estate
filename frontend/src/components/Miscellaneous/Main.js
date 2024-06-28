@@ -133,7 +133,7 @@ const Main = () => {
 
                 <Link href="#about" style={{ textDecoration: 'none' }}>
                   <Button
-                       bg="teal"
+                       bg="teal.500"
                        _active={{ bg: "transparent" }}
                        cursor="pointer"
                        color="black"
@@ -145,6 +145,7 @@ const Main = () => {
                        }}
                        _focus={{ boxShadow: "xl" }}
                        fontSize="lg"
+                       p={4}
                   >
                     Explore More
                   </Button>
