@@ -134,7 +134,6 @@ const Main = () => {
                 <Link href="#about" style={{ textDecoration: 'none' }}>
                   <Button
                        bg="teal"
-                       _hover={{ bg: "transparent" }}
                        _active={{ bg: "transparent" }}
                        cursor="pointer"
                        color="black"
