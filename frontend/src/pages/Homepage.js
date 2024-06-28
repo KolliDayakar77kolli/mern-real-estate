@@ -23,7 +23,7 @@ function Homepage() {
         <Header />
         <Main />
 
-        <Box mx="auto" w="100%" bg="white">
+        <Box mx="auto" w="100%" pt="70px" pb="70px" bg="white">
           <Wel />
           <MV />
         </Box>
