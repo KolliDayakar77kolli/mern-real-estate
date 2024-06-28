@@ -117,14 +117,14 @@ function AdminHeader() {
                 <NavLink to="/profile" onClose={onClose}>
                   Profile
                 </NavLink>
-                <NavLink to="#" onClick={handleLogout} onClose={onClose}>
-                  <Button
-                    fontWeight="bold"
-                    _hover={{ textDecoration: "none" }}
-                  >
-                    Logout
-                  </Button>
-                </NavLink>
+                <Button
+                  fontWeight="bold"
+                  _hover={{ textDecoration: "none" }}
+                  onClick={handleLogout}
+                  color="white"
+                >
+                  Logout
+                </Button>
               </VStack>
             </DrawerBody>
           </DrawerContent>
