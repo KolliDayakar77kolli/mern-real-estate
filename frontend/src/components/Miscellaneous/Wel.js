@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Heading,Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Heading, Text } from "@chakra-ui/react";
 
 const Wel = () => {
   return (
@@ -34,7 +34,7 @@ const Wel = () => {
             as="h1"
             size="3xl"
             color="#081637"
-            mb={4}
+            mb={8}
             fontFamily="'Nunito Sans', Arial, sans-serif"
           >
             Welcome to Ratna Real Estate
@@ -44,7 +44,6 @@ const Wel = () => {
             <Text
               as="span"
               fontSize="2em"
-              
               float="left"
               lineHeight="0.8"
               mr="0.1em"
@@ -53,12 +52,19 @@ const Wel = () => {
             >
               I’
             </Text>
-            <Text as="span"  mt={2} fontSize="md" color="gray.600" lineHeight="taller" textAlign="justify">
+            <Text
+              as="span"
+              mt={2}
+              fontSize="md"
+              color="gray.600"
+              lineHeight="taller"
+              textAlign="justify"
+            >
               m Galla Srinivas Rao, the founder and principal broker of Ratna
-              Real Estate. With over 10 years in the real estate industry, I have
-              cultivated a reputation for excellence, integrity, and
-              client-focused service. Our mission is to provide unparalleled real
-              estate solutions tailored to each client’s unique needs and
+              Real Estate. With over 10 years in the real estate industry, I
+              have cultivated a reputation for excellence, integrity, and
+              client-focused service. Our mission is to provide unparalleled
+              real estate solutions tailored to each client’s unique needs and
               aspirations.
             </Text>
           </Box>
@@ -66,28 +72,28 @@ const Wel = () => {
       </Box>
 
       <Box
-      width={{ base: "100%", md: "50%" }}
-      height="100%"
-      position="relative"
-    >
-      <Image
-        src="Owner_Big_Photo.jpg"
-        alt="owner pic"
-        width="100%"
+        width={{ base: "100%", md: "50%" }}
         height="100%"
-        objectFit="fill"
-      />
-      <Box
-        position="absolute"
-        bottom={0}
-        right={0}
-        backgroundColor="rgba(0, 0, 0, 0.6)"
-        color="white"
-        p={2}
+        position="relative"
       >
-        <Text>Galla Srinivas Rao</Text>
+        <Image
+          src="Owner_Big_Photo.jpg"
+          alt="owner pic"
+          width="100%"
+          height="100%"
+          objectFit="fill"
+        />
+        <Box
+          position="absolute"
+          bottom={0}
+          right={0}
+          backgroundColor="rgba(0, 0, 0, 0.6)"
+          color="white"
+          p={2}
+        >
+          <Text>Galla Srinivas Rao</Text>
+        </Box>
       </Box>
-    </Box>
     </Flex>
   );
 };
