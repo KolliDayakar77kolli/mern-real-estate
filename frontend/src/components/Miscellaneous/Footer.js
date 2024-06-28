@@ -47,10 +47,10 @@ const Footer = () => {
 
             {/* Social Media Icons */}
             <Flex>
-              <Link href="#" mr={2} sx={linkStyles}>
+              <Link href="tel:9701333112" mr={2} sx={linkStyles}>
                 <Icon as={PhoneIcon} boxSize={6} />
               </Link>
-              <Link href="#" mr={2} sx={linkStyles}>
+              <Link href="mailto:ratnarealestateinfo@gmail.com" mr={2} sx={linkStyles}>
                 <Icon as={EmailIcon} boxSize={6} />
               </Link>
               <Link href="#" mr={2} sx={linkStyles}>
@@ -66,16 +66,16 @@ const Footer = () => {
             <Heading fontSize="lg" color="#5ea51d">
               Quick Links
             </Heading>
-            <Link href="#" sx={linkStyles}>
+            <Link href="/" sx={linkStyles}>
               Home
             </Link>
-            <Link href="#" sx={linkStyles}>
+            <Link href="#categories" sx={linkStyles}>
               Categories
             </Link>
-            <Link href="#" sx={linkStyles}>
+            <Link href="#about" sx={linkStyles}>
               About Us
             </Link>
-            <Link href="#" sx={linkStyles}>
+            <Link href="#contact" sx={linkStyles}>
               Contact Us
             </Link>
           </VStack>
@@ -84,17 +84,17 @@ const Footer = () => {
             <Heading fontSize="lg" color="#5ea51d">
               Categories
             </Heading>
-            <Link href="#" sx={linkStyles}>
+            <Link href="https://www.ratnarealestate.com/posts?type=Amaravathi" sx={linkStyles}>
               Amaravathi Plots/Lands
             </Link>
-            <Link href="#" sx={linkStyles}>
+            <Link href="https://www.ratnarealestate.com/posts?type=Andhra" sx={linkStyles}>
               Andhra Plots/Lands
             </Link>
-            <Link href="#" sx={linkStyles}>
+            <Link href="https://www.ratnarealestate.com/posts?type=Telangana" sx={linkStyles}>
               Telangana Plots/Lands
             </Link>
             <Link
-              href="#"
+              href="https://www.ratnarealestate.com/posts?type=Commercial"
               sx={linkStyles}
               maxW={{ base: "100%", md: "250px" }}
               textAlign="center"

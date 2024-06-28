@@ -61,7 +61,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <Heading id="contactUs" textAlign="center" fontFamily="'Nunito Sans', Arial, sans-serif">Contact Form</Heading>
+      <Heading id="contact" textAlign="center" fontFamily="'Nunito Sans', Arial, sans-serif">Contact Form</Heading>
       <Text color="#5ea51d" fontWeight="800" fontFamily="'Nunito Sans', Arial, sans-serif" textAlign="center">
         Simply fill the form we will get in touch with you soon...
       </Text>

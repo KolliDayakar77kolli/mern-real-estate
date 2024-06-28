@@ -11,6 +11,7 @@ const Wel = () => {
       width="100%"
       height={{ base: "auto", md: "500px" }}
       p={4}
+      id="about"
     >
       <Box
         width={{ base: "100%", md: "50%" }}

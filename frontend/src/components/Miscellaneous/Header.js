@@ -35,7 +35,7 @@ const NavLinks = ({ onClose, animate }) => {
   const links = [
     { href: "/", label: "Home" },
     { href: "#categories", label: "Categories" },
-    { href: "/about", label: "About Us" },
+    { href: "#about", label: "About Us" },
     { href: "#contact", label: "Contact Us" },
     { href: "tel:9701333112", label: "9701333112" }, 
     { href: "mailto:ratnarealestateinfo@gmail.com", label: "ratnarealestateinfo@gmail.com" }, 
@@ -175,7 +175,7 @@ function Header() {
           <DrawerOverlay zIndex="10000">
             <DrawerContent paddingTop="20px" bg="#081637">
               <DrawerCloseButton paddingTop="40px" color="#ffffff" />
-              <DrawerHeader color="#ffffff">Menu</DrawerHeader>
+              <DrawerHeader color="#5ea51d">Menu</DrawerHeader>
               <DrawerBody mt="15">
                 <VStack align="start" spacing={7}>
                   <NavLinks onClose={onClose} animate={isDrawer} />
