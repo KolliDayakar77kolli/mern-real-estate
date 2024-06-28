@@ -38,7 +38,7 @@ const AdminPage = () => {
   const [plotLocation, setPlotLocation] = useState('');
   const [pics, setPics] = useState([]);
   const [highlights, setHighlights] = useState(['']);
-  const [type, setType] = useState('residential');
+  const [type, setType] = useState('Amaravathi');
   const [currentPostId, setCurrentPostId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isPicLoading, setIsPicLoading] = useState(false);

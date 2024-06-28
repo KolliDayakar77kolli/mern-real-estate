@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Flex,
@@ -14,18 +14,18 @@ import {
   DrawerCloseButton,
   VStack,
   Button,
-  Image
-} from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { Link as RouterLink , useHistory} from 'react-router-dom';
+  Image,
+} from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { Link as RouterLink, useHistory } from "react-router-dom";
 
 function AdminHeader() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const history = useHistory();
 
   const handleLogout = () => {
-    localStorage.removeItem('userInfo');
-    history.push('/login');
+    localStorage.removeItem("userInfo");
+    history.push("/login");
   };
   return (
     <Box>
@@ -117,14 +117,14 @@ function AdminHeader() {
                 <NavLink to="/profile" onClose={onClose}>
                   Profile
                 </NavLink>
-                <Button
-                  fontWeight="bold"
-                  _hover={{ textDecoration: "none" }}
-                  display={{ base: "none", md: "block" }}
-                  onClick={handleLogout}
-                >
-                  Logout
-                </Button>
+                <NavLink to="#" onClick={handleLogout} onClose={onClose}>
+                  <Button
+                    fontWeight="bold"
+                    _hover={{ textDecoration: "none" }}
+                  >
+                    Logout
+                  </Button>
+                </NavLink>
               </VStack>
             </DrawerBody>
           </DrawerContent>
@@ -140,7 +140,7 @@ const NavLink = ({ to, onClose, children }) => (
     to={to}
     fontWeight="bold"
     onClick={onClose}
-    _hover={{ textDecoration: 'none' }}
+    _hover={{ textDecoration: "none" }}
     p={2}
   >
     {children}
