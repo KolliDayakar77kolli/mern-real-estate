@@ -121,7 +121,7 @@ function AdminHeader() {
                   fontWeight="bold"
                   _hover={{ textDecoration: "none" }}
                   onClick={handleLogout}
-                  color="white"
+                  color="black"
                 >
                   Logout
                 </Button>

@@ -46,17 +46,21 @@ const Testt = () => {
               <Button
                 bg="blue.700"
                 color="white"
-                _hover={{ bg: "grey.400", color:"blue.700"}}
+                _hover={{
+                  bg: "white",
+                  color: "blue.700",
+                  border: "1px solid",
+                  borderColor: "blue.700",
+                }}
                 _active={{ bg: "transparent" }}
                 _focus={{ boxShadow: "xl" }}
                 cursor="pointer"
-                fontSize='lg'
+                fontSize="lg"
               >
                 Book Slot
               </Button>
             </Link>
           </Box>
-
         </Box>
         <Box
           flex="2"
