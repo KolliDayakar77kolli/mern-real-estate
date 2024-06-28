@@ -78,7 +78,6 @@ function Posts() {
   }, [searchQuery, allPosts]);
 
   useEffect(() => {
-    // Scroll to the top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
@@ -137,7 +136,6 @@ function Posts() {
               )
               .map((post, postIndex) => (
                 <Flex
-                  data-aos="fade-right"
                   key={postIndex}
                   direction={{ base: "column", md: "row" }}
                   bg="#ffffff"
@@ -147,10 +145,115 @@ function Posts() {
                   mx="auto"
                   mb={4}
                   position="relative"
-                  maxH="auto"
                   boxShadow="0px 8px 16px rgba(0, 0, 0, 0.2)"
                 >
-                  {/* Carousel and post details */}
+                  <Box
+                    flex={{ base: "100%", md: "50%" }}
+                    overflow="hidden"
+                    position="relative"
+                    textAlign="center"
+                    onClick={() => setSelectedImageIndex(prev => ({ ...prev, [postIndex]: 0 }))}
+                  >
+                    <Carousel
+                      showThumbs={false}
+                      showStatus={false}
+                      infiniteLoop
+                      selectedItem={selectedImageIndex[postIndex]}
+                      interval={2000}
+                    >
+                      {post.pics &&
+                        post.pics.map((pic, picIndex) => (
+                          <Box
+                            key={picIndex}
+                            position="relative"
+                            textAlign="center"
+                            border={
+                              picIndex === selectedImageIndex[postIndex]
+                                ? "1px solid black"
+                                : "none"
+                            }
+                            borderRadius="md"
+                            overflow="hidden"
+                            onClick={() => setSelectedImageIndex(prev => ({ ...prev, [postIndex]: picIndex }))}
+                            width="100%"
+                            height={{ base: "200px", md: "300px", lg: "380px" }}
+                          >
+                            <Image
+                              src={pic}
+                              alt={`Post Image ${picIndex}`}
+                              objectFit="cover"
+                              width="100%"
+                              height="100%"
+                            />
+                          </Box>
+                        ))}
+                    </Carousel>
+                  </Box>
+
+                  <Box
+                    flex={{ base: "100%", md: "50%" }}
+                    color="black"
+                    p={4}
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="space-between"
+                    zIndex={2}
+                    mt={{ base: 4, md: 0 }}
+                  >
+                    <Heading
+                      as="h3"
+                      fontSize="xl"
+                      fontWeight="bold"
+                      color="gray.800"
+                      textAlign="center"
+                      mb={2}
+                    >
+                      {post.title}
+                    </Heading>
+                    <Tag colorScheme="orange" mb={2} textAlign="center">
+                      {post.content}
+                    </Tag>
+
+                    <Grid templateColumns="1fr 1fr" gap={6} mt={4}>
+                      <Box>
+                        <Text>
+                          <strong>Plot Area:</strong> {post.plotArea.value} {post.plotArea.unit}
+                        </Text>
+                      </Box>
+                      <Box>
+                        <Text>
+                          <strong>Plot Price:</strong> {post.plotPrice}
+                        </Text>
+                      </Box>
+                      <Box>
+                        <Text>
+                          <strong>Plot Location:</strong> {post.plotLocation}
+                        </Text>
+                      </Box>
+                      <Box>
+                        <Text>
+                          <strong>Plot Title:</strong> {post.title}
+                        </Text>
+                      </Box>
+                    </Grid>
+
+                    <Box mt={4} mx={6} textAlign="center">
+                      <Text fontWeight="bold" textAlign="start">
+                        Highlights:
+                      </Text>
+                      <UnorderedList ml={4} listStylePosition="inside">
+                        {post.highlights &&
+                          post.highlights.map((highlight, highlightIndex) => (
+                            <ListItem key={highlightIndex} display="flex" alignItems="center">
+                              <Box as="span" pr={2}>
+                                <Text as="span">&#8226;</Text>
+                              </Box>
+                              <Text as="span">{highlight}</Text>
+                            </ListItem>
+                          ))}
+                      </UnorderedList>
+                    </Box>
+                  </Box>
                 </Flex>
               ))
           )}
@@ -187,13 +290,13 @@ function Posts() {
           </Button>
         </Stack>
 
-        {/* Contact and Map section */}
         <Flex
           direction={flexDirection}
           align="center"
           justify="center"
           gap={4}
           p={4}
+          mt={8}
         >
           <Box
             bg="white"
@@ -214,7 +317,6 @@ function Posts() {
             <Map />
           </Box>
         </Flex>
-        {/* Contact and Map section */}
       </Box>
       <Footer />
     </ChakraProvider>
@@ -222,7 +324,6 @@ function Posts() {
 }
 
 export default Posts;
-
 
 
 
