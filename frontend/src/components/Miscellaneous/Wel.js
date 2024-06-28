@@ -43,7 +43,8 @@ const Wel = () => {
           <Box>
             <Text
               as="span"
-              fontSize="3em"
+              fontSize="2em"
+              
               float="left"
               lineHeight="0.8"
               mr="0.1em"
