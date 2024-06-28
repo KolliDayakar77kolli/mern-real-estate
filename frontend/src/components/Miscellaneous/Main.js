@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  Box,
-  Text,
-  Heading,
-  Button,
-  keyframes,
-  Link,
-} from "@chakra-ui/react";
+import { Box, Text, Heading, Button, keyframes, Link,Flex } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./../../index.css";
 import Lottie from "lottie-react";
 import animationData from "../../lottie animations/Explore More.json";
@@ -113,7 +106,7 @@ const Main = () => {
                   help of our expert agents!
                 </Text>
 
-                <Link href="#categories" style={{ textDecoration: 'none' }}>
+                {/* <Link href="#categories" style={{ textDecoration: 'none' }}>
                       <Button
                         bg="transparent"
                         _hover={{ bg: "transparent" }}
@@ -149,7 +142,58 @@ const Main = () => {
                   >
                     Explore More
                   </Button>
-                </Link>
+                </Link> */}
+
+                <Flex
+                  direction={{ base: "column", md: "row" }} // Vertically stacked on small screens, horizontally aligned on medium and larger screens
+                  justify={{ base: "flex-start", md: "center" }} // Align items to the start on small screens, center on medium and larger screens
+                  alignItems={{ base: "flex-start", md: "center" }} // Align items to the start on small screens, center on medium and larger screens
+                  mt={{ base: 4, md: 0 }} // Margin top added to adjust spacing on smaller screens
+                >
+                  <Link href="#categories" style={{ textDecoration: "none" }}>
+                    <Button
+                      bg="transparent"
+                      _hover={{ bg: "transparent" }}
+                      _active={{ bg: "transparent" }}
+                      _focus={{ boxShadow: "none" }}
+                      cursor="pointer"
+                      animation={`${buttonSlideIn} 2s ease-in-out`}
+                    >
+                      <Lottie
+                        animationData={animationData}
+                        autoplay
+                        loop
+                        style={{ width: 200, height: 200 }}
+                      />
+                    </Button>
+                  </Link>
+
+                  <Link
+                    href="#about"
+                    style={{
+                      textDecoration: "none",
+                      marginLeft: { base: 0, md: 4 },
+                    }}
+                  >
+                    <Button
+                      bg="teal.500"
+                      _active={{ bg: "transparent" }}
+                      cursor="pointer"
+                      color="black"
+                      _hover={{
+                        bg: "white",
+                        color: "blue.700",
+                        border: "1px solid",
+                        borderColor: "blue.700",
+                      }}
+                      _focus={{ boxShadow: "xl" }}
+                      fontSize="lg"
+                      p={4}
+                    >
+                      Explore More
+                    </Button>
+                  </Link>
+                </Flex>
               </Box>
             </Box>
           </Box>
