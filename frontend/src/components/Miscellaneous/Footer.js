@@ -1,18 +1,28 @@
-import React from 'react';
-import { Box, Flex, Text, VStack, Stack, useBreakpointValue, Link, Icon, Heading } from '@chakra-ui/react';
-import { PhoneIcon, EmailIcon, InfoIcon } from '@chakra-ui/icons';
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import React from "react";
+import {
+  Box,
+  Flex,
+  Text,
+  VStack,
+  Stack,
+  useBreakpointValue,
+  Link,
+  Icon,
+  Heading,
+} from "@chakra-ui/react";
+import {  InfoIcon } from "@chakra-ui/icons";
+import { FaPhone, FaEnvelope, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const linkStyles = {
-  textDecoration: 'none',
-  fontWeight: '450',
-  color: 'white',
-  _hover: { textDecoration: 'none' }
+  textDecoration: "none",
+  fontWeight: "450",
+  color: "white",
+  _hover: { textDecoration: "none" },
 };
 
 const Footer = () => {
-  const stackDirection = useBreakpointValue({ base: 'column', md: 'row' });
-  const alignItems = useBreakpointValue({ base: 'flex-start', md: 'center' });
+  const stackDirection = useBreakpointValue({ base: "column", md: "row" });
+  const alignItems = useBreakpointValue({ base: "flex-start", md: "center" });
 
   return (
     <>
@@ -48,25 +58,37 @@ const Footer = () => {
 
               {/* Social Media Icons */}
               <Flex>
-                <Link href="tel:9701333112" mr={2} sx={linkStyles}>
-                  <Icon as={PhoneIcon} boxSize={6} />
+                <Link
+                  href="tel:9701333112"
+                  mr={2}
+                  sx={linkStyles}
+                  target="_blank"
+                >
+                  <Icon as={FaPhone} boxSize={6} color="blue.500" />
                 </Link>
                 <Link
                   href="mailto:ratnarealestateinfo@gmail.com"
                   mr={2}
                   sx={linkStyles}
+                  target="_blank"
                 >
-                  <Icon as={EmailIcon} boxSize={6} />
+                  <Icon as={FaEnvelope} boxSize={6} color="red.500" />
                 </Link>
-                <Link href="https://wa.me/9701333112" mr={2} sx={linkStyles}>
-                  <Icon as={FaWhatsapp} boxSize={6} />
+                <Link
+                  href="https://wa.me/9701333112"
+                  mr={2}
+                  sx={linkStyles}
+                  target="_blank"
+                >
+                  <Icon as={FaWhatsapp} boxSize={6} color="green.500" />
                 </Link>
                 <Link
                   href="https://www.instagram.com/ratnarealestate?igsh=MTZlMGNmd2FoNDhlbg=="
                   mr={2}
                   sx={linkStyles}
+                  target="_blank"
                 >
-                  <Icon as={FaInstagram} boxSize={6} />
+                  <Icon as={FaInstagram} boxSize={6} color="pink.500" />
                 </Link>
               </Flex>
             </VStack>
