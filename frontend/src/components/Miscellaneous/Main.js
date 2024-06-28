@@ -173,7 +173,7 @@ const Main = () => {
                     style={{
                       textDecoration: "none",
                       marginLeft: { base: 0, md: 4 },
-                      marginTop: {base: 5, md: -4},
+                      marginTop: {base: 5, md: -5},
                     }}
                   >
                     <Button
@@ -190,6 +190,7 @@ const Main = () => {
                       _focus={{ boxShadow: "xl" }}
                       fontSize="lg"
                       p={4}
+                      animation={`${buttonSlideIn} 2s ease-in-out`}
                     >
                       Explore More
                     </Button>
