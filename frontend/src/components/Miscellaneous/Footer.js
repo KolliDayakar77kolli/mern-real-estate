@@ -10,7 +10,7 @@ import {
   Icon,
   Heading,
 } from "@chakra-ui/react";
-import {  InfoIcon } from "@chakra-ui/icons";
+import { PhoneIcon, EmailIcon, InfoIcon } from "@chakra-ui/icons";
 import { FaPhone, FaEnvelope, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const linkStyles = {
