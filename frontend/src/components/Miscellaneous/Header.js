@@ -75,51 +75,6 @@ function Header() {
 
   return (
     <Box>
-      {/* First Mine */}
-      {/* <Flex
-        as="header"
-        bg="#081637"
-        color="#fff"
-        padding="2"
-        align="center"
-        justify="space-between"
-        position="fixed"
-        zIndex="8999"
-        width="100%"
-      >
-        <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
-          <Flex align="center">
-            <Image
-              src="logo.png"
-              alt="Logo"
-              height="60px"
-              width="60px"
-              marginLeft="20px"
-            />
-            <Heading fontSize="25px" marginLeft="20px" color="#5ea51d">
-              Ratna Real Estate
-            </Heading>
-          </Flex>
-        </Link>
-        <IconButton
-          display={{ base: "block", md: "none" }}
-          aria-label="Open Menu"
-          icon={<HamburgerIcon />}
-          onClick={onOpen}
-        />
-        <Flex
-          display={{ base: "none", md: "flex" }}
-          color="white"
-          flex="1"
-          justify="start"
-          alignItems="center"
-          marginLeft="40px"
-          gap="10"
-        >
-          <NavLinks onClose={onClose} animate={false} />
-        </Flex>
-      </Flex> */}
-
       <Flex
         as="header"
         bg="#081637"
