@@ -66,18 +66,28 @@ const Wel = () => {
       </Box>
 
       <Box
-        width={{ base: "100%", md: "50%" }}
+      width={{ base: "100%", md: "50%" }}
+      height="100%"
+      position="relative"
+    >
+      <Image
+        src="Owner_Big_Photo.jpg"
+        alt="owner pic"
+        width="100%"
         height="100%"
-        position="relative"
+        objectFit="fill"
+      />
+      <Box
+        position="absolute"
+        bottom={0}
+        right={0}
+        backgroundColor="rgba(0, 0, 0, 0.6)"
+        color="white"
+        p={2}
       >
-        <Image
-          src="Owner_Big_Photo.jpg"
-          alt="owner pic"
-          width="100%"
-          height="100%"
-          objectFit="fill"
-        />
+        <Text>Galla Srinivas Rao</Text>
       </Box>
+    </Box>
     </Flex>
   );
 };
