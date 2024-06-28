@@ -68,8 +68,7 @@ const Wel = () => {
               aspirations.
             </Text>
             <Text
-              as="span"
-              mt={0}
+              mt={2}
               fontSize="md"
               color="gray.600"
               lineHeight="taller"
