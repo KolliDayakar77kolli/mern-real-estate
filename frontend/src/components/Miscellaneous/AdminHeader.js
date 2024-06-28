@@ -39,15 +39,23 @@ function AdminHeader() {
       >
         {/* Left section */}
         <Flex align="center">
-        <Link href="/" fontWeight="bold" _hover={{ textDecoration: 'none' }}>
-          <Flex align="center">
-            <Image src="logo.png" alt="Logo" height="60px" width="60px" marginLeft="20px" />
-            <Heading fontSize="25px" marginLeft="20px" color="white">Ratna Real Estate</Heading>
-          </Flex>
-        </Link>
+          <Link href="/" fontWeight="bold" _hover={{ textDecoration: "none" }}>
+            <Flex align="center">
+              <Image
+                src="logo.png"
+                alt="Logo"
+                height="60px"
+                width="60px"
+                marginLeft="20px"
+              />
+              <Heading fontSize="25px" marginLeft="20px" color="white">
+                Ratna Real Estate
+              </Heading>
+            </Flex>
+          </Link>
 
           <Flex
-            display={{ base: 'none', md: 'flex' }}
+            display={{ base: "none", md: "flex" }}
             flex="1"
             justify="flex-start"
             gap="10"
@@ -72,8 +80,8 @@ function AdminHeader() {
         <Flex align="center">
           <Button
             fontWeight="bold"
-            _hover={{ textDecoration: 'none' }}
-            display={{ base: 'none', md: 'block' }}
+            _hover={{ textDecoration: "none" }}
+            display={{ base: "none", md: "block" }}
             onClick={handleLogout}
           >
             Logout
@@ -81,7 +89,7 @@ function AdminHeader() {
 
           {/* Hamburger menu button for mobile */}
           <IconButton
-            display={{ base: 'block', md: 'none' }}
+            display={{ base: "block", md: "none" }}
             aria-label="Open Menu"
             icon={<HamburgerIcon />}
             onClick={onOpen}
@@ -100,18 +108,23 @@ function AdminHeader() {
                 <NavLink to="/" onClose={onClose}>
                   Home
                 </NavLink>
-                <NavLink to="/projects" onClose={onClose}>
+                <NavLink to="/admin" onClose={onClose}>
+                  Admin
+                </NavLink>
+                <NavLink to="/chats" onClose={onClose}>
+                  Chats
+                </NavLink>
+                <NavLink to="/profile" onClose={onClose}>
                   Profile
                 </NavLink>
-                <NavLink to="/about" onClose={onClose}>
-                  About Us
-                </NavLink>
-                <NavLink to="/contact" onClose={onClose}>
-                  Contact Us
-                </NavLink>
-                <NavLink to="/admin" onClose={onClose}>
-                  Admin Login
-                </NavLink>
+                <Button
+                  fontWeight="bold"
+                  _hover={{ textDecoration: "none" }}
+                  display={{ base: "none", md: "block" }}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
               </VStack>
             </DrawerBody>
           </DrawerContent>

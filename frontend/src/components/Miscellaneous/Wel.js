@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Image, Heading, Text } from "@chakra-ui/react";
 
-const Wel = () => {
+const Welcome = () => {
   return (
     <Flex
       mt="100px"
@@ -61,7 +61,7 @@ const Wel = () => {
               textAlign="justify"
             >
               m Galla Srinivas Rao, the founder and chairman of Ratna Real
-              Estate. With over 10 years in the real estate industry, I have
+              Estate. With over 20 years in the real estate industry, I have
               cultivated a reputation for excellence, integrity, and
               client-focused service. Our mission is to provide unparalleled
               real estate solutions tailored to each client’s unique needs and
@@ -112,4 +112,4 @@ const Wel = () => {
   );
 };
 
-export default Wel;
+export default Welcome;
