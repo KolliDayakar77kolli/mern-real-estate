@@ -4,20 +4,20 @@ import { Box, Flex, Image, Text } from '@chakra-ui/react';
 const Wel = () => {
   return (
     <Flex
-    mt="250px"
-    direction={{ base: 'column', md: 'row' }} // Stacks vertically on smaller screens, horizontally on larger screens
+    mt="130px"
+    direction={{ base: 'column', md: 'row' }} 
     alignItems="center"
     justifyContent="center"
     width="100%"
-    height="500px" // Set a fixed height for the entire container
+    height="500px"
     p={4}
     bg="orange"
   >
     <Box
       width={{ base: '100%', md: '50%' }}
-      height="100%" // Ensure the text box has the same height as the container
+      height="100%" 
       p={4}
-      textAlign={{ base: 'center', md: 'left' }} // Center text on smaller screens
+      textAlign={{ base: 'center', md: 'left' }} 
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -35,7 +35,7 @@ const Wel = () => {
     </Box>
     <Box
       width={{ base: '100%', md: '50%' }}
-      height="100%" // Ensure the image box has the same height as the container
+      height="100%" 
       position="relative"
     bg="blue"
 
@@ -45,7 +45,7 @@ const Wel = () => {
         alt="owner pic"
         width="100%"
         height="100%"
-        objectFit="fill" // Ensure the image covers the entire box without being cut off
+        objectFit="fill" 
       />
     </Box>
   </Flex>
