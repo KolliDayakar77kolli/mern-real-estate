@@ -13,6 +13,7 @@ const Unique = () => {
       p={4}
       bg="grey.700"
       boxShadow="xl"
+      mx="auto"
       
     >
       <Box
