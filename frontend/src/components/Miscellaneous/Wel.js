@@ -60,12 +60,26 @@ const Wel = () => {
               lineHeight="taller"
               textAlign="justify"
             >
-              m Galla Srinivas Rao, the founder and principal broker of Ratna
-              Real Estate. With over 10 years in the real estate industry, I
-              have cultivated a reputation for excellence, integrity, and
+              m Galla Srinivas Rao, the founder and chairman of Ratna Real
+              Estate. With over 10 years in the real estate industry, I have
+              cultivated a reputation for excellence, integrity, and
               client-focused service. Our mission is to provide unparalleled
               real estate solutions tailored to each client’s unique needs and
               aspirations.
+            </Text>
+            <Text
+              as="span"
+              mt={0}
+              fontSize="md"
+              color="gray.600"
+              lineHeight="taller"
+              textAlign="justify"
+            >
+              Whether you're a first-time buyer, an experienced investor, or
+              looking to buy or sell your property, we have the knowledge and resources
+              to assist you. Our deep understanding of the local market trends,
+              combined with our extensive network, ensures that you get the best
+              possible outcomes.
             </Text>
           </Box>
         </Box>
@@ -85,13 +99,14 @@ const Wel = () => {
         />
         <Box
           position="absolute"
-          bottom={0}
-          right={0}
+          bottom={2}
+          right={2}
           backgroundColor="rgba(0, 0, 0, 0.6)"
           color="white"
+          borderRadius="md"
           p={2}
         >
-          <Text>Galla Srinivas Rao</Text>
+          <Text fontWeight="bold">Galla Srinivas Rao</Text>
         </Box>
       </Box>
     </Flex>
